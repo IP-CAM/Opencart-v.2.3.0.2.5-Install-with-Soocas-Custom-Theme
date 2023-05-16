@@ -1,0 +1,37 @@
+*.log
+.idea/
+
+/www/image/cache/*
+!/www/image/cache/index.html
+
+# Backup Files
+/www/system/storage/backup/*
+!/www/system/storage/backup/index.html
+
+# System Cache Files
+/www/system/storage/cache/*
+!/www/system/storage/cache/index.html
+
+# Download Files
+/www/system/storage/download/*
+!/www/system/storage/download/index.html
+
+# Log Files
+/www/system/storage/logs/*
+!/www/system/storage/logs/index.html
+
+# Modification Files
+/www/system/storage/modification/*
+!/www/system/storage/modification/index.html
+
+# Upload Files
+/www/system/storage/upload/*
+!/www/system/storage/upload/index.html
+
+# MegaFilter Files
+/www/system/cache_mfp/*
+
+# Верстка
+/www/верстка/*
+
+/www/vendor/vendor/*

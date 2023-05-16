@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <name>Modification Manager</name>
+  <code>modification_manager</code>
+  <version>2.8</version>
+  <author>OpenCart-Templates</author>
+  <link>http://www.opencart-templates.co.uk/modification-manager</link>
+
+  <file path="admin/language/en-gb/extension/modification.php">
+	<operation>
+      <search><![CDATA[<?php]]></search> 
+      <add position="after"><![CDATA[
+$_['tab_error'] = 'Error';
+$_['tab_files'] = 'Files';
+
+$_['text_add'] = 'Add Modification';
+$_['text_edit'] = 'Edit Modification: %s';
+
+$_['text_enabled'] = 'Enabled';
+$_['text_disabled'] = 'Disabled';
+
+$_['entry_author'] = 'Author';
+$_['entry_name'] = 'Name';
+$_['entry_xml'] = 'XML';
+
+$_['button_filter'] = 'Filter';
+$_['button_reset'] = 'Reset';
+
+$_['column_date_modified'] = 'Last Modified';
+
+$_['error_warning'] = 'There has been an error. Please check your data and try again';
+$_['error_required'] = 'This field is required';
+$_['error_name'] = 'Missing name tag';
+$_['error_code'] = 'Missing code tag';
+$_['error_exists'] = 'Modification \'%s\' is already using the same code: %s!';]]></add>
+    </operation>
+  </file>
+
+  <file path="admin/controller/extension/installer.php">
+	<operation>
+      <search index="0"><![CDATA[$json['error'] = sprintf($this->language->get('error_exists'), $modification_info['name']);]]></search>
+      <add position="replace"><![CDATA[$this->model_extension_modification->deleteModification($modification_info['modification_id']);]]></add>
+    </operation>
+  </file>
+</modification>
