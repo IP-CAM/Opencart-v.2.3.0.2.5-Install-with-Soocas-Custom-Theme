@@ -477,6 +477,24 @@ class ControllerSettingSetting extends Controller {
 			$data['config_instagram'] = $this->config->get('config_instagram');
 		}
 
+		if (isset($this->request->post['config_instagram'])) {
+			$data['config_instagram'] = $this->request->post['config_instagram'];
+		} else {
+			$data['config_instagram'] = $this->config->get('config_instagram');
+		}
+
+		if (isset($this->request->post['config_telegram'])) {
+			$data['config_telegram'] = $this->request->post['config_telegram'];
+		} else {
+			$data['config_telegram'] = $this->config->get('config_telegram');
+		}
+
+		if (isset($this->request->post['config_vk'])) {
+			$data['config_vk'] = $this->request->post['config_vk'];
+		} else {
+			$data['config_vk'] = $this->config->get('config_vk');
+		}
+
 		if (isset($this->request->post['config_owner'])) {
 			$data['config_owner'] = $this->request->post['config_owner'];
 		} else {
@@ -487,6 +505,30 @@ class ControllerSettingSetting extends Controller {
 			$data['config_address'] = $this->request->post['config_address'];
 		} else {
 			$data['config_address'] = $this->config->get('config_address');
+		}
+
+		if (isset($this->request->post['config_address'])) {
+			$data['config_address_ur'] = $this->request->post['config_address_ur'];
+		} else {
+			$data['config_address_ur'] = $this->config->get('config_address_ur');
+		}
+
+		if (isset($this->request->post['config_email_clients'])) {
+			$data['config_email_clients'] = $this->request->post['config_email_clients'];
+		} else {
+			$data['config_email_clients'] = $this->config->get('config_email_clients');
+		}
+
+		if (isset($this->request->post['config_email_wholesale'])) {
+			$data['config_email_wholesale'] = $this->request->post['config_email_wholesale'];
+		} else {
+			$data['config_email_wholesale'] = $this->config->get('config_email_wholesale');
+		}
+
+		if (isset($this->request->post['config_email_cooperation'])) {
+			$data['config_email_cooperation'] = $this->request->post['config_email_cooperation'];
+		} else {
+			$data['config_email_cooperation'] = $this->config->get('config_email_cooperation');
 		}
 
 		if (isset($this->request->post['config_geocode'])) {

@@ -4,17 +4,19 @@
 // *	@source		See SOURCE.txt for source and other copyright.
 // *	@license	GNU General Public License version 3; see LICENSE.txt
 
-class ControllerExtensionModuleFeatured extends Controller {
-	public function index($setting) {
+class ControllerExtensionModuleFeatured extends Controller
+{
+	public function index($setting)
+	{
 		$this->load->language('extension/module/featured');
 
-		$data['heading_title'] = $this->language->get('heading_title');
+		// $data['heading_title'] = $this->language->get('heading_title');
 
-		$data['text_tax'] = $this->language->get('text_tax');
+		// $data['text_tax'] = $this->language->get('text_tax');
 
-		$data['button_cart'] = $this->language->get('button_cart');
-		$data['button_wishlist'] = $this->language->get('button_wishlist');
-		$data['button_compare'] = $this->language->get('button_compare');
+		// $data['button_cart'] = $this->language->get('button_cart');
+		// $data['button_wishlist'] = $this->language->get('button_wishlist');
+		// $data['button_compare'] = $this->language->get('button_compare');
 
 		$this->load->model('catalog/product');
 
@@ -45,36 +47,36 @@ class ControllerExtensionModuleFeatured extends Controller {
 						$price = false;
 					}
 
-					if ((float)$product_info['special']) {
-						$special = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
-					} else {
-						$special = false;
-					}
+					// if ((float)$product_info['special']) {
+					// 	$special = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+					// } else {
+					// 	$special = false;
+					// }
 
-					if ($this->config->get('config_tax')) {
-						$tax = $this->currency->format((float)$product_info['special'] ? $product_info['special'] : $product_info['price'], $this->session->data['currency']);
-					} else {
-						$tax = false;
-					}
+					// if ($this->config->get('config_tax')) {
+					// 	$tax = $this->currency->format((float)$product_info['special'] ? $product_info['special'] : $product_info['price'], $this->session->data['currency']);
+					// } else {
+					// 	$tax = false;
+					// }
 
-					if ($this->config->get('config_review_status')) {
-						$rating = $product_info['rating'];
-					} else {
-						$rating = false;
-					}
-					
-					$stickers = $this->getStickers($product_info['product_id']) ;
+					// if ($this->config->get('config_review_status')) {
+					// 	$rating = $product_info['rating'];
+					// } else {
+					// 	$rating = false;
+					// }
+
+					// $stickers = $this->getStickers($product_info['product_id']) ;
 
 					$data['products'][] = array(
-						'product_id'  => $product_info['product_id'],
+						// 'product_id'  => $product_info['product_id'],
 						'thumb'       => $image,
 						'name'        => $product_info['name'],
-						'description' => utf8_substr(strip_tags(html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',
+						// 'description' => utf8_substr(strip_tags(html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',
 						'price'       => $price,
-						'special'     => $special,
-						'tax'         => $tax,
-						'sticker'     => $stickers,
-						'rating'      => $rating,
+						// 'special'     => $special,
+						// 'tax'         => $tax,
+						// 'sticker'     => $stickers,
+						// 'rating'      => $rating,
 						'href'        => $this->url->link('product/product', 'product_id=' . $product_info['product_id'])
 					);
 				}
@@ -85,26 +87,26 @@ class ControllerExtensionModuleFeatured extends Controller {
 			return $this->load->view('extension/module/featured', $data);
 		}
 	}
-	
-	private function getStickers($product_id) {
-	
- 	$stickers = $this->model_catalog_product->getProductStickerbyProductId($product_id) ;	
 
-		
-		if (!$stickers) {
-			return;
-		}
-		
-		$data['stickers'] = array();
-		
-		foreach ($stickers as $sticker) {
-			$data['stickers'][] = array(
-				'position' => $sticker['position'],
-				'image'    => HTTP_SERVER . 'image/' . $sticker['image']
-			);		
-		}
-				
-		return $this->load->view('product/stickers', $data);
-	
-	}
+	// private function getStickers($product_id)
+	// {
+
+	// 	$stickers = $this->model_catalog_product->getProductStickerbyProductId($product_id);
+
+
+	// 	if (!$stickers) {
+	// 		return;
+	// 	}
+
+	// 	$data['stickers'] = array();
+
+	// 	foreach ($stickers as $sticker) {
+	// 		$data['stickers'][] = array(
+	// 			'position' => $sticker['position'],
+	// 			'image'    => HTTP_SERVER . 'image/' . $sticker['image']
+	// 		);
+	// 	}
+
+	// 	return $this->load->view('product/stickers', $data);
+	// }
 }

@@ -1,144 +1,132 @@
-<?php echo $header; ?>
-<div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
-  <div class="row"><?php echo $column_left; ?>
-    <?php if ($column_left && $column_right) { ?>
-    <?php $class = 'col-sm-6'; ?>
-    <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-9'; ?>
-    <?php } else { ?>
-    <?php $class = 'col-sm-12'; ?>
-    <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?></h1>
-      <h3><?php echo $text_location; ?></h3>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class="row">
-            <?php if ($image) { ?>
-            <div class="col-sm-3"><img src="<?php echo $image; ?>" alt="<?php echo $store; ?>" title="<?php echo $store; ?>" class="img-thumbnail" /></div>
-            <?php } ?>
-            <div class="col-sm-3"><strong><?php echo $store; ?></strong><br />
-              <address>
-              <?php echo $address; ?>
-              </address>
-              <?php if ($geocode) { ?>
-              <a href="https://maps.google.com/maps?q=<?php echo urlencode($geocode); ?>&hl=<?php echo $geocode_hl; ?>&t=m&z=15" target="_blank" class="btn btn-info"><i class="fa fa-map-marker"></i> <?php echo $button_map; ?></a>
-              <?php } ?>
+<?= $header; ?>
+
+<section class="contacts">
+  <div class="container contacts__container">
+
+    <nav class="breadcrumb">
+      <ul class="breadcrumb__list">
+        <? foreach ($breadcrumbs as $id => $breadcrumb) { ?>
+          <? if ($id + 1 != count($breadcrumbs)) { ?>
+            <li class="breadcrumb__item">
+              <a class="breadcrumb__link breadcrumb__link_active" href="<?= $breadcrumb['href']; ?>">
+                <?= $breadcrumb['text']; ?>
+              </a>
+            </li>
+          <? } else { ?>
+            <li class="breadcrumb__item">
+              <span class="breadcrumb__link">
+                <?= $breadcrumb['text']; ?>
+              </span>
+            </li>
+          <? } ?>
+        <? } ?>
+      </ul>
+    </nav>
+
+    <div class="contacts__wrap">
+      <h2 class="title-h2 contacts__title-h2">Контакты</h2>
+      <p class="contacts__time">
+        <? echo $open ?>
+      </p>
+    </div>
+
+    <div class="contacts__data">
+
+      <div class="contacts__left">
+        <ul class="contacts__list">
+          <li class="contacts__item">
+            <span class="contacts__name">Телефон:</span>
+            <a class="contacts__link contacts__link_big" href="tel:<?= str_replace([' ', '(', ')', '-'], '', $telephone); ?>">
+            <?= $telephone; ?>
+            </a>
+          </li>
+
+          <? if ($email_clients) { ?>
+            <li class="contacts__item">
+              <span class="contacts__name">Клиентам:</span>
+              <a class="contacts__link" href="mailto:<?= $email_clients; ?>">
+                <?= $email_clients; ?>
+              </a>
+            </li>
+          <? } ?>
+
+          <? if ($email_wholesale) { ?>
+            <li class="contacts__item">
+              <span class="contacts__name">Оптовым клиентам:</span>
+              <a class="contacts__link" href="mailto:<?= $email_wholesale; ?>">
+                <?= $email_wholesale; ?>
+              </a>
+            </li>
+          <? } ?>
+
+          <? if ($email_cooperation) { ?>
+            <li class="contacts__item">
+              <span class="contacts__name">По вопросам сотрудничества:</span>
+              <a class="contacts__link" href="mailto:<?= $email_cooperation; ?>">
+                <?= $email_cooperation; ?>
+              </a>
+            </li>
+          <? } ?>
+
+          <? if ($legal_address) { ?>
+            <li class="contacts__item">
+              <span class="contacts__name">Юридический адресс:</span>
+              <span class="contacts__description">
+                <?= $legal_address; ?>
+              </span>
+            </li>
+          <? } ?>
+
+        </ul>
+      </div>
+
+      <div class="contacts__right">
+        <div class="form">
+          <form action="#" method="POST" class="form-id">
+            <h3 class="title-h3 form__title-3">Форма обратной связи</h3>
+
+            <div class="form__item form__item_big-margin">
+              <label for="forName" class="form__label">Имя</label>
+              <input type="text" id="forName" class="form__input" name="name">
             </div>
-            <div class="col-sm-3"><strong><?php echo $text_telephone; ?></strong><br>
-              <?php echo $telephone; ?><br />
-              <br />
-              <?php if ($fax) { ?>
-              <strong><?php echo $text_fax; ?></strong><br>
-              <?php echo $fax; ?>
-              <?php } ?>
+
+            <div class="form__item form__item_big-margin">
+              <label for="forEmail" class="form__label">Email *</label>
+              <input type="text" id="forEmail" class="form__input" name="email" required="">
             </div>
-            <div class="col-sm-3">
-              <?php if ($open) { ?>
-              <strong><?php echo $text_open; ?></strong><br />
-              <?php echo $open; ?><br />
-              <br />
-              <?php } ?>
-              <?php if ($comment) { ?>
-              <strong><?php echo $text_comment; ?></strong><br />
-              <?php echo $comment; ?>
-              <?php } ?>
+
+            <div class="form__item form__item_big-margin">
+              <label for="forMessage" class="form__label form__label_top">Сообщение *</label>
+              <textarea id="forMessage" class="form__input form__input_big" name="message" required=""></textarea>
             </div>
-          </div>
+
+            <div class="form__wrap">
+              <button type="submit" class="btn btn_black form__button">Отправить</button>
+              <span class="form__politics">Нажимая кнопку отправить, я даю согласие на обработку своих данных в соответствии с текущим законодательством</span>
+            </div>
+          </form>
         </div>
       </div>
-      <?php if ($locations) { ?>
-      <h3><?php echo $text_store; ?></h3>
-      <div class="panel-group" id="accordion">
-        <?php foreach ($locations as $location) { ?>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title"><a href="#collapse-location<?php echo $location['location_id']; ?>" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"><?php echo $location['name']; ?> <i class="fa fa-caret-down"></i></a></h4>
-          </div>
-          <div class="panel-collapse collapse" id="collapse-location<?php echo $location['location_id']; ?>">
-            <div class="panel-body">
-              <div class="row">
-                <?php if ($location['image']) { ?>
-                <div class="col-sm-3"><img src="<?php echo $location['image']; ?>" alt="<?php echo $location['name']; ?>" title="<?php echo $location['name']; ?>" class="img-thumbnail" /></div>
-                <?php } ?>
-                <div class="col-sm-3"><strong><?php echo $location['name']; ?></strong><br />
-                  <address>
-                  <?php echo $location['address']; ?>
-                  </address>
-                  <?php if ($location['geocode']) { ?>
-                  <a href="https://maps.google.com/maps?q=<?php echo urlencode($location['geocode']); ?>&hl=<?php echo $geocode_hl; ?>&t=m&z=15" target="_blank" class="btn btn-info"><i class="fa fa-map-marker"></i> <?php echo $button_map; ?></a>
-                  <?php } ?>
-                </div>
-                <div class="col-sm-3"> <strong><?php echo $text_telephone; ?></strong><br>
-                  <?php echo $location['telephone']; ?><br />
-                  <br />
-                  <?php if ($location['fax']) { ?>
-                  <strong><?php echo $text_fax; ?></strong><br>
-                  <?php echo $location['fax']; ?>
-                  <?php } ?>
-                </div>
-                <div class="col-sm-3">
-                  <?php if ($location['open']) { ?>
-                  <strong><?php echo $text_open; ?></strong><br />
-                  <?php echo $location['open']; ?><br />
-                  <br />
-                  <?php } ?>
-                  <?php if ($location['comment']) { ?>
-                  <strong><?php echo $text_comment; ?></strong><br />
-                  <?php echo $location['comment']; ?>
-                  <?php } ?>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <?php } ?>
+
+    </div>
+
+    <div class="social-links">
+      <span class="social-links__text">Наши социальные сети</span>
+      <div class="social-links__list">
+        <a class="social-links__link" href="<?= $link_telegram; ?>">
+          <img class="social-links__icon" src="catalog/view/theme/soocas/images/dist/contacts/telegram.svg" alt="Telegram icon">
+        </a>
+        <a class="social-links__link" href="<?= $link_vk; ?>">
+          <img class="social-links__icon" src="catalog/view/theme/soocas/images/dist/contacts/vk.svg" alt="Vk icon">
+        </a>
+        <a class="social-links__link" href="<?= $link_instagram; ?>">
+          <img class="social-links__icon" src="catalog/view/theme/soocas/images/dist/contacts/instagram.svg" alt="Instagram icon">
+        </a>
       </div>
-      <?php } ?>
-      <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
-        <fieldset>
-          <legend><?php echo $text_contact; ?></legend>
-          <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-name"><?php echo $entry_name; ?></label>
-            <div class="col-sm-10">
-              <input type="text" name="name" value="<?php echo $name; ?>" id="input-name" class="form-control" />
-              <?php if ($error_name) { ?>
-              <div class="text-danger"><?php echo $error_name; ?></div>
-              <?php } ?>
-            </div>
-          </div>
-          <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-email"><?php echo $entry_email; ?></label>
-            <div class="col-sm-10">
-              <input type="text" name="email" value="<?php echo $email; ?>" id="input-email" class="form-control" />
-              <?php if ($error_email) { ?>
-              <div class="text-danger"><?php echo $error_email; ?></div>
-              <?php } ?>
-            </div>
-          </div>
-          <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-enquiry"><?php echo $entry_enquiry; ?></label>
-            <div class="col-sm-10">
-              <textarea name="enquiry" rows="10" id="input-enquiry" class="form-control"><?php echo $enquiry; ?></textarea>
-              <?php if ($error_enquiry) { ?>
-              <div class="text-danger"><?php echo $error_enquiry; ?></div>
-              <?php } ?>
-            </div>
-          </div>
-          <?php echo $captcha; ?>
-        </fieldset>
-        <div class="buttons">
-          <div class="pull-right">
-            <input class="btn btn-primary" type="submit" value="<?php echo $button_submit; ?>" />
-          </div>
-        </div>
-      </form>
-      <?php echo $content_bottom; ?></div>
-    <?php echo $column_right; ?></div>
-</div>
-<?php echo $footer; ?>
+    </div>
+
+  </div>
+</section>
+
+<?= $content_bottom; ?>
+<?= $footer; ?>

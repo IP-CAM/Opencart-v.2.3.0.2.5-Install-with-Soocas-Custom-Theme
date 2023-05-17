@@ -125,6 +125,12 @@
                 </div>
               </div>
               <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-address-ur">Юридический адрес</label>
+                <div class="col-sm-10">
+                  <textarea name="config_address_ur" placeholder="Юридический адрес" rows="5" id="input-address-ur" class="form-control"><?php echo $config_address_ur; ?></textarea>
+                </div>
+              </div>
+              <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-geocode"><span data-toggle="tooltip" data-container="#tab-general" title="<?php echo $help_geocode; ?>"><?php echo $entry_geocode; ?></span></label>
                 <div class="col-sm-10">
                   <input type="text" name="config_geocode" value="<?php echo $config_geocode; ?>" placeholder="<?php echo $entry_geocode; ?>" id="input-geocode" class="form-control" />
@@ -139,6 +145,29 @@
                   <?php } ?>
                 </div>
               </div>
+
+              <!-- Почты для контактов -->
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-email-clients">E-mail клиентам</label>
+                <div class="col-sm-10">
+                  <input type="text" name="config_email_clients" value="<?php echo $config_email_clients; ?>" placeholder="E-mail клиентам" id="input-email-clients" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-email-wholesale">E-mail оптовым клиентам</label>
+                <div class="col-sm-10">
+                  <input type="text" name="config_email_wholesale" value="<?php echo $config_email_wholesale; ?>" placeholder="E-mail оптовым клиентам" id="input-email-wholesale" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-email-cooperation ">
+                  E-mail по вопросам сотрудничества:
+                </label>
+                <div class="col-sm-10">
+                  <input type="text" name="config_email_cooperation" value="<?php echo $config_email_cooperation; ?>" placeholder="E-mail по вопросам сотрудничества" id="input-email-cooperation " class="form-control" />
+                </div>
+              </div>
+
               <div class="form-group required">
                 <label class="col-sm-2 control-label" for="input-telephone"><?php echo $entry_telephone; ?></label>
                 <div class="col-sm-10">
@@ -216,6 +245,22 @@
                 </label>
                 <div class="col-sm-10">
                   <input type="text" name="config_instagram" value="<?php echo $config_instagram; ?>" placeholder="Facebook" id="input-name" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-name">
+                  Telegram
+                </label>
+                <div class="col-sm-10">
+                  <input type="text" name="config_telegram" value="<?php echo $config_telegram; ?>" placeholder="Телеграм" id="input-name" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-name">
+                  VK
+                </label>
+                <div class="col-sm-10">
+                  <input type="text" name="config_vk" value="<?php echo $config_vk; ?>" placeholder="Вконтакте" id="input-name" class="form-control" />
                 </div>
               </div>
               <?php if ($locations) { ?>

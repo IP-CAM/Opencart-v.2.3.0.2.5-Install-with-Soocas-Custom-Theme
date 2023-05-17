@@ -5,7 +5,7 @@
 // *	@license	GNU General Public License version 3; see LICENSE.txt
 
 // Heading
-$_['heading_title']  = 'Связаться с нами';
+$_['heading_title']  = 'Контакты';
 
 // Text
 $_['text_location']  = 'Мы находимся по адресу:';
