@@ -32,7 +32,7 @@ class ControllerExtensionModuleImgcategory extends Controller {
 			
             $data['categories'][] = array (
 				'href' 	=> $this->url->link('product/category', 'path=' . $result['category_id']),
-				'thumb'	=> $this->model_tool_image->resize($image, $setting['width'], $setting['height']),
+				'thumb'	=> $this->model_tool_image->onesize($image, $setting['width']),
 				'name' 	=> $result['name'],
 			);
 		}

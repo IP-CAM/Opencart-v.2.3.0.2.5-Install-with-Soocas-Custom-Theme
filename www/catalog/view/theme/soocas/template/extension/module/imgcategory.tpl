@@ -1,11 +1,17 @@
-<h3 class="module-title"><span><?php echo $heading_title; ?></span></h3>
-<div class="row imgcategory">
-    <?php foreach ($categories as $category) { ?>
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="product-thumb transition">
-                <div class="image"><a href="<?php echo $category['href']; ?>"><img src="<?php echo $category['thumb']; ?>" title="<?php echo $category['name']; ?>" alt="<?php echo $category['name']; ?>"/></a></div>
-                <h4><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></h4>
-            </div>
-        </div>
-    <?php } ?>
-</div>
+<section class="categories" id="catalog">
+  <div class="container categories__container">
+    <h1 class="title-h1 categories__title-h1">Товары Soocas</h1>
+    <ul class="categories__list">
+      <? foreach ($categories as $category) { ?>
+        <li class="categories__item">
+          <a href="<?= $category['href']; ?>" class="categories__link">
+            <img src="<?= $category['thumb']; ?>" class="categories__img" alt="Image product">
+            <p class="categories__description">
+              <?= $category['name']; ?>
+            </p>
+          </a>
+        </li>
+      <? } ?>
+    </ul>
+  </div>
+</section>

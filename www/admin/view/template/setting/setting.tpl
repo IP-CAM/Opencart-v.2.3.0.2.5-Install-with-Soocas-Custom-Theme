@@ -200,11 +200,6 @@
                 </label>
                 <div class="col-sm-10">
                   <input type="text" name="config_facebook" value="<?php echo $config_facebook; ?>" placeholder="Facebook" id="input-name" class="form-control" />
-                  <?php if ($error_name) { ?>
-                    <div class="text-danger">
-                      Что-то пошло не так.
-                    </div>
-                  <?php } ?>
                 </div>
               </div>
               <div class="form-group">
@@ -213,11 +208,6 @@
                 </label>
                 <div class="col-sm-10">
                   <input type="text" name="config_youtube" value="<?php echo $config_youtube; ?>" placeholder="Facebook" id="input-name" class="form-control" />
-                  <?php if ($error_name) { ?>
-                    <div class="text-danger">
-                      Что-то пошло не так.
-                    </div>
-                  <?php } ?>
                 </div>
               </div>
               <div class="form-group">
@@ -226,11 +216,6 @@
                 </label>
                 <div class="col-sm-10">
                   <input type="text" name="config_instagram" value="<?php echo $config_instagram; ?>" placeholder="Facebook" id="input-name" class="form-control" />
-                  <?php if ($error_name) { ?>
-                    <div class="text-danger">
-                      Что-то пошло не так.
-                    </div>
-                  <?php } ?>
                 </div>
               </div>
               <?php if ($locations) { ?>

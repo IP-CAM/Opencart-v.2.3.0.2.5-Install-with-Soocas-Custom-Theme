@@ -5771,6 +5771,7 @@ button.swiper-pagination-bullet {
 }
 
 .instagram__btn {
+  position: relative;
   letter-spacing: .01em;
   padding: 10px 20px 8px 14px;
   text-transform: lowercase
@@ -5809,6 +5810,15 @@ button.swiper-pagination-bullet {
   box-shadow: 0 2px 10px rgba(0, 0, 0, .2)
 }
 
+.instagram__btn::before {
+  content: url(../images/svg/instagram-light.svg);
+  position: relative;
+  display: flex;
+  height: 20px;
+  margin-right: 10px;
+  width: 20px;  
+}
+
 .instagram__icon {
   height: 20px;
   margin-right: 10px;
@@ -5821,7 +5831,7 @@ button.swiper-pagination-bullet {
 
 .instagram__icon_light-theme {
   fill: #000
-}
+} 
 
 .instagram__text {
   -webkit-box-orient: vertical;
