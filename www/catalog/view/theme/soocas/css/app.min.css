@@ -5462,9 +5462,9 @@ button.swiper-pagination-bullet {
   left: 0;
   position: fixed;
   top: 0;
-  -webkit-transition: all .3s ease;
-  -o-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: transform .3s ease;
+  -o-transition: transform .3s ease;
+  transition: transform .3s ease;
   width: 100%;
   z-index: 10
 }

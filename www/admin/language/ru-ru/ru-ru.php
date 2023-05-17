@@ -124,6 +124,7 @@ $_['tab_image']                     = 'Изображения';
 $_['tab_option']                    = 'Опции';
 $_['tab_server']                    = 'Сервер';
 $_['tab_store']                     = 'Магазин';
+$_['tab_social']                    = 'Соц. сети';
 $_['tab_special']                   = 'Акции';
 $_['tab_session']                   = 'Сессия';
 $_['tab_local']                     = 'Локализация';

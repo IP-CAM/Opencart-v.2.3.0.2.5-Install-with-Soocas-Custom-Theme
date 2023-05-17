@@ -227,6 +227,7 @@ class ControllerSettingSetting extends Controller {
 
 		$data['tab_general'] = $this->language->get('tab_general');
 		$data['tab_store'] = $this->language->get('tab_store');
+		$data['tab_social'] = $this->language->get('tab_social');
 		$data['tab_local'] = $this->language->get('tab_local');
 		$data['tab_option'] = $this->language->get('tab_option');
 		$data['tab_image'] = $this->language->get('tab_image');
@@ -456,6 +457,24 @@ class ControllerSettingSetting extends Controller {
 			$data['config_name'] = $this->request->post['config_name'];
 		} else {
 			$data['config_name'] = $this->config->get('config_name');
+		}
+
+		if (isset($this->request->post['config_facebook'])) {
+			$data['config_facebook'] = $this->request->post['config_facebook'];
+		} else {
+			$data['config_facebook'] = $this->config->get('config_facebook');
+		}
+
+		if (isset($this->request->post['config_youtube'])) {
+			$data['config_youtube'] = $this->request->post['config_youtube'];
+		} else {
+			$data['config_youtube'] = $this->config->get('config_youtube');
+		}
+
+		if (isset($this->request->post['config_instagram'])) {
+			$data['config_instagram'] = $this->request->post['config_instagram'];
+		} else {
+			$data['config_instagram'] = $this->config->get('config_instagram');
 		}
 
 		if (isset($this->request->post['config_owner'])) {

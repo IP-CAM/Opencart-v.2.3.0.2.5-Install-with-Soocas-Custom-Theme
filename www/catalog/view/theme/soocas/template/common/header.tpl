@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <!--[if IE]><![endif]-->
-<!--[if IE 8 ]><html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>" class="ie8"><![endif]-->
-<!--[if IE 9 ]><html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>" class="ie9"><![endif]-->
+<!--[if IE 8 ]><html dir="<? echo $direction; ?>" lang="<? echo $lang; ?>" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html dir="<? echo $direction; ?>" lang="<? echo $lang; ?>" class="ie9"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
-<html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>">
+<html dir="<? echo $direction; ?>" lang="<? echo $lang; ?>">
 <!--<![endif]-->
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title><?php echo $title; ?></title>
-  <base href="<?php echo $base; ?>">
-  <?php if ($description) { ?>
-    <meta name="description" content="<?php echo $description; ?>">
-  <?php } ?>
-  <?php if ($keywords) { ?>
-    <meta name="keywords" content="<?php echo $keywords; ?>">
-  <?php } ?>
-  <?php foreach ($styles as $style) { ?>
-    <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>">
-  <?php } ?>
-  <?php foreach ($links as $link) { ?>
-    <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>">
-  <?php } ?>
-  <?php foreach ($scripts as $script) { ?>
-    <script src="<?php echo $script; ?>"></script>
-  <?php } ?>
-  <?php foreach ($analytics as $analytic) { ?>
-    <?php echo $analytic; ?>
-  <?php } ?>
+  <title><? echo $title; ?></title>
+  <base href="<? echo $base; ?>">
+  <? if ($description) { ?>
+    <meta name="description" content="<? echo $description; ?>">
+  <? } ?>
+  <? if ($keywords) { ?>
+    <meta name="keywords" content="<? echo $keywords; ?>">
+  <? } ?>
+  <? foreach ($styles as $style) { ?>
+    <link href="<? echo $style['href']; ?>" type="text/css" rel="<? echo $style['rel']; ?>" media="<? echo $style['media']; ?>">
+  <? } ?>
+  <? foreach ($links as $link) { ?>
+    <link href="<? echo $link['href']; ?>" rel="<? echo $link['rel']; ?>">
+  <? } ?>
+  <? foreach ($scripts as $script) { ?>
+    <script src="<? echo $script; ?>"></script>
+  <? } ?>
+  <? foreach ($analytics as $analytic) { ?>
+    <? echo $analytic; ?>
+  <? } ?>
 
   <link rel="stylesheet" href="catalog/view/theme/soocas/css/app.min.css">
 
 </head>
 
-<body class="<?php echo $class; ?> page">
+<body class="<? echo $class; ?> page">
   <div class="page__cover"></div>
   <div class="wrapper">
 
@@ -49,9 +49,9 @@
         </div>
         <div class="header__info">
           <span class="country country_light header__country">Россия</span>
-          <a href="<?php echo $home; ?>" class="logo">
+          <a href="<? echo $home; ?>" class="logo">
             <? if ($logo) { ?>
-              <img class="logo__img" src="<?php echo $logo; ?>" alt="Soocas logo" width="137" height="30">
+              <img class="logo__img" src="<? echo $logo; ?>" alt="Soocas logo" width="137" height="30">
             <? } ?>
           </a>
           <div class="header__buttons">
