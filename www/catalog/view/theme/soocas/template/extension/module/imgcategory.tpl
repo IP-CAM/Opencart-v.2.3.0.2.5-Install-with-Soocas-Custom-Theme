@@ -5,7 +5,7 @@
       <? foreach ($categories as $category) { ?>
         <li class="categories__item">
           <a href="<?= $category['href']; ?>" class="categories__link">
-            <img src="<?= $category['thumb']; ?>" class="categories__img" alt="Image product">
+            <img src="<?= $category['thumb']; ?>" class="categories__img" alt="<?= $category['name']; ?> Soocas">
             <p class="categories__description">
               <?= $category['name']; ?>
             </p>
