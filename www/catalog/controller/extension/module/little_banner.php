@@ -9,6 +9,12 @@ class ControllerExtensionModuleLittleBanner extends Controller
 	public function index($setting)
 	{
 		if ($setting['status']) {
+			
+			$data['module_title'] = '';
+			$data['module_text'] = '';
+			$data['module_link'] = '';
+			$data['module_button_text'] = '';
+
 			if (isset($setting['module_title'])) {
 				$data['module_title'] = $setting['module_title'];
 			}

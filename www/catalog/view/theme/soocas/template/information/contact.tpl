@@ -110,9 +110,9 @@
 
     </div>
 
-    <div class="social-links">
-      <span class="social-links__text">Наши социальные сети</span>
-      <? if ($link_telegram || $link_vk || $link_instagram) { ?>
+    <? if ($link_telegram || $link_vk || $link_instagram) { ?>
+      <div class="social-links">
+        <span class="social-links__text">Наши социальные сети</span>
         <div class="social-links__list">
           <a class="social-links__link" href="<?= $link_telegram; ?>">
             <img class="social-links__icon" src="catalog/view/theme/soocas/images/dist/contacts/telegram.svg" alt="Telegram icon">
@@ -126,8 +126,8 @@
             <img class="social-links__icon" src="catalog/view/theme/soocas/images/dist/contacts/instagram.svg" alt="Instagram icon">
           </a>
         </div>
-      <? } ?>
-    </div>
+      </div>
+    <? } ?>
 
   </div>
 </section>
