@@ -6,7 +6,7 @@
     <nav class="breadcrumb">
       <ul class="breadcrumb__list">
         <? foreach ($breadcrumbs as $id => $breadcrumb) { ?>
-          <? if ($id + 1 != count($breadcrumbs)) { ?>
+          <? if (!isset($breadcrumb['last'])) { ?>
             <li class="breadcrumb__item">
               <a class="breadcrumb__link breadcrumb__link_active" href="<?= $breadcrumb['href']; ?>">
                 <?= $breadcrumb['text']; ?>
@@ -37,7 +37,7 @@
           <li class="contacts__item">
             <span class="contacts__name">Телефон:</span>
             <a class="contacts__link contacts__link_big" href="tel:<?= str_replace([' ', '(', ')', '-'], '', $telephone); ?>">
-            <?= $telephone; ?>
+              <?= $telephone; ?>
             </a>
           </li>
 
@@ -112,17 +112,21 @@
 
     <div class="social-links">
       <span class="social-links__text">Наши социальные сети</span>
-      <div class="social-links__list">
-        <a class="social-links__link" href="<?= $link_telegram; ?>">
-          <img class="social-links__icon" src="catalog/view/theme/soocas/images/dist/contacts/telegram.svg" alt="Telegram icon">
-        </a>
-        <a class="social-links__link" href="<?= $link_vk; ?>">
-          <img class="social-links__icon" src="catalog/view/theme/soocas/images/dist/contacts/vk.svg" alt="Vk icon">
-        </a>
-        <a class="social-links__link" href="<?= $link_instagram; ?>">
-          <img class="social-links__icon" src="catalog/view/theme/soocas/images/dist/contacts/instagram.svg" alt="Instagram icon">
-        </a>
-      </div>
+      <? if ($link_telegram || $link_vk || $link_instagram) { ?>
+        <div class="social-links__list">
+          <a class="social-links__link" href="<?= $link_telegram; ?>">
+            <img class="social-links__icon" src="catalog/view/theme/soocas/images/dist/contacts/telegram.svg" alt="Telegram icon">
+          </a>
+
+          <a class="social-links__link" href="<?= $link_vk; ?>">
+            <img class="social-links__icon" src="catalog/view/theme/soocas/images/dist/contacts/vk.svg" alt="Vk icon">
+          </a>
+
+          <a class="social-links__link" href="<?= $link_instagram; ?>">
+            <img class="social-links__icon" src="catalog/view/theme/soocas/images/dist/contacts/instagram.svg" alt="Instagram icon">
+          </a>
+        </div>
+      <? } ?>
     </div>
 
   </div>
