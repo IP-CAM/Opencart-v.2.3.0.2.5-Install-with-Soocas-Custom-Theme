@@ -841,11 +841,11 @@ class ControllerExtensionModification extends Controller {
 
 		$file = DIR_LOGS . 'ocmod.log';
 
-		if (file_exists($file)) {
-			$data['log'] = htmlentities(file_get_contents($file, FILE_USE_INCLUDE_PATH, null));
-		} else {
-			$data['log'] = '';
-		}
+		// if (file_exists($file)) {
+		// 	$data['log'] = htmlentities(file_get_contents($file, FILE_USE_INCLUDE_PATH, null));
+		// } else {
+		// 	$data['log'] = '';
+		// }
 
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');

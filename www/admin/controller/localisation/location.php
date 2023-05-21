@@ -4,10 +4,12 @@
 // *	@source		See SOURCE.txt for source and other copyright.
 // *	@license	GNU General Public License version 3; see LICENSE.txt
 
-class ControllerLocalisationLocation extends Controller {
+class ControllerLocalisationLocation extends Controller
+{
 	private $error = array();
 
-	public function index() {
+	public function index()
+	{
 		$this->load->language('localisation/location');
 
 		$this->document->setTitle($this->language->get('heading_title'));
@@ -17,7 +19,8 @@ class ControllerLocalisationLocation extends Controller {
 		$this->getList();
 	}
 
-	public function add() {
+	public function add()
+	{
 		$this->load->language('localisation/location');
 
 		$this->document->setTitle($this->language->get('heading_title'));
@@ -49,7 +52,8 @@ class ControllerLocalisationLocation extends Controller {
 		$this->getForm();
 	}
 
-	public function edit() {
+	public function edit()
+	{
 		$this->load->language('localisation/location');
 
 		$this->document->setTitle($this->language->get('heading_title'));
@@ -81,7 +85,8 @@ class ControllerLocalisationLocation extends Controller {
 		$this->getForm();
 	}
 
-	public function delete() {
+	public function delete()
+	{
 		$this->load->language('localisation/location');
 
 		$this->document->setTitle($this->language->get('heading_title'));
@@ -115,7 +120,8 @@ class ControllerLocalisationLocation extends Controller {
 		$this->getList();
 	}
 
-	protected function getList() {
+	protected function getList()
+	{
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
@@ -264,7 +270,8 @@ class ControllerLocalisationLocation extends Controller {
 		$this->response->setOutput($this->load->view('localisation/location_list', $data));
 	}
 
-	protected function getForm() {
+	protected function getForm()
+	{
 		$data['heading_title'] = $this->language->get('heading_title');
 
 		$data['text_form'] = !isset($this->request->get['location_id']) ? $this->language->get('text_add') : $this->language->get('text_edit');
@@ -438,7 +445,8 @@ class ControllerLocalisationLocation extends Controller {
 		$this->response->setOutput($this->load->view('localisation/location_form', $data));
 	}
 
-	protected function validateForm() {
+	protected function validateForm()
+	{
 		if (!$this->user->hasPermission('modify', 'localisation/location')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
@@ -458,7 +466,8 @@ class ControllerLocalisationLocation extends Controller {
 		return !$this->error;
 	}
 
-	protected function validateDelete() {
+	protected function validateDelete()
+	{
 		if (!$this->user->hasPermission('modify', 'localisation/location')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}

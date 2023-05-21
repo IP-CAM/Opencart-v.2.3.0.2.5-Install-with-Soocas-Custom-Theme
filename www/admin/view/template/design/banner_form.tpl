@@ -31,7 +31,9 @@
             <div class="col-sm-10">
               <input type="text" name="name" value="<?= $name; ?>" placeholder="<?= $entry_name; ?>" id="input-name" class="form-control" />
               <? if ($error_name) { ?>
-                <div class="text-danger"><?= $error_name; ?></div>
+                <div class="text-danger">
+                  <?= $error_name; ?>
+                </div>
               <? } ?>
             </div>
           </div>
@@ -73,7 +75,14 @@
 
                         <tr id="image-row<?= $image_row; ?>">
                           <!-- Заголовок -->
-                          <td colspan="2" class="text-left"><input type="text" name="banner_image[<?= $language['language_id']; ?>][<?= $image_row; ?>][title]" value="<?= $banner_image['title']; ?>" placeholder="Название баннера" class="form-control" /><? if (isset($error_banner_image[$language['language_id']][$image_row])) { ?><div class="text-danger"><?= $error_banner_image[$language['language_id']][$image_row]; ?></div><? } ?></td>
+                          <td colspan="2" class="text-left">
+                            <input type="text" name="banner_image[<?= $language['language_id']; ?>][<?= $image_row; ?>][title]" value="<?= $banner_image['title']; ?>" placeholder="Название баннера" class="form-control" />
+                            <? if (isset($error_banner_image[$language['language_id']][$image_row])) { ?>
+                              <div class="text-danger">
+                                <?= $error_banner_image[$language['language_id']][$image_row]; ?>
+                              </div>
+                            <? } ?>
+                          </td>
                           <!-- Сортировка -->
                           <td colspan="2" class="text-left" style="width: 40%;"><input type="text" name="banner_image[<?= $language['language_id']; ?>][<?= $image_row; ?>][sort_order]" value="<?= $banner_image['sort_order']; ?>" placeholder="<?= $entry_sort_order; ?>" class="form-control" /></td>
                           <!-- Удаление -->
@@ -88,9 +97,25 @@
 
                         <tr id="image-row<?= $image_row; ?>">
                           <!-- Картинка -->
-                          <td colspan="2" class="text-left"><a href="" id="thumb-image-<?= $image_row; ?>" data-toggle="image" class="img-thumbnail"><img src="<?= $banner_image['thumb']; ?>" alt="" title="" data-placeholder="<?= $placeholder; ?>" /></a><input type="hidden" name="banner_image[<?= $language['language_id']; ?>][<?= $image_row; ?>][image]" value="<?= $banner_image['image']; ?>" id="input-image<?= $image_row; ?>" /></td>
+                          <td colspan="2" class="text-left">
+                            <a href="" id="thumb-image-<?= $image_row; ?>" data-toggle="image" class="img-thumbnail">
+                              <img src="<?= $banner_image['thumb']; ?>" alt="" title="" data-placeholder="<?= $placeholder; ?>" />
+                            </a>
+                            <input type="hidden" name="banner_image[<?= $language['language_id']; ?>][<?= $image_row; ?>][image]" value="<?= $banner_image['image']; ?>" id="input-image<?= $image_row; ?>" />
+                            <? if (!$banner_image['image']) { ?>
+                              <div class="text-danger">
+                                Картинка обязательна
+                              </div>
+                            <? } ?>
+                          </td>
                           <!-- Картинка мобильные -->
-                          <td colspan="2" class="text-left"><a href="" id="thumb-image-mobile-<?= $image_row; ?>" data-toggle="image" class="img-thumbnail"><img src="<?= $banner_image['thumb_mobile']; ?>" alt="" title="" data-placeholder="<?= $placeholder; ?>" /></a><input type="hidden" name="banner_image[<?= $language['language_id']; ?>][<?= $image_row; ?>][image_mobile]" value="<?= $banner_image['image_mobile']; ?>" id="input-image_mobile<?= $image_row; ?>" /></td>
+                          <td colspan="2" class="text-left"><a href="" id="thumb-image-mobile-<?= $image_row; ?>" data-toggle="image" class="img-thumbnail"><img src="<?= $banner_image['thumb_mobile']; ?>" alt="" title="" data-placeholder="<?= $placeholder; ?>" /></a><input type="hidden" name="banner_image[<?= $language['language_id']; ?>][<?= $image_row; ?>][image_mobile]" value="<?= $banner_image['image_mobile']; ?>" id="input-image_mobile<?= $image_row; ?>" />
+                            <? if (!$banner_image['image_mobile']) { ?>
+                              <div class="text-danger">
+                                Картинка обязательна
+                              </div>
+                            <? } ?>
+                          </td>
                         </tr>
 
 
@@ -102,7 +127,7 @@
 
                         <tr id="image-row<?= $image_row; ?>">
                           <!-- Доп контент -->
-                          <td colspan="4" class="text-left"><textarea class="form-control" name="banner_image[<?= $language['language_id']; ?>][<?= $image_row; ?>][textarea]" cols="30" rows="10"><?= $banner_image['textarea']; ?></textarea><? if (isset($error_banner_image[$language['language_id']][$image_row])) { ?><div class="text-danger"><?= $error_banner_image[$language['language_id']][$image_row]; ?></div><? } ?></td>
+                          <td colspan="4" class="text-left"><textarea class="form-control" name="banner_image[<?= $language['language_id']; ?>][<?= $image_row; ?>][textarea]" cols="30" rows="10"><?= $banner_image['textarea']; ?></textarea><? if (isset($error_banner_image[$language['language_id']][$image_row])) { ?><? } ?></td>
                         </tr>
 
 

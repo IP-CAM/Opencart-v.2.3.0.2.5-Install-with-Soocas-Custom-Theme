@@ -10,16 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 				if (scrolled > 153 && scrolled > scrollPrev) {
 					header.classList.add('header_part-out');
-				} 
+				}
 
-				if (scrolled < 153 ) {
+				if (scrolled < 153) {
 					header.classList.remove('header_part-out');
-				} 
-	
+				}
+
 				scrollPrev = scrolled;
 			})
 		}
-		
+
 		if (window.matchMedia("(max-width: 768px)").matches) {
 			window.addEventListener('scroll', () => {
 				let scrolled = window.pageYOffset;
@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
 					header.classList.add('header_part-out');
 				}
 
-				if (scrolled < 105 ) {
+				if (scrolled < 105) {
 					header.classList.remove('header_part-out');
 					header.classList.remove('header_out');
-				} 
-	
+				}
+
 				scrollPrev = scrolled;
 			})
 		}
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const nav = document.querySelector('.nav');
 		const navLinks = document.querySelectorAll('.nav__link');
 		const burger = document.querySelector('.burger');
-		
+
 		const toggleClasses = () => {
 			burger.classList.toggle('burger_open');
 			nav.classList.toggle('nav_open');
@@ -71,8 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			//проверка на наличие якорной ссылки
 			const menuActive = body.classList.contains('page_active-burger');
 			const firstIndex = link.getAttribute('href').indexOf('#') === 0;
-			
-			if (menuActive & firstIndex) toggleClasses();				
+
+			if (menuActive & firstIndex) toggleClasses();
 		}))
 	}
 
@@ -150,13 +150,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			body.classList.toggle('page_active-form');
 		}
 
-		if(btnOpen) btnOpen.addEventListener('click', toggleClasses);
+		if (btnOpen) btnOpen.addEventListener('click', toggleClasses);
 
 		btnsClose[1].addEventListener('click', () => {
 			if (document.querySelector('.page_active-form')) toggleClasses();
 		})
 
-		if(btnSend) btnSend.addEventListener('click', toggleClasses);
+		if (btnSend) btnSend.addEventListener('click', toggleClasses);
 
 		cover.addEventListener('click', () => {
 			if (document.querySelector('.page_active-form')) toggleClasses();
@@ -177,13 +177,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			body.classList.toggle('page_active-successful');
 		}
 
-		if(btnOpen) btnOpen.addEventListener('click', toggleClasses);
+		if (btnOpen) btnOpen.addEventListener('click', toggleClasses);
 
 		btnsClose[2].addEventListener('click', () => {
 			if (document.querySelector('.page_active-successful')) toggleClasses();
 		})
 
-		if(btnReady) btnReady.addEventListener('click', toggleClasses);
+		if (btnReady) btnReady.addEventListener('click', toggleClasses);
 
 		cover.addEventListener('click', () => {
 			if (document.querySelector('.page_active-successful')) toggleClasses();
@@ -194,8 +194,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function checkboxColor() {
 		const checkboxList = document.querySelectorAll('.device__input');
-		
-		checkboxList.forEach(checkbox => checkbox.addEventListener('click', () => {		
+
+		checkboxList.forEach(checkbox => checkbox.addEventListener('click', () => {
 			checkboxList.forEach(checkbox => checkbox.checked = false);
 			checkbox.checked = true;
 		}))
@@ -210,14 +210,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		btnsPlus.forEach(btn => btn.addEventListener("click", () => {
 			let input = btn.closest('.cart__amount').querySelector('.cart__input');
 
-			if(input.value >= 99) return;
+			if (input.value >= 99) return;
 			input.value = Number(input.value) + 1;
 		}))
 
 		btnsMinus.forEach(btn => btn.addEventListener("click", () => {
 			let input = btn.closest('.cart__amount').querySelector('.cart__input');
 
-			if(input.value <= 1) return;
+			if (input.value <= 1) return;
 			input.value = Number(input.value) - 1;
 		}))
 	}
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const listImages2 = document.querySelectorAll('.img-big');
 		const imgWrap = document.querySelector('#img-modal');
 		const tegImg = document.querySelector('.image__photo');
-		
+
 		const toggleClasses = () => {
 			modalList[3].classList.toggle('modal_open-image');
 			imgWrap.classList.toggle('image_open');
@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			let src = e.target.src;
 			tegImg.src = src;
 			toggleClasses();
-		} 
+		}
 
 		listImages1.forEach(img => img.addEventListener("click", getSrc));
 		listImages2.forEach(img => img.addEventListener("click", getSrc));
