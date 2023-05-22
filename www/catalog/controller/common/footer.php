@@ -72,6 +72,7 @@ class ControllerCommonFooter extends Controller {
 		// $data['order'] = $this->url->link('account/order', '', true);
 		// $data['wishlist'] = $this->url->link('account/wishlist', '', true);
 		// $data['newsletter'] = $this->url->link('account/newsletter', '', true);
+		$data['search'] = $this->load->controller('common/search');
 
 		
 		$data['address'] = nl2br($this->config->get('config_address'));

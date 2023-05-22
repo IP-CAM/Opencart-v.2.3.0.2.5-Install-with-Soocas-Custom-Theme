@@ -75,26 +75,13 @@
   </div>
 </footer>
 
-<div class="window"  id="search">
-  <button class="window__close">
-    <img src="catalog/view/theme/soocas/images/dist/search/close.svg" alt="Закрыть" width="20" height="20" aria-label="Закрыть">
-  </button>
-  <div class="search window__search">
-    <h2 class="search__title window__title">Поиск</h2>
-    <div class="search__item">
-      <input type="search" placeholder="Что вы хотите найти?" class="search__input" name="search">
-    </div>
-  </div>
-  <div class="window__result" id="search_result">
-    <p>Начините писать</p>
-  </div>
-  <a class="btn btn_black window__button" href="./search.html">Смотреть все результаты</a>
-</div>
+<?= $search; ?>
 
 </div>
 
 <script defer src="catalog/view/javascript/search-common.js"></script>
-<script defer src="catalog/view/theme/soocas/js/app2.min.js"></script>
+<script defer src="catalog/view/theme/soocas/js/swiper-bundle.min.js"></script>
+<script defer src="catalog/view/theme/soocas/js/app.js"></script>
 
 </body>
 

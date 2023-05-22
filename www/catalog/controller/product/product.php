@@ -673,7 +673,7 @@ class ControllerProductProduct extends Controller
 			);
 		}
 
-		$pagination = new Pagination();
+		$pagination = new PaginationCatalog();
 		$pagination->total = $review_total;
 		$pagination->page = $page;
 		$pagination->limit = 5;
@@ -823,16 +823,35 @@ class ControllerProductProduct extends Controller
 				'limit' => 50
 			);
 
+			$this->load->model('tool/image');
+
 			$results = $this->model_catalog_product->getProducts($filter_data);
 
 			foreach ($results as $result) {
 
+				if (isset($result['image']) && $result['image']) {
+					$image = $this->model_tool_image->onesize($result['image'], 100);
+				} else {
+					$image = '';
+				}
 
+				if ($result['special']) {
+					$special = $this->currency->format($result['special'], $this->session->data['currency']);
+				} else {
+					$special = ''; 
+				}
+
+				if ($result['price']) {
+					$price = $this->currency->format($result['price'], $this->session->data['currency']);
+				} else {
+					$price = '';
+				}
 
 				$json[] = array(
 					'name' => strip_tags(html_entity_decode($result['name'], ENT_QUOTES, 'UTF-8')),
-					'price' => round($result['price']) . ' ₽',
-					'image' => '/image/' . $result['image'],
+					'price' => $price,
+					'special' => $special,
+					'image' => $image,
 					'link' => str_replace('&amp;', '&', $this->url->link('product/product', 'product_id=' . $result['product_id'])),
 				);
 			}

@@ -16,7 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
           let json = this.response;
           if (json.length) {
             json.forEach(item => {
-              html += `<a class="window__item" href="${item.link}"><div class="window__content"><div class="window__img-wrap"><img class="window__img" src="${item.image}" alt="${item.name}"></div><div class="window__description"><div class="window__name">${item.name}</div><div class="window__price">${item.price}</div></div></div></a>`;
+              let price = 0;
+              if (!item.special) {
+                price = item.price;
+              } else {
+                price = item.special;
+              }
+              html += `<a class="window__item" href="${item.link}"><div class="window__content"><div class="window__img-wrap"><img class="window__img" src="${item.image}" alt="${item.name}"></div><div class="window__description"><div class="window__name">${item.name}</div><div class="window__price">${price}</div></div></div></a>`;
               document.querySelector('#search_result').innerHTML = html;
             });
           } else {
@@ -31,5 +37,19 @@ document.addEventListener("DOMContentLoaded", () => {
       };
       request.send();
     }
+    document.getElementById('search_link').href = `/index.php?route=product/search&search=${value}`;
   });
+
+  if (document.getElementById('page-search-form')) {
+    const searchPageForm = document.getElementById('page-search-form');
+    let searchPageInput = searchPageForm.querySelector('input');
+
+    searchPageForm.addEventListener('submit', event => {
+      event.preventDefault();
+      window.location.href = `/index.php?route=product/search&search=${searchPageInput.value}`;
+    });
+
+
+  }
+
 });

@@ -833,18 +833,18 @@ class ControllerExtensionModification extends Controller {
 		// Log
   		$error_file = DIR_LOGS . 'ocmod_error.log';
 
-		if (file_exists($error_file)) {
-			$data['error_log'] = htmlentities(file_get_contents($error_file, FILE_USE_INCLUDE_PATH, null));
-		} else {
+		// if (file_exists($error_file)) {
+		// 	$data['error_log'] = htmlentities(file_get_contents($error_file, FILE_USE_INCLUDE_PATH, null));
+		// } else {
 			$data['error_log'] = '';
-		}
+		// }
 
 		$file = DIR_LOGS . 'ocmod.log';
 
 		// if (file_exists($file)) {
-		// 	$data['log'] = htmlentities(file_get_contents($file, FILE_USE_INCLUDE_PATH, null));
+			// $data['log'] = htmlentities(file_get_contents($file, FILE_USE_INCLUDE_PATH, null));
 		// } else {
-		// 	$data['log'] = '';
+			$data['log'] = '';
 		// }
 
 		$data['header'] = $this->load->controller('common/header');
