@@ -4,10 +4,12 @@
 // *	@source		See SOURCE.txt for source and other copyright.
 // *	@license	GNU General Public License version 3; see LICENSE.txt
 
-class ControllerProductProduct extends Controller {
+class ControllerProductProduct extends Controller
+{
 	private $error = array();
 
-	public function index() {
+	public function index()
+	{
 		$this->load->language('product/product');
 
 		$data['breadcrumbs'] = array();
@@ -224,17 +226,17 @@ class ControllerProductProduct extends Controller {
 			} else {
 				$this->document->setTitle($product_info['name']);
 			}
-			
+
 			if ($product_info['noindex'] <= 0) {
 				$this->document->setRobots('noindex,follow');
 			}
-			
-			if ($product_info['meta_h1']) {	
+
+			if ($product_info['meta_h1']) {
 				$data['heading_title'] = $product_info['meta_h1'];
 			} else {
 				$data['heading_title'] = $product_info['name'];
 			}
-			
+
 			$this->document->setDescription($product_info['meta_description']);
 			$this->document->setKeywords($product_info['meta_keyword']);
 			$this->document->addLink($this->url->link('product/product', 'product_id=' . $this->request->get['product_id']), 'canonical');
@@ -352,11 +354,11 @@ class ControllerProductProduct extends Controller {
 					'price'    => $this->currency->format($this->tax->calculate($discount['price'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency'])
 				);
 			}
-			
+
 			$productbenefits = $this->model_catalog_product->getProductBenefitsbyProductId($product_info['product_id']);
-			
+
 			$data['benefits'] = array();
-				
+
 			foreach ($productbenefits as $benefit) {
 				if ($benefit['image'] && file_exists(DIR_IMAGE . $benefit['image'])) {
 					$bimage = $benefit['image'];
@@ -482,11 +484,11 @@ class ControllerProductProduct extends Controller {
 				} else {
 					$rating = false;
 				}
-				
+
 				$productbenefits = $this->model_catalog_product->getProductBenefitsbyProductId($result['product_id']);
-				
+
 				$benefits = array();
-				
+
 				foreach ($productbenefits as $benefit) {
 					if ($benefit['image'] && file_exists(DIR_IMAGE . $benefit['image'])) {
 						$bimage = $benefit['image'];
@@ -507,8 +509,8 @@ class ControllerProductProduct extends Controller {
 						'type'      		=> $benefit['type']
 					);
 				}
-				
-				$stickers = $this->getStickers($result['product_id']) ;
+
+				$stickers = $this->getStickers($result['product_id']);
 
 				$data['products'][] = array(
 					'product_id'  => $result['product_id'],
@@ -549,13 +551,13 @@ class ControllerProductProduct extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
-			
-			$data['product_tabs']=array();
-			
+
+			$data['product_tabs'] = array();
+
 			$tabresults = $this->model_catalog_product->getproducttab($this->request->get['product_id']);
-			
-			foreach($tabresults as $result){
-				$data['product_tabs'][]=array(
+
+			foreach ($tabresults as $result) {
+				$data['product_tabs'][] = array(
 					'product_tab_id' => $result['product_tab_id'],
 					'title'   => $result['heading'],
 					'description' => html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'),
@@ -642,7 +644,8 @@ class ControllerProductProduct extends Controller {
 		}
 	}
 
-	public function review() {
+	public function review()
+	{
 		$this->load->language('product/product');
 
 		$this->load->model('catalog/review');
@@ -670,7 +673,7 @@ class ControllerProductProduct extends Controller {
 			);
 		}
 
-		$pagination = new Pagination();
+		$pagination = new PaginationCatalog();
 		$pagination->total = $review_total;
 		$pagination->page = $page;
 		$pagination->limit = 5;
@@ -683,7 +686,8 @@ class ControllerProductProduct extends Controller {
 		$this->response->setOutput($this->load->view('product/review', $data));
 	}
 
-	public function write() {
+	public function write()
+	{
 		$this->load->language('product/product');
 
 		$json = array();
@@ -723,7 +727,8 @@ class ControllerProductProduct extends Controller {
 		$this->response->setOutput(json_encode($json));
 	}
 
-	public function getRecurringDescription() {
+	public function getRecurringDescription()
+	{
 		$this->load->language('product/product');
 		$this->load->model('catalog/product');
 
@@ -782,25 +787,77 @@ class ControllerProductProduct extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
-	
-	private function getStickers($product_id) {
-	
- 	$stickers = $this->model_catalog_product->getProductStickerbyProductId($product_id) ;	
-		
+
+	private function getStickers($product_id)
+	{
+
+		$stickers = $this->model_catalog_product->getProductStickerbyProductId($product_id);
+
 		if (!$stickers) {
 			return;
 		}
-		
+
 		$data['stickers'] = array();
-		
+
 		foreach ($stickers as $sticker) {
 			$data['stickers'][] = array(
 				'position' => $sticker['position'],
 				'image'    => HTTP_SERVER . 'image/' . $sticker['image']
-			);		
+			);
 		}
-		
+
 		return $this->load->view('product/stickers', $data);
-	
+	}
+	public function autocomplete()
+	{
+		$json = array();
+
+		if (isset($this->request->get['filter_name'])) {
+			$this->load->model('catalog/product');
+
+			$search = $this->request->get['filter_name'];
+			$filter_data = array(
+				'filter_name' => $search,
+				'filter_tag' => $search,
+				'start' => 0,
+				'limit' => 50
+			);
+
+			$this->load->model('tool/image');
+
+			$results = $this->model_catalog_product->getProducts($filter_data);
+
+			foreach ($results as $result) {
+
+				if (isset($result['image']) && $result['image']) {
+					$image = $this->model_tool_image->onesize($result['image'], 100);
+				} else {
+					$image = '';
+				}
+
+				if ($result['special']) {
+					$special = $this->currency->format($result['special'], $this->session->data['currency']);
+				} else {
+					$special = ''; 
+				}
+
+				if ($result['price']) {
+					$price = $this->currency->format($result['price'], $this->session->data['currency']);
+				} else {
+					$price = '';
+				}
+
+				$json[] = array(
+					'name' => strip_tags(html_entity_decode($result['name'], ENT_QUOTES, 'UTF-8')),
+					'price' => $price,
+					'special' => $special,
+					'image' => $image,
+					'link' => str_replace('&amp;', '&', $this->url->link('product/product', 'product_id=' . $result['product_id'])),
+				);
+			}
+		}
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
 	}
 }

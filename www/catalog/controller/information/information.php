@@ -4,8 +4,10 @@
 // *	@source		See SOURCE.txt for source and other copyright.
 // *	@license	GNU General Public License version 3; see LICENSE.txt
 
-class ControllerInformationInformation extends Controller {
-	public function index() {
+class ControllerInformationInformation extends Controller
+{
+	public function index()
+	{
 		$this->load->language('information/information');
 
 		$this->load->model('catalog/information');
@@ -14,7 +16,7 @@ class ControllerInformationInformation extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/home')
+			'href' => $this->url->link('common/home'),
 		);
 
 		if (isset($this->request->get['information_id'])) {
@@ -31,22 +33,17 @@ class ControllerInformationInformation extends Controller {
 			} else {
 				$this->document->setTitle($information_info['title']);
 			}
-			
+
 			if ($information_info['noindex'] <= 0) {
 				$this->document->setRobots('noindex,follow');
-			}
-			
-			if ($information_info['meta_h1']) {
-				$data['heading_title'] = $information_info['meta_h1'];
-			} else {
-				$data['heading_title'] = $information_info['title'];
 			}
 			$this->document->setDescription($information_info['meta_description']);
 			$this->document->setKeywords($information_info['meta_keyword']);
 
 			$data['breadcrumbs'][] = array(
 				'text' => $information_info['title'],
-				'href' => $this->url->link('information/information', 'information_id=' .  $information_id)
+				'href' => $this->url->link('information/information', 'information_id=' .  $information_id),
+				'last' => true,
 			);
 
 			$data['button_continue'] = $this->language->get('button_continue');
@@ -92,7 +89,8 @@ class ControllerInformationInformation extends Controller {
 		}
 	}
 
-	public function agree() {
+	public function agree()
+	{
 		$this->load->model('catalog/information');
 
 		if (isset($this->request->get['information_id'])) {

@@ -1,21 +1,40 @@
-<?php echo $header; ?>
-<div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
-  <div class="row"><?php echo $column_left; ?>
-    <?php if ($column_left && $column_right) { ?>
-    <?php $class = 'col-sm-6'; ?>
-    <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-9'; ?>
-    <?php } else { ?>
-    <?php $class = 'col-sm-12'; ?>
-    <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?></h1>
-      <?php echo $description; ?><?php echo $content_bottom; ?></div>
-    <?php echo $column_right; ?></div>
-</div>
-<?php echo $footer; ?>
+<?= $header; ?>
+
+
+<section class="info">
+  <div class="container info__container">
+
+    <nav class="breadcrumb">
+      <ul class="breadcrumb__list">
+        <? foreach ($breadcrumbs as $id => $breadcrumb) { ?>
+          <? if (!isset($breadcrumb['last'])) { ?>
+            <li class="breadcrumb__item">
+              <a class="breadcrumb__link breadcrumb__link_active" href="<?= $breadcrumb['href']; ?>">
+                <?= $breadcrumb['text']; ?>
+              </a>
+            </li>
+          <? } else { ?>
+            <li class="breadcrumb__item">
+              <span class="breadcrumb__link">
+                <?= $breadcrumb['text']; ?>
+              </span>
+            </li>
+          <? } ?>
+        <? } ?>
+      </ul>
+    </nav>
+
+    <article class="info__description">
+      <h2 class="info__title-h2">О нас</h2>
+      <p class="info__text">
+        <?= $description; ?>
+      </p>
+    </article>
+
+  </div>
+</section>
+
+
+<?= $content_top; ?>
+<?= $content_bottom; ?>
+<?= $footer; ?>

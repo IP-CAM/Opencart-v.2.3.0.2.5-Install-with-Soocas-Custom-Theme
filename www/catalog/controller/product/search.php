@@ -135,6 +135,12 @@ class ControllerProductSearch extends Controller {
 		} else {
 			$data['heading_title'] = $this->language->get('heading_title');
 		}
+
+		if (isset($this->request->get['search'])) {
+			$data['search_result'] = $this->request->get['search'];
+		} else {
+			$data['search_result'] = '';
+		}
 		
 		$this->document->setRobots('noindex,follow');
 
@@ -465,7 +471,7 @@ class ControllerProductSearch extends Controller {
 				$url .= '&limit=' . $this->request->get['limit'];
 			}
 
-			$pagination = new Pagination();
+			$pagination = new PaginationCatalog();
 			$pagination->total = $product_total;
 			$pagination->page = $page;
 			$pagination->limit = $limit;

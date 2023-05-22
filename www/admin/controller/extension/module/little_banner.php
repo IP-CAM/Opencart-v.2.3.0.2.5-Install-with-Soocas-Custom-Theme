@@ -129,6 +129,7 @@ class ControllerExtensionModuleLittleBanner extends Controller {
 		}
 
 		$this->load->model('tool/image');
+		$data['placeholder'] = $this->model_tool_image->resize('no_image.png', 100, 100);
 
 		$data['attributes'] = array();
 		if (isset($this->request->post['attributes'])) {

@@ -74,9 +74,14 @@
 
   </div>
 </footer>
+
+<?= $search; ?>
+
 </div>
 
-<script src="catalog/view/theme/soocas/js/app.min.js"></script>
+<script defer src="catalog/view/javascript/search-common.js"></script>
+<script defer src="catalog/view/theme/soocas/js/swiper-bundle.min.js"></script>
+<script defer src="catalog/view/theme/soocas/js/app.js"></script>
 
 </body>
 
