@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: db
--- Время создания: Май 18 2023 г., 14:44
+-- Время создания: Май 22 2023 г., 15:04
 -- Версия сервера: 8.0.31
 -- Версия PHP: 8.0.27
 
@@ -547,8 +547,8 @@ CREATE TABLE `oc_banner_image` (
 --
 
 INSERT INTO `oc_banner_image` (`banner_image_id`, `banner_id`, `language_id`, `title`, `image`, `image_mobile`, `textarea`, `sort_order`) VALUES
-(114, 9, 1, 'Фен Soocas H5 Hair Care', 'catalog/index banner/slide-1.png', 'catalog/index banner/slide-1-mob.png', '&lt;h2 class=&quot;slider__title slider__title_dark&quot;&gt;Знакомтесь — лучший друг ваших волос&lt;/h2&gt;\r\n&lt;p class=&quot;slider__description&quot;&gt;Новый Soocas H5 Hair Care порадуют вас качеством и приятной ценой&lt;/p&gt;\r\n&lt;a target=&quot;blank&quot;\r\n    href=&quot;https://market.yandex.ru/catalog--feny-i-fen-shchetki/16336735/list?srnum=23&amp;amp;was_redir=1&amp;amp;rt=11&amp;amp;rs=eJwzKlMK4hL2MFXwSMwsUnBOLEpVKM7PT04sFjj26CGzEgsHgwADkOQVENZgyMKmrorD0MzCwNDIzKSB8V7fU_YuRiYOhgDGKlYOEG8WIzY9GxgZANPqIl4%2C&amp;amp;parsed-glfilter=7893318%3A16801264&amp;amp;text=H5%20Hair%20Care%20soocas&amp;amp;hid=16336734&amp;amp;allowCollapsing=1&amp;amp;local-offers-first=0&amp;amp;glfilter=7893318%3A16801264&quot;\r\n    class=&quot;btn btn_red slider__btn&quot;&gt;Подробнее&lt;/a&gt;\r\n\r\n&lt;div class=&quot;slider__text&quot;&gt;\r\n    &lt;img class=&quot;slider__icon&quot; src=&quot;../catalog/view/theme/soocas/images/dist/main-slider/icon.svg&quot; alt=&quot;Icon honeycomb&quot;&gt;\r\n    &lt;p class=&quot;slider__paragraph&quot;&gt;\r\n        Уникальная сотовая система фильтров для защиты попадания волос\r\n    &lt;/p&gt;\r\n&lt;/div&gt;', 1),
-(115, 9, 1, 'Электробритва Soocas', 'catalog/index banner/slide-2.png', 'catalog/index banner/slide-2-mob.png', '&lt;h2 class=&quot;slider__title slider__title_light&quot;&gt;Гладкость которую вы раньше никогда не пробовали&lt;/h2&gt;\r\n&lt;p class=&quot;slider__description slider__description_light&quot;&gt;Новые электробритвы Soocas порадуют вас качеством и приятной\r\n    ценой&lt;/p&gt;\r\n&lt;a target=&quot;_blank&quot; href=&quot;https://market.yandex.ru/catalog--elektrobritvy-muzhskie/16680755/list?srnum=46&amp;was_redir=1&amp;rt=11&amp;rs=eJwz2s6oVMqlemHthd0Xtl7YdbHpYsOFfRc2AskdF5subLqwQSE4Pz85sVgh2NhQ4Nijh8xKLBwMAgxAkk9ARIMhizidVRyGZhYGhkZmJg2Mpw6zdjEycTAEMFaxcAA5sxiJM2MVIxfHtBPfRARunenl2sDIAAB9eFa5&amp;parsed-glfilter=7893318%3A16801264&amp;text=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%B1%D1%80%D0%B8%D1%82%D0%B2%D0%B0%20Soocas%20S31&amp;hid=90570&amp;allowCollapsing=1&amp;local-offers-first=0&amp;glfilter=7893318%3A16801264&quot; class=&quot;btn btn_transparent slider__btn&quot;&gt;Подробнее&lt;/a&gt;\r\n&lt;div class=&quot;slider__advantages&quot;&gt;\r\n    &lt;div class=&quot;slider__item&quot;&gt;\r\n        &lt;img class=&quot;slider__preview&quot; src=&quot;../catalog/view/theme/soocas/images/dist/main-slider/img-1.png&quot; alt=&quot;Icon&quot;&gt;\r\n        &lt;p class=&quot;slider__paragraph slider__paragraph_white&quot;&gt;Электробритва Soocas S31&lt;/p&gt;\r\n    &lt;/div&gt;\r\n    &lt;div class=&quot;slider__item&quot;&gt;\r\n        &lt;img class=&quot;slider__preview&quot; src=&quot;../catalog/view/theme/soocas/images/dist/main-slider/img-2.png&quot; alt=&quot;Icon&quot;&gt;\r\n        &lt;p class=&quot;slider__paragraph slider__paragraph_white&quot;&gt;Аксессуары для хранения&lt;/p&gt;\r\n    &lt;/div&gt;\r\n    &lt;div class=&quot;slider__item&quot;&gt;\r\n        &lt;img class=&quot;slider__preview&quot; src=&quot;../catalog/view/theme/soocas/images/dist/main-slider/img-3.png&quot; alt=&quot;Icon&quot;&gt;\r\n        &lt;p class=&quot;slider__paragraph slider__paragraph_white&quot;&gt;В комплекте все необходимое&lt;/p&gt;\r\n    &lt;/div&gt;\r\n&lt;/div&gt;', 2);
+(116, 9, 1, 'Фен Soocas H5 Hair Care', 'catalog/index banner/slide-1.png', 'catalog/index banner/slide-1-mob.png', '&lt;h2 class=&quot;slider__title slider__title_dark&quot;&gt;Знакомтесь — лучший друг ваших волос&lt;/h2&gt;\r\n&lt;p class=&quot;slider__description&quot;&gt;Новый Soocas H5 Hair Care порадуют вас качеством и приятной ценой&lt;/p&gt;\r\n&lt;a target=&quot;blank&quot;\r\n    href=&quot;https://market.yandex.ru/catalog--feny-i-fen-shchetki/16336735/list?srnum=23&amp;amp;was_redir=1&amp;amp;rt=11&amp;amp;rs=eJwzKlMK4hL2MFXwSMwsUnBOLEpVKM7PT04sFjj26CGzEgsHgwADkOQVENZgyMKmrorD0MzCwNDIzKSB8V7fU_YuRiYOhgDGKlYOEG8WIzY9GxgZANPqIl4%2C&amp;amp;parsed-glfilter=7893318%3A16801264&amp;amp;text=H5%20Hair%20Care%20soocas&amp;amp;hid=16336734&amp;amp;allowCollapsing=1&amp;amp;local-offers-first=0&amp;amp;glfilter=7893318%3A16801264&quot;\r\n    class=&quot;btn btn_red slider__btn&quot;&gt;Подробнее&lt;/a&gt;\r\n\r\n&lt;div class=&quot;slider__text&quot;&gt;\r\n    &lt;img class=&quot;slider__icon&quot; src=&quot;../catalog/view/theme/soocas/images/dist/main-slider/icon.svg&quot; alt=&quot;Icon honeycomb&quot;&gt;\r\n    &lt;p class=&quot;slider__paragraph&quot;&gt;\r\n        Уникальная сотовая система фильтров для защиты попадания волос\r\n    &lt;/p&gt;\r\n&lt;/div&gt;', 1),
+(117, 9, 1, 'Электробритва Soocas', 'catalog/index banner/slide-2.png', 'catalog/index banner/slide-2-mob.png', '&lt;h2 class=&quot;slider__title slider__title_light&quot;&gt;Гладкость которую вы раньше никогда не пробовали&lt;/h2&gt;\r\n&lt;p class=&quot;slider__description slider__description_light&quot;&gt;Новые электробритвы Soocas порадуют вас качеством и приятной\r\n    ценой&lt;/p&gt;\r\n&lt;a target=&quot;_blank&quot; href=&quot;https://market.yandex.ru/catalog--elektrobritvy-muzhskie/16680755/list?srnum=46&amp;was_redir=1&amp;rt=11&amp;rs=eJwz2s6oVMqlemHthd0Xtl7YdbHpYsOFfRc2AskdF5subLqwQSE4Pz85sVgh2NhQ4Nijh8xKLBwMAgxAkk9ARIMhizidVRyGZhYGhkZmJg2Mpw6zdjEycTAEMFaxcAA5sxiJM2MVIxfHtBPfRARunenl2sDIAAB9eFa5&amp;parsed-glfilter=7893318%3A16801264&amp;text=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%B1%D1%80%D0%B8%D1%82%D0%B2%D0%B0%20Soocas%20S31&amp;hid=90570&amp;allowCollapsing=1&amp;local-offers-first=0&amp;glfilter=7893318%3A16801264&quot; class=&quot;btn btn_transparent slider__btn&quot;&gt;Подробнее&lt;/a&gt;\r\n&lt;div class=&quot;slider__advantages&quot;&gt;\r\n    &lt;div class=&quot;slider__item&quot;&gt;\r\n        &lt;img class=&quot;slider__preview&quot; src=&quot;../catalog/view/theme/soocas/images/dist/main-slider/img-1.png&quot; alt=&quot;Icon&quot;&gt;\r\n        &lt;p class=&quot;slider__paragraph slider__paragraph_white&quot;&gt;Электробритва Soocas S31&lt;/p&gt;\r\n    &lt;/div&gt;\r\n    &lt;div class=&quot;slider__item&quot;&gt;\r\n        &lt;img class=&quot;slider__preview&quot; src=&quot;../catalog/view/theme/soocas/images/dist/main-slider/img-2.png&quot; alt=&quot;Icon&quot;&gt;\r\n        &lt;p class=&quot;slider__paragraph slider__paragraph_white&quot;&gt;Аксессуары для хранения&lt;/p&gt;\r\n    &lt;/div&gt;\r\n    &lt;div class=&quot;slider__item&quot;&gt;\r\n        &lt;img class=&quot;slider__preview&quot; src=&quot;../catalog/view/theme/soocas/images/dist/main-slider/img-3.png&quot; alt=&quot;Icon&quot;&gt;\r\n        &lt;p class=&quot;slider__paragraph slider__paragraph_white&quot;&gt;В комплекте все необходимое&lt;/p&gt;\r\n    &lt;/div&gt;\r\n&lt;/div&gt;', 2);
 
 -- --------------------------------------------------------
 
@@ -1466,12 +1466,12 @@ CREATE TABLE `oc_custommenu` (
 INSERT INTO `oc_custommenu` (`custommenu_id`, `sort_order`, `columns`, `custommenu_type`, `status`) VALUES
 (77, 5, 1, '', 1),
 (75, 6, 1, '', 1),
-(72, 2, 1, 'custom', 1),
+(72, 6, 1, 'custom', 1),
 (9, 1, 1, 'product', 1),
 (78, 5, 1, '', 1),
 (17, 1, 1, 'manufacturer', 1),
-(76, 5, 1, 'custom', 1),
-(65, 3, 1, 'custom', 1),
+(76, 4, 1, 'custom', 1),
+(65, 2, 1, 'custom', 1),
 (64, 1, 1, 'custom', 1),
 (35, 1, 1, 'manufacturer', 1),
 (36, 1, 1, 'manufacturer', 1),
@@ -1482,9 +1482,9 @@ INSERT INTO `oc_custommenu` (`custommenu_id`, `sort_order`, `columns`, `customme
 (44, 1, 1, 'custom', 1),
 (49, 1, 1, 'custom', 1),
 (51, 1, 1, 'custom', 1),
-(66, 4, 1, 'custom', 1),
+(66, 3, 1, 'custom', 1),
 (74, 6, 1, '', 1),
-(79, 6, 1, 'custom', 1);
+(79, 5, 1, 'custom', 1);
 
 -- --------------------------------------------------------
 
@@ -1619,12 +1619,12 @@ INSERT INTO `oc_custommenu_description` (`custommenu_id`, `name`, `link`, `langu
 (26, 'PC', '', 1),
 (79, 'Оптовым клиентам', '/', 1),
 (64, 'Главная', '/', 1),
-(65, 'Каталог', '/123', 1),
-(66, 'О нас', '/', 1),
+(65, 'Каталог', '/index.php?route=information/catalog', 1),
+(66, 'О нас', '/index.php?route=information/information&amp;information_id=4', 1),
 (76, 'Контакты', '/index.php?route=information/contact', 1),
 (37, 'Apple', '8', 0),
 (38, 'Apple', '8', 0),
-(72, 'Где купить', '/', 1);
+(72, 'Где купить', '/#markets', 1);
 
 -- --------------------------------------------------------
 
@@ -1918,9 +1918,7 @@ CREATE TABLE `oc_information` (
 
 INSERT INTO `oc_information` (`information_id`, `bottom`, `sort_order`, `status`, `noindex`) VALUES
 (3, 1, 3, 1, 1),
-(4, 1, 1, 1, 1),
-(5, 1, 4, 1, 1),
-(6, 1, 2, 1, 1);
+(4, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1944,10 +1942,8 @@ CREATE TABLE `oc_information_description` (
 --
 
 INSERT INTO `oc_information_description` (`information_id`, `language_id`, `title`, `description`, `meta_title`, `meta_description`, `meta_keyword`, `meta_h1`) VALUES
-(5, 1, 'Terms &amp; Conditions', '&lt;p&gt;\r\n	Terms &amp;amp; Conditions&lt;/p&gt;\r\n', 'Terms &amp; Conditions', '', '', ''),
-(3, 1, 'Privacy Policy', '&lt;p&gt;\r\n	Privacy Policy&lt;/p&gt;\r\n', 'Privacy Policy', '', '', ''),
-(6, 1, 'Delivery Information', '&lt;p&gt;\r\n	Delivery Information&lt;/p&gt;\r\n', 'Delivery Information', '', '', ''),
-(4, 1, 'About Us', '&lt;p&gt;\r\n	About Us&lt;/p&gt;\r\n', 'About Us', '', '', '');
+(4, 1, 'О нас', 'Компания SOOCAS, основанная в июле 2015 года, позиционирует себя как бренд защитных модных технологий. Ее основная продукция включает электрические зубные щетки. ирригатор, электробритва. фен и другие электронные товары личной гигиены. Кроме того, SOOCAS также будет производить вспомогательные продукты, такие как зубная паста, жидкость для полоскания рта и эфирное масло для ухода за волосами. Китайское имя Soocas &amp;laquo;#1&amp;raquo; означает простой и элегантный человек, который представляет видение бренда Soocas, чтобы помочь пользователям улучшить свой личный имидж и качество жизни. В то же время Soocas также фокусируется на создании незабываемых впечатлений для конечных пользователей. Придерживаясь принципов создания продуктов Pure, Smart и Elegant, а также объединяя инновационные технологии и изысканный дизайн. Так что конечные пользователи могут стать лучше в прекрасном опыте продукта.', 'О нас', 'Компания SOOCAS, основанная в июле 2015 года, позиционирует себя как бренд защитных модных технологий. Ее основная продукция включает электрические зубные щетки. ирригатор, электробритва. фен и другие электронные товары личной гигиены', '', 'О нас'),
+(3, 1, 'Privacy Policy', '&lt;p&gt;\r\n	Privacy Policy&lt;/p&gt;\r\n', 'Privacy Policy', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -1960,6 +1956,13 @@ CREATE TABLE `oc_information_to_layout` (
   `store_id` int NOT NULL,
   `layout_id` int NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+
+--
+-- Дамп данных таблицы `oc_information_to_layout`
+--
+
+INSERT INTO `oc_information_to_layout` (`information_id`, `store_id`, `layout_id`) VALUES
+(4, 0, 18);
 
 -- --------------------------------------------------------
 
@@ -1978,9 +1981,7 @@ CREATE TABLE `oc_information_to_store` (
 
 INSERT INTO `oc_information_to_store` (`information_id`, `store_id`) VALUES
 (3, 0),
-(4, 0),
-(5, 0),
-(6, 0);
+(4, 0);
 
 -- --------------------------------------------------------
 
@@ -2038,7 +2039,9 @@ INSERT INTO `oc_layout` (`layout_id`, `name`) VALUES
 (14, 'Блог'),
 (15, 'Категории Блога'),
 (16, 'Статьи Блога'),
-(17, 'Страница Производителя');
+(17, 'Страница Производителя'),
+(18, 'О нас'),
+(19, 'Каталог');
 
 -- --------------------------------------------------------
 
@@ -2064,13 +2067,18 @@ INSERT INTO `oc_layout_module` (`layout_module_id`, `layout_id`, `code`, `positi
 (103, 17, 'manufacturer', 'column_left', 0),
 (69, 10, 'affiliate', 'column_right', 1),
 (68, 6, 'account', 'column_right', 1),
-(72, 3, 'category', 'column_left', 1),
+(190, 3, 'imgcategory.38', 'content_top', 0),
 (174, 1, 'banner.45', 'content_top', 0),
 (175, 1, 'html.39', 'content_top', 1),
 (78, 14, 'blog_category', 'column_left', 0),
 (79, 15, 'blog_category', 'column_left', 0),
+(195, 19, 'html.47', 'content_bottom', 0),
+(182, 18, 'html.46', 'content_bottom', 0),
+(191, 3, 'html.47', 'content_bottom', 0),
 (180, 1, 'little_banner.44', 'content_top', 6),
 (104, 17, 'category', 'column_left', 1),
+(194, 19, 'imgcategory.38', 'content_top', 0),
+(187, 13, 'html.47', 'content_bottom', 0),
 (178, 1, 'html.40', 'content_top', 4),
 (179, 1, 'html.41', 'content_top', 5),
 (177, 1, 'featured.28', 'content_top', 3),
@@ -2097,7 +2105,7 @@ CREATE TABLE `oc_layout_route` (
 INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
 (38, 6, 0, 'account/%'),
 (17, 10, 0, 'affiliate/%'),
-(44, 3, 0, 'product/category'),
+(87, 3, 0, 'product/category'),
 (82, 1, 0, 'common/home'),
 (20, 2, 0, 'product/product'),
 (24, 11, 0, 'information/information'),
@@ -2107,11 +2115,12 @@ INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `rout
 (34, 4, 0, ''),
 (45, 5, 0, 'product/manufacturer'),
 (52, 12, 0, 'product/compare'),
-(53, 13, 0, 'product/search'),
+(85, 13, 0, 'product/search'),
 (57, 14, 0, 'blog/latest'),
 (58, 15, 0, 'blog/category'),
 (56, 16, 0, 'blog/article'),
-(63, 17, 0, 'product/manufacturer/info');
+(63, 17, 0, 'product/manufacturer/info'),
+(88, 19, 0, 'information/catalog');
 
 -- --------------------------------------------------------
 
@@ -2330,12 +2339,14 @@ CREATE TABLE `oc_module` (
 INSERT INTO `oc_module` (`module_id`, `name`, `code`, `setting`) VALUES
 (28, 'Лидеры продаж (Главная страница)', 'featured', '{\"name\":\"\\u041b\\u0438\\u0434\\u0435\\u0440\\u044b \\u043f\\u0440\\u043e\\u0434\\u0430\\u0436 (\\u0413\\u043b\\u0430\\u0432\\u043d\\u0430\\u044f \\u0441\\u0442\\u0440\\u0430\\u043d\\u0438\\u0446\\u0430)\",\"product_name\":\"\",\"product\":[\"50\",\"53\",\"51\",\"52\"],\"limit\":\"4\",\"width\":\"275\",\"height\":\"320\",\"status\":\"1\"}'),
 (45, 'Баннер вверху страницы', 'banner', '{\"name\":\"\\u0411\\u0430\\u043d\\u043d\\u0435\\u0440 \\u0432\\u0432\\u0435\\u0440\\u0445\\u0443 \\u0441\\u0442\\u0440\\u0430\\u043d\\u0438\\u0446\\u044b\",\"banner_id\":\"9\",\"width\":\"1920\",\"height\":\"720\",\"status\":\"1\"}'),
+(46, 'Принципы наших продуктов (О нас)', 'html', '{\"name\":\"\\u041f\\u0440\\u0438\\u043d\\u0446\\u0438\\u043f\\u044b \\u043d\\u0430\\u0448\\u0438\\u0445 \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0442\\u043e\\u0432 (\\u041e \\u043d\\u0430\\u0441)\",\"module_description\":{\"1\":{\"title\":\"\",\"description\":\"&lt;section class=&quot;principles&quot;&gt;\\r\\n&lt;div class=&quot;container principles__container&quot;&gt;\\r\\n&lt;div class=&quot;principles__block&quot;&gt;\\r\\n&lt;div class=&quot;block&quot;&gt;\\r\\n&lt;div class=&quot;block__wrapper&quot;&gt;&lt;picture class=&quot;block__img&quot;&gt; &lt;source srcset=&quot;\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/principles\\/img-1-mob.png&quot; media=&quot;(max-width: 425px)&quot; \\/&gt; &lt;source srcset=&quot;\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/principles\\/img-1-tabl.png&quot; media=&quot;(max-width: 992px)&quot; \\/&gt; &lt;img class=&quot;block__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/principles\\/img-1.png&quot; alt=&quot;Image&quot; \\/&gt; &lt;\\/picture&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;block__wrapper wrapper-content wrapper-content_blue&quot;&gt;\\r\\n&lt;h3 class=&quot;title-h3&quot;&gt;\\u041f\\u0440\\u0438\\u043d\\u0446\\u0438\\u043f\\u044b \\u043d\\u0430\\u0448\\u0438\\u0445 \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0442\\u043e\\u0432&lt;\\/h3&gt;\\r\\n&lt;span class=&quot;subtitle block__subtitle&quot;&gt;\\u041f\\u0440\\u043e\\u0441\\u0442\\u043e\\u0439 \\u0438 \\u0441\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u043d\\u044b\\u0439&lt;\\/span&gt; &lt;span class=&quot;subtitle&quot;&gt;\\u0412\\u043f\\u0438\\u0442\\u044b\\u0432\\u0430\\u044f \\u0441\\u0432\\u0435\\u0436\\u0435\\u0435 \\u0432\\u0434\\u043e\\u0445\\u043d\\u043e\\u0432\\u0435\\u043d\\u0438\\u0435&lt;\\/span&gt;\\r\\n&lt;p class=&quot;text&quot;&gt;\\u041f\\u043e\\u0434\\u0447\\u0435\\u0440\\u043a\\u0438\\u0432\\u0430\\u044f \\u0442\\u0435\\u0445\\u043d\\u043e\\u043b\\u043e\\u0433\\u0438\\u044e \\u0438 \\u0444\\u0430\\u043a\\u0442\\u0443\\u0440\\u0443, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u043f\\u0440\\u043e\\u0441\\u0442\\u043e\\u0439 \\u0438&amp;nbsp;\\u0441\\u0434\\u0435\\u0440\\u0436\\u0430\\u043d\\u043d\\u044b\\u0439 \\u0433\\u0440\\u0430\\u0444\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0439 \\u0432\\u0438\\u0437\\u0443\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 \\u0441\\u0442\\u0438\\u043b\\u044c, \\u0432\\u043f\\u0438\\u0442\\u044b\\u0432\\u0430\\u044f \\u043f\\u0440\\u0438 \\u044d\\u0442\\u043e\\u043c \\u0441\\u0432\\u0435\\u0436\\u0435\\u0435 \\u0432\\u0434\\u043e\\u0445\\u043d\\u043e\\u0432\\u0435\\u043d\\u0438\\u0435. \\u0421\\u043e\\u0437\\u0434\\u0430\\u043d\\u0438\\u0435 \\u043c\\u043e\\u043b\\u043e\\u0434\\u043e\\u0439, \\u0438\\u043d\\u043d\\u043e\\u0432\\u0430\\u0446\\u0438\\u043e\\u043d\\u043d\\u043e\\u0439 \\u0438 \\u043c\\u043e\\u0434\\u043d\\u043e\\u0439 \\u0430\\u0439\\u0434\\u0435\\u043d\\u0442\\u0438\\u043a\\u0438 \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0442\\u0430&lt;\\/p&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;h2 class=&quot;title-h2 principles__title-h2&quot;&gt;\\u041f\\u0440\\u0438\\u043d\\u0446\\u0438\\u043f\\u044b \\u0434\\u0438\\u0437\\u0430\\u0439\\u043d\\u0430&lt;\\/h2&gt;\\r\\n&lt;div class=&quot;principles__block&quot;&gt;\\r\\n&lt;div class=&quot;block&quot;&gt;\\r\\n&lt;div class=&quot;block__wrapper wrapper-content wrapper-content_gray wrapper-content_bottom&quot;&gt;\\r\\n&lt;h3 class=&quot;title-h3&quot;&gt;\\u0427\\u0438\\u0441\\u0442\\u044b\\u0439&lt;\\/h3&gt;\\r\\n&lt;span class=&quot;subtitle&quot;&gt;\\u0411\\u0435\\u0437 \\u0438\\u0437\\u0431\\u044b\\u0442\\u043e\\u0447\\u043d\\u043e\\u0441\\u0442\\u0438&lt;\\/span&gt;\\r\\n&lt;p class=&quot;text&quot;&gt;\\u041e\\u0442\\u043a\\u0430\\u0437 \\u043e\\u0442 \\u0438\\u0437\\u0431\\u044b\\u0442\\u043e\\u0447\\u043d\\u043e\\u0441\\u0442\\u0438 \\u043d\\u0435\\u043e\\u0431\\u0445\\u043e\\u0434\\u0438\\u043c \\u043d\\u0435 \\u0442\\u043e\\u043b\\u044c\\u043a\\u043e \\u0434\\u043b\\u044f \\u0443\\u0434\\u043e\\u0432\\u043b\\u0435\\u0442\\u0432\\u043e\\u0440\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0433\\u043e \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0442\\u0430, \\u043d\\u043e \\u0438 \\u0434\\u043b\\u044f \\u044d\\u0441\\u0442\\u0435\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0446\\u0435\\u043b\\u0435\\u0439.&lt;\\/p&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;block__wrapper&quot;&gt;&lt;picture class=&quot;block__img&quot;&gt; &lt;source srcset=&quot;\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/principles\\/img-2-mob.png&quot; media=&quot;(max-width: 425px)&quot; \\/&gt; &lt;source srcset=&quot;\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/principles\\/img-2-tabl.png&quot; media=&quot;(max-width: 992px)&quot; \\/&gt; &lt;img class=&quot;block__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/principles\\/img-2.png&quot; alt=&quot;Image&quot; \\/&gt; &lt;\\/picture&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;block&quot;&gt;\\r\\n&lt;div class=&quot;block__wrapper&quot;&gt;&lt;picture class=&quot;block__img&quot;&gt; &lt;source srcset=&quot;\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/principles\\/img-3-mob.png&quot; media=&quot;(max-width: 425px)&quot; \\/&gt; &lt;source srcset=&quot;\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/principles\\/img-3-tabl.png&quot; media=&quot;(max-width: 992px)&quot; \\/&gt; &lt;img class=&quot;block__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/principles\\/img-3.png&quot; alt=&quot;Image&quot; \\/&gt; &lt;\\/picture&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;block__wrapper wrapper-content wrapper-content_gray&quot;&gt;\\r\\n&lt;h3 class=&quot;title-h3&quot;&gt;\\u0423\\u043c\\u043d\\u044b\\u0439&lt;\\/h3&gt;\\r\\n&lt;span class=&quot;subtitle&quot;&gt;\\u0418\\u043d\\u0434\\u0438\\u0432\\u0438\\u0434\\u0443\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439&lt;\\/span&gt;\\r\\n&lt;p class=&quot;text&quot;&gt;\\u0421\\u043e\\u0432\\u0440\\u0435\\u043c\\u0435\\u043d\\u043d\\u044b\\u0439 \\u0438 \\u0438\\u043d\\u0442\\u0435\\u043b\\u043b\\u0435\\u043a\\u0442\\u0443\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 \\u0443\\u0445\\u043e\\u0434 \\u0437\\u0430 \\u0441\\u043e\\u0431\\u043e\\u0439, \\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0439 \\u0443\\u0432\\u0430\\u0436\\u0430\\u0435\\u0442 \\u0438\\u043d\\u0434\\u0438\\u0432\\u0438\\u0434\\u0443\\u0430\\u043b\\u044c\\u043d\\u043e\\u0441\\u0442\\u044c \\u0438 \\u043f\\u043e\\u043d\\u0438\\u043c\\u0430\\u0435\\u0442 \\u0432\\u0430\\u0448\\u0438 \\u0442\\u0440\\u0435\\u0431\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f, \\u043f\\u043e\\u0437\\u0432\\u043e\\u043b\\u044f\\u044f \\u0432\\u0430\\u043c \\u043d\\u0430\\u0441\\u043b\\u0430\\u0436\\u0434\\u0430\\u0442\\u044c\\u0441\\u044f \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u043b\\u0438\\u0437\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u044b\\u043c \\u0432\\u0440\\u0435\\u043c\\u0435\\u043d\\u0435\\u043c \\u0443\\u0445\\u043e\\u0434\\u0430 \\u0437\\u0430 \\u0441\\u043e\\u0431\\u043e\\u0439.&lt;\\/p&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;block&quot;&gt;\\r\\n&lt;div class=&quot;block__wrapper wrapper-content wrapper-content_gray wrapper-content_bottom&quot;&gt;\\r\\n&lt;h3 class=&quot;title-h3&quot;&gt;\\u042d\\u043b\\u0435\\u0433\\u0430\\u043d\\u0442\\u043d\\u044b\\u0439&lt;\\/h3&gt;\\r\\n&lt;span class=&quot;subtitle&quot;&gt;\\u0417\\u0434\\u043e\\u0440\\u043e\\u0432\\u044b\\u0439 \\u0436\\u0438\\u0437\\u043d\\u0435\\u043d\\u043d\\u044b\\u0439 \\u0442\\u043e\\u043d\\u0443\\u0441 \\u0438&amp;nbsp;\\u044d\\u0441\\u0442\\u0435\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0439&amp;nbsp;\\u0442\\u0435\\u043c\\u043f\\u0435\\u0440\\u0430\\u043c\\u0435\\u043d\\u0442&lt;\\/span&gt;\\r\\n&lt;p class=&quot;text&quot;&gt;\\u042d\\u043b\\u0435\\u0433\\u0430\\u043d\\u0442\\u043d\\u043e\\u0441\\u0442\\u044c &amp;mdash; \\u044d\\u0442\\u043e \\u0443\\u0436\\u0435 \\u043d\\u0435 \\u043f\\u0440\\u043e\\u0441\\u0442\\u043e \\u0432\\u043d\\u0435\\u0448\\u043d\\u0438\\u0439 \\u0432\\u0438\\u0434, \\u0430 \\u0441\\u043e\\u0447\\u0435\\u0442\\u0430\\u043d\\u0438\\u0435 \\u0437\\u0434\\u043e\\u0440\\u043e\\u0432\\u043e\\u0439 \\u0436\\u0438\\u0437\\u043d\\u0435\\u043d\\u043d\\u043e\\u0439 \\u0441\\u0438\\u043b\\u044b \\u0438 \\u044d\\u0441\\u0442\\u0435\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u043e\\u0433\\u043e \\u0442\\u0435\\u043c\\u043f\\u0435\\u0440\\u0430\\u043c\\u0435\\u043d\\u0442\\u0430. \\u041f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0442\\u044b SOOCAS \\u0438\\u043c\\u0435\\u044e\\u0442 \\u043f\\u0440\\u0435\\u0432\\u043e\\u0441\\u0445\\u043e\\u0434\\u043d\\u043e\\u0435 \\u043a\\u0430\\u0447\\u0435\\u0441\\u0442\\u0432\\u043e \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0442\\u0430 \\u043a\\u0430\\u043a \\u0432\\u043d\\u0443\\u0442\\u0440\\u0435\\u043d\\u043d\\u0435\\u0435 \\u044f\\u0434\\u0440\\u043e, \\u044d\\u0441\\u0442\\u0435\\u0442\\u0438\\u043a\\u0443 \\u043a\\u0430\\u043a \\u0432\\u043d\\u0435\\u0448\\u043d\\u0435\\u0435 \\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0435\\u043d\\u0438\\u0435, \\u043d\\u0430\\u043f\\u0440\\u0430\\u0432\\u043b\\u0435\\u043d\\u043d\\u043e\\u0435 \\u043d\\u0430 \\u0443\\u043b\\u0443\\u0447\\u0448\\u0435\\u043d\\u0438\\u0435 \\u0438\\u043c\\u0438\\u0434\\u0436\\u0430 \\u0438 \\u043a\\u0430\\u0447\\u0435\\u0441\\u0442\\u0432\\u0430 \\u0436\\u0438\\u0437\\u043d\\u0438 \\u043f\\u043e\\u0442\\u0440\\u0435\\u0431\\u0438\\u0442\\u0435\\u043b\\u044f, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u0431\\u043e\\u043b\\u0435\\u0435 \\u0440\\u0435\\u0430\\u043b\\u0438\\u0441\\u0442\\u0438\\u0447\\u043d\\u043e \\u043e\\u0442\\u0440\\u0430\\u0436\\u0430\\u044e\\u0449\\u0435\\u0435 \\u044d\\u043b\\u0435\\u0433\\u0430\\u043d\\u0442\\u043d\\u0443\\u044e \\u0436\\u0438\\u0437\\u043d\\u044c.&lt;\\/p&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;block__wrapper&quot;&gt;&lt;picture class=&quot;block__img&quot;&gt; &lt;source srcset=&quot;\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/principles\\/img-4-mob.png&quot; media=&quot;(max-width: 425px)&quot; \\/&gt; &lt;source srcset=&quot;\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/principles\\/img-4-tabl.png&quot; media=&quot;(max-width: 992px)&quot; \\/&gt; &lt;img class=&quot;block__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/principles\\/img-4.png&quot; alt=&quot;Image&quot; \\/&gt; &lt;\\/picture&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/section&gt;\"}},\"status\":\"1\"}'),
 (38, 'Категории (IMG)', 'imgcategory', '{\"name\":\"\\u041a\\u0430\\u0442\\u0435\\u0433\\u043e\\u0440\\u0438\\u0438 (IMG)\",\"category_id\":\"0\",\"width\":\"300\",\"height\":\"400\",\"status\":\"1\"}'),
 (39, 'Преимущества (блок под слайдером на главной странице)', 'html', '{\"name\":\"\\u041f\\u0440\\u0435\\u0438\\u043c\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432\\u0430 (\\u0431\\u043b\\u043e\\u043a \\u043f\\u043e\\u0434 \\u0441\\u043b\\u0430\\u0439\\u0434\\u0435\\u0440\\u043e\\u043c \\u043d\\u0430 \\u0433\\u043b\\u0430\\u0432\\u043d\\u043e\\u0439 \\u0441\\u0442\\u0440\\u0430\\u043d\\u0438\\u0446\\u0435)\",\"module_description\":{\"1\":{\"title\":\"\",\"description\":\"&lt;div class=&quot;advantages&quot;&gt;\\r\\n&lt;div class=&quot;container advantages__container&quot;&gt;\\r\\n&lt;ul class=&quot;advantages__list&quot;&gt;\\r\\n&lt;li class=&quot;advantages__item&quot;&gt;&lt;img class=&quot;advantages__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/advantages\\/icon-1.svg&quot; alt=&quot;icon&quot; width=&quot;90&quot; height=&quot;37&quot; \\/&gt; &lt;span class=&quot;advantages__description&quot;&gt;\\u041e\\u0444\\u0438\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 \\u043f\\u0440\\u0435\\u0434\\u0441\\u0442\\u0430\\u0432\\u0438\\u0442\\u0435\\u043b\\u044c Soocas \\u0432 \\u0420\\u043e\\u0441\\u0441\\u0438\\u0438&lt;\\/span&gt;&lt;\\/li&gt;\\r\\n&lt;li class=&quot;advantages__item&quot;&gt;&lt;img class=&quot;advantages__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/advantages\\/icon-2.svg&quot; alt=&quot;icon&quot; width=&quot;45&quot; height=&quot;37&quot; \\/&gt; &lt;span class=&quot;advantages__description&quot;&gt;\\u0413\\u0430\\u0440\\u0430\\u043d\\u0442\\u0438\\u044f \\u0438 \\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u043d\\u043e\\u0435 \\u043e\\u0431\\u0441\\u043b\\u0443\\u0436\\u0438\\u0432\\u0430\\u043d\\u0438\\u0435&lt;\\/span&gt;&lt;\\/li&gt;\\r\\n&lt;li class=&quot;advantages__item&quot;&gt;&lt;img class=&quot;advantages__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/advantages\\/icon-3.svg&quot; alt=&quot;icon&quot; width=&quot;47&quot; height=&quot;47&quot; \\/&gt; &lt;span class=&quot;advantages__description&quot;&gt;\\u0421\\u043f\\u0435\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u044b\\u0435 \\u0443\\u0441\\u043b\\u043e\\u0432\\u0438\\u044f \\u0434\\u043b\\u044f B2B&lt;\\/span&gt;&lt;\\/li&gt;\\r\\n&lt;\\/ul&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\"}},\"status\":\"1\"}'),
 (40, 'Представлены на маркетплейсах', 'html', '{\"name\":\"\\u041f\\u0440\\u0435\\u0434\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u044b \\u043d\\u0430 \\u043c\\u0430\\u0440\\u043a\\u0435\\u0442\\u043f\\u043b\\u0435\\u0439\\u0441\\u0430\\u0445\",\"module_description\":{\"1\":{\"title\":\"\",\"description\":\"&lt;section id=&quot;markets&quot; class=&quot;marketplaces marketplaces_pink&quot;&gt;\\r\\n&lt;div class=&quot;container marketplaces__container&quot;&gt;\\r\\n&lt;h2 class=&quot;title-h2&quot;&gt;\\u041f\\u0440\\u0435\\u0434\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u044b \\u043d\\u0430 \\u0432\\u0441\\u0435\\u0445 \\u043c\\u0430\\u0440\\u043a\\u0435\\u0442\\u043f\\u043b\\u0435\\u0439\\u0441\\u0430\\u0445&lt;\\/h2&gt;\\r\\n&lt;p class=&quot;marketplaces__description&quot;&gt;\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u043f\\u0440\\u0438\\u043e\\u0431\\u0440\\u0435\\u0441\\u0442\\u0438 \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0446\\u0438\\u044e Soocas \\u043d\\u0430 Wildberries, Ozon, \\u042f\\u043d\\u0434\\u0435\\u043a\\u0441 \\u041c\\u0430\\u0440\\u043a\\u0435\\u0442, \\u043b\\u0438\\u0431\\u043e \\u0443 \\u043d\\u0430\\u0441 \\u043d\\u0430 \\u0441\\u0430\\u0439\\u0442\\u0435&lt;\\/p&gt;\\r\\n&lt;div class=&quot;marketplaces__list&quot;&gt;&lt;a class=&quot;marketplaces__link&quot; href=&quot;https:\\/\\/ozon.ru\\/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; &lt;img class=&quot;marketplaces__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/marketplaces\\/logo-1.png&quot; alt=&quot;Logo Ozon&quot; \\/&gt; &lt;\\/a&gt; &lt;a class=&quot;marketplaces__link&quot; href=&quot;https:\\/\\/wildberries.ru\\/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; &lt;img class=&quot;marketplaces__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/marketplaces\\/logo-2.png&quot; alt=&quot;Logo Wildberries&quot; \\/&gt; &lt;\\/a&gt; &lt;a class=&quot;marketplaces__link marketplaces__link_border&quot; href=&quot;https:\\/\\/market.yandex.ru\\/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; &lt;img class=&quot;marketplaces__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/marketplaces\\/logo-3.png&quot; alt=&quot;Logo Yandex Market&quot; \\/&gt; &lt;\\/a&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/section&gt;\"}},\"status\":\"1\"}'),
 (41, 'Призыв к подписке на инстаграм (темный)', 'html', '{\"name\":\"\\u041f\\u0440\\u0438\\u0437\\u044b\\u0432 \\u043a \\u043f\\u043e\\u0434\\u043f\\u0438\\u0441\\u043a\\u0435 \\u043d\\u0430 \\u0438\\u043d\\u0441\\u0442\\u0430\\u0433\\u0440\\u0430\\u043c (\\u0442\\u0435\\u043c\\u043d\\u044b\\u0439)\",\"module_description\":{\"1\":{\"title\":\"\",\"description\":\"&lt;div class=&quot;instagram instagram_dark-theme&quot;&gt;\\r\\n&lt;div class=&quot;container instagram__container&quot;&gt;\\r\\n&lt;div class=&quot;instagram__info&quot;&gt;\\r\\n&lt;p class=&quot;instagram__description instagram__description_dark-theme&quot;&gt;\\u041f\\u043e\\u0434\\u043f\\u0438\\u0448\\u0438\\u0441\\u044c \\u043d\\u0430 \\u043e\\u0444\\u0438\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 Instagram Soocas \\u0432 \\u0420\\u043e\\u0441\\u0441\\u0438\\u0438, \\u0447\\u0442\\u043e\\u0431\\u044b \\u043d\\u0435 \\u043f\\u0440\\u043e\\u043f\\u0443\\u0441\\u0442\\u0438\\u0442\\u044c \\u0430\\u043a\\u0446\\u0438\\u0438 \\u0438 \\u0440\\u0430\\u0441\\u043f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0438 \\u0442\\u043e\\u0432\\u0430\\u0440\\u043e\\u0432 \\u0431\\u0440\\u0435\\u043d\\u0434\\u0430&lt;\\/p&gt;\\r\\n&lt;a class=&quot;btn instagram__btn instagram__btn_dark-theme&quot; href=&quot;https:\\/\\/www.instagram.com\\/soocasrussia\\/&quot;&gt; &lt;span class=&quot;instagram__text&quot;&gt; &lt;span class=&quot;instagram__action instagram__action_dark-theme&quot;&gt;\\u041f\\u043e\\u0434\\u043f\\u0438\\u0441\\u0430\\u0442\\u044c\\u0441\\u044f&lt;\\/span&gt; &lt;span class=&quot;instagram__nickname instagram__action_dark-theme&quot;&gt;@soocasrussia&lt;\\/span&gt; &lt;\\/span&gt; &lt;\\/a&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper instagram__gallery swiper-initialized swiper-horizontal swiper-backface-hidden&quot;&gt;\\r\\n&lt;div class=&quot;swiper-wrapper&quot;&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide swiper-slide-active&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem1&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-1.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide swiper-slide-next&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem2&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-2.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;instagram__elem3&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-3.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem4&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-4.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem5&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-5.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem6&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-6.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;instagram__elem7&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-7.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\"}},\"status\":\"1\"}'),
 (43, 'Представлены на маркетплейсах (Светлая)', 'html', '{\"name\":\"\\u041f\\u0440\\u0435\\u0434\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u044b \\u043d\\u0430 \\u043c\\u0430\\u0440\\u043a\\u0435\\u0442\\u043f\\u043b\\u0435\\u0439\\u0441\\u0430\\u0445 (\\u0421\\u0432\\u0435\\u0442\\u043b\\u0430\\u044f)\",\"module_description\":{\"1\":{\"title\":\"\",\"description\":\"&lt;section id=&quot;markets&quot; class=&quot;marketplaces marketplaces_light&quot;&gt;\\r\\n&lt;div class=&quot;container marketplaces__container&quot;&gt;\\r\\n&lt;h2 class=&quot;title-h2&quot;&gt;\\u041f\\u0440\\u0435\\u0434\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u044b \\u043d\\u0430 \\u0432\\u0441\\u0435\\u0445 \\u043c\\u0430\\u0440\\u043a\\u0435\\u0442\\u043f\\u043b\\u0435\\u0439\\u0441\\u0430\\u0445&lt;\\/h2&gt;\\r\\n&lt;p class=&quot;marketplaces__description&quot;&gt;\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u043f\\u0440\\u0438\\u043e\\u0431\\u0440\\u0435\\u0441\\u0442\\u0438 \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0446\\u0438\\u044e Soocas \\u043d\\u0430 Wildberries, Ozon, \\u042f\\u043d\\u0434\\u0435\\u043a\\u0441 \\u041c\\u0430\\u0440\\u043a\\u0435\\u0442, \\u043b\\u0438\\u0431\\u043e \\u0443 \\u043d\\u0430\\u0441 \\u043d\\u0430 \\u0441\\u0430\\u0439\\u0442\\u0435&lt;\\/p&gt;\\r\\n&lt;div class=&quot;marketplaces__list&quot;&gt;&lt;a class=&quot;marketplaces__link&quot; href=&quot;https:\\/\\/ozon.ru\\/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; &lt;img class=&quot;marketplaces__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/marketplaces\\/logo-1.png&quot; alt=&quot;Logo Ozon&quot; \\/&gt; &lt;\\/a&gt; &lt;a class=&quot;marketplaces__link&quot; href=&quot;https:\\/\\/wildberries.ru\\/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; &lt;img class=&quot;marketplaces__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/marketplaces\\/logo-2.png&quot; alt=&quot;Logo Wildberries&quot; \\/&gt; &lt;\\/a&gt; &lt;a class=&quot;marketplaces__link marketplaces__link_border&quot; href=&quot;https:\\/\\/market.yandex.ru\\/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; &lt;img class=&quot;marketplaces__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/marketplaces\\/logo-3.png&quot; alt=&quot;Logo Yandex Market&quot; \\/&gt; &lt;\\/a&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/section&gt;\"}},\"status\":\"1\"}'),
-(44, 'Знакомтесь — лучший друг ваших зубов', 'little_banner', '{\"name\":\"\\u0417\\u043d\\u0430\\u043a\\u043e\\u043c\\u0442\\u0435\\u0441\\u044c \\u2014 \\u043b\\u0443\\u0447\\u0448\\u0438\\u0439 \\u0434\\u0440\\u0443\\u0433 \\u0432\\u0430\\u0448\\u0438\\u0445 \\u0437\\u0443\\u0431\\u043e\\u0432\",\"module_title\":\"\\u0417\\u043d\\u0430\\u043a\\u043e\\u043c\\u0442\\u0435\\u0441\\u044c \\u2014 \\u043b\\u0443\\u0447\\u0448\\u0438\\u0439 \\u0434\\u0440\\u0443\\u0433 \\u0432\\u0430\\u0448\\u0438\\u0445 \\u0437\\u0443\\u0431\\u043e\\u0432\",\"module_text\":\"\\u0417\\u0443\\u0431\\u043d\\u044b\\u0435 \\u0449\\u0435\\u0442\\u043a\\u0438 \\u0441\\u0435\\u0440\\u0438\\u0438 Soocas V1 \\u043f\\u043e\\u0440\\u0430\\u0434\\u0443\\u044e\\u0442 \\u0432\\u0430\\u0441 \\u043a\\u0430\\u0447\\u0435\\u0441\\u0442\\u0432\\u043e\\u043c \\u0438 \\u043f\\u0440\\u0438\\u044f\\u0442\\u043d\\u043e\\u0439 \\u0446\\u0435\\u043d\\u043e\\u0439\",\"module_link\":\"https:\\/\\/market.yandex.ru\\/search?cvredirect=1&amp;amp;text=soocas%20v1%20%D1%89%D0%B5%D1%82%D0%BA%D0%B8&amp;amp;allowCollapsing=1&amp;amp;local-offers-first=0\",\"module_button_text\":\"\\u041f\\u043e\\u0434\\u0440\\u043e\\u0431\\u043d\\u0435\\u0435\",\"image\":\"catalog\\/background.png\",\"image_small\":\"catalog\\/background-mobile.png\",\"status\":\"1\"}');
+(44, 'Знакомтесь — лучший друг ваших зубов', 'little_banner', '{\"name\":\"\\u0417\\u043d\\u0430\\u043a\\u043e\\u043c\\u0442\\u0435\\u0441\\u044c \\u2014 \\u043b\\u0443\\u0447\\u0448\\u0438\\u0439 \\u0434\\u0440\\u0443\\u0433 \\u0432\\u0430\\u0448\\u0438\\u0445 \\u0437\\u0443\\u0431\\u043e\\u0432\",\"module_title\":\"\\u0417\\u043d\\u0430\\u043a\\u043e\\u043c\\u0442\\u0435\\u0441\\u044c \\u2014 \\u043b\\u0443\\u0447\\u0448\\u0438\\u0439 \\u0434\\u0440\\u0443\\u0433 \\u0432\\u0430\\u0448\\u0438\\u0445 \\u0437\\u0443\\u0431\\u043e\\u0432\",\"module_text\":\"\\u0417\\u0443\\u0431\\u043d\\u044b\\u0435 \\u0449\\u0435\\u0442\\u043a\\u0438 \\u0441\\u0435\\u0440\\u0438\\u0438 Soocas V1 \\u043f\\u043e\\u0440\\u0430\\u0434\\u0443\\u044e\\u0442 \\u0432\\u0430\\u0441 \\u043a\\u0430\\u0447\\u0435\\u0441\\u0442\\u0432\\u043e\\u043c \\u0438 \\u043f\\u0440\\u0438\\u044f\\u0442\\u043d\\u043e\\u0439 \\u0446\\u0435\\u043d\\u043e\\u0439\",\"module_link\":\"https:\\/\\/market.yandex.ru\\/search?cvredirect=1&amp;amp;text=soocas%20v1%20%D1%89%D0%B5%D1%82%D0%BA%D0%B8&amp;amp;allowCollapsing=1&amp;amp;local-offers-first=0\",\"module_button_text\":\"\\u041f\\u043e\\u0434\\u0440\\u043e\\u0431\\u043d\\u0435\\u0435\",\"image\":\"catalog\\/background.png\",\"image_small\":\"catalog\\/background-mobile.png\",\"status\":\"1\"}'),
+(47, 'Призыв к подписке на инстаграм (светлый)', 'html', '{\"name\":\"\\u041f\\u0440\\u0438\\u0437\\u044b\\u0432 \\u043a \\u043f\\u043e\\u0434\\u043f\\u0438\\u0441\\u043a\\u0435 \\u043d\\u0430 \\u0438\\u043d\\u0441\\u0442\\u0430\\u0433\\u0440\\u0430\\u043c (\\u0441\\u0432\\u0435\\u0442\\u043b\\u044b\\u0439)\",\"module_description\":{\"1\":{\"title\":\"\",\"description\":\"&lt;div class=&quot;instagram instagram_light-theme&quot;&gt;\\r\\n&lt;div class=&quot;container instagram__container&quot;&gt;\\r\\n&lt;div class=&quot;instagram__info&quot;&gt;\\r\\n&lt;p class=&quot;instagram__description instagram__description_light-theme&quot;&gt;\\u041f\\u043e\\u0434\\u043f\\u0438\\u0448\\u0438\\u0441\\u044c \\u043d\\u0430 \\u043e\\u0444\\u0438\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 Instagram Soocas \\u0432 \\u0420\\u043e\\u0441\\u0441\\u0438\\u0438, \\u0447\\u0442\\u043e\\u0431\\u044b \\u043d\\u0435 \\u043f\\u0440\\u043e\\u043f\\u0443\\u0441\\u0442\\u0438\\u0442\\u044c \\u0430\\u043a\\u0446\\u0438\\u0438 \\u0438 \\u0440\\u0430\\u0441\\u043f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0438 \\u0442\\u043e\\u0432\\u0430\\u0440\\u043e\\u0432 \\u0431\\u0440\\u0435\\u043d\\u0434\\u0430&lt;\\/p&gt;\\r\\n&lt;a class=&quot;btn instagram__btn instagram__btn_light-theme&quot; href=&quot;https:\\/\\/www.instagram.com\\/soocasrussia\\/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; &lt;span class=&quot;instagram__text&quot;&gt; &lt;span class=&quot;instagram__action instagram__action_light-theme&quot;&gt;\\u041f\\u043e\\u0434\\u043f\\u0438\\u0441\\u0430\\u0442\\u044c\\u0441\\u044f&lt;\\/span&gt; &lt;span class=&quot;instagram__nickname instagram__action_light-theme&quot;&gt;@soocasrussia&lt;\\/span&gt; &lt;\\/span&gt; &lt;\\/a&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper instagram__gallery swiper-initialized swiper-horizontal swiper-backface-hidden&quot;&gt;\\r\\n&lt;div class=&quot;swiper-wrapper&quot; style=&quot;cursor: grab; transform: translate3d(0px, 0px, 0px);&quot;&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide swiper-slide-active&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem1&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-1.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide swiper-slide-next&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem2&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-2.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;instagram__elem3&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-3.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem4&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-4.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem5&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-5.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem6&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-6.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;instagram__elem7&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-7.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\"}},\"status\":\"1\"}');
 
 -- --------------------------------------------------------
 
@@ -2757,10 +2768,20 @@ CREATE TABLE `oc_product` (
 --
 
 INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `noindex`, `date_added`, `date_modified`) VALUES
-(50, '111111111111', '', '', '', '', '', '', '', 999, 7, 'catalog/products/product-1.png', 0, 1, '12000.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, 1, '2023-05-17 13:18:09', '2023-05-17 13:19:55'),
+(63, '2222222222', '', '', '', '', '', '', '', 1, 7, 'catalog/products/product-2.png', 0, 1, '9900.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, 0, '2023-05-21 12:19:19', '2023-05-21 12:20:05'),
+(54, '111111111111', '', '', '', '', '', '', '', 999, 7, 'catalog/products/product-1.png', 0, 1, '12000.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 1, 0, '2023-05-19 13:38:45', '2023-05-19 14:07:10'),
+(55, '111111111111', '', '', '', '', '', '', '', 999, 7, 'catalog/products/product-1.png', 0, 1, '12000.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 2, 0, '2023-05-19 13:38:54', '2023-05-21 12:18:54'),
+(56, '111111111111', '', '', '', '', '', '', '', 999, 7, 'catalog/products/product-1.png', 0, 1, '12000.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 2, 0, '2023-05-19 13:38:54', '2023-05-21 12:19:03'),
+(57, '2222222222', '', '', '', '', '', '', '', 1, 7, 'catalog/products/product-2.png', 0, 1, '9900.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 2, 0, '2023-05-19 13:38:54', '2023-05-21 12:19:09'),
+(58, '111111111111', '', '', '', '', '', '', '', 999, 7, 'catalog/products/product-1.png', 0, 1, '12000.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 1, 0, '2023-05-21 12:19:18', '2023-05-21 12:19:32'),
+(59, '111111111111', '', '', '', '', '', '', '', 999, 7, 'catalog/products/product-1.png', 0, 1, '12000.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 6, 0, '2023-05-21 12:19:18', '2023-05-22 12:47:23'),
+(60, '111111111111', '', '', '', '', '', '', '', 999, 7, 'catalog/products/product-1.png', 0, 1, '12000.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 2, 0, '2023-05-21 12:19:18', '2023-05-21 12:19:45'),
+(61, '111111111111', '', '', '', '', '', '', '', 999, 7, 'catalog/products/product-1.png', 0, 1, '12000.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 1, 0, '2023-05-21 12:19:18', '2023-05-21 12:19:51'),
+(62, '2222222222', '', '', '', '', '', '', '', 1, 7, 'catalog/products/product-2.png', 0, 1, '9900.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, 0, '2023-05-21 12:19:18', '2023-05-21 12:19:58'),
+(50, '111111111111', '', '', '', '', '', '', '', 999, 7, 'catalog/products/product-1.png', 0, 1, '12000.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 2, 1, '2023-05-17 13:18:09', '2023-05-17 13:19:55'),
 (51, '2222222222', '', '', '', '', '', '', '', 1, 7, 'catalog/products/product-2.png', 0, 1, '9900.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 1, 1, '2023-05-17 13:19:13', '2023-05-17 13:19:38'),
 (52, '123123123', '', '', '', '', '', '', '', 666, 7, 'catalog/products/product-3.png', 0, 1, '11900.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, 1, '2023-05-17 13:20:42', '0000-00-00 00:00:00'),
-(53, '124214124', '', '', '', '', '', '', '', 1, 7, 'catalog/products/product-4.png', 0, 1, '8900.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, 1, '2023-05-17 13:21:27', '0000-00-00 00:00:00');
+(53, '124214124', '', '', '', '', '', '', '', 1, 7, 'catalog/products/product-4.png', 0, 1, '8900.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 2, 1, '2023-05-17 13:21:27', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -2802,7 +2823,17 @@ INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `desc
 (50, 1, 'Беспроводной ирригатор Soocas W3 Pro', '', '', '', '', '', '', ''),
 (51, 1, 'Электрическая зубная щетка Soocas X3U', '', '', '', '', '', '', ''),
 (52, 1, 'Электробритва Soocas S5 4 в 1', '', '', '', '', '', '', ''),
-(53, 1, 'Фен с ионизатором Soocas H5', '', '', '', '', '', '', '');
+(53, 1, 'Фен с ионизатором Soocas H5', '', '', '', '', '', '', ''),
+(54, 1, 'Беспроводной ирригатор Soocas W3 Pro', '', '', '', '', '', '', ''),
+(55, 1, 'Беспроводной ирригатор Soocas W3 Pro', '', '', '', '', '', '', ''),
+(56, 1, 'Беспроводной ирригатор Soocas W3 Pro', '', '', '', '', '', '', ''),
+(57, 1, 'Электрическая зубная щетка Soocas X3U', '', '', '', '', '', '', ''),
+(58, 1, 'Беспроводной ирригатор Soocas W3 Pro', '', '', '', '', '', '', ''),
+(59, 1, 'Беспроводной ирригатор Soocas W3 Pro', '', '', '', '', '', '', ''),
+(60, 1, 'Беспроводной ирригатор Soocas W3 Pro', '', '', '', '', '', '', ''),
+(61, 1, 'Беспроводной ирригатор Soocas W3 Pro', '', '', '', '', '', '', ''),
+(62, 1, 'Электрическая зубная щетка Soocas X3U', '', '', '', '', '', '', ''),
+(63, 1, 'Электрическая зубная щетка Soocas X3U', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -2966,6 +2997,13 @@ CREATE TABLE `oc_product_special` (
   `date_end` date NOT NULL DEFAULT '0000-00-00'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
 
+--
+-- Дамп данных таблицы `oc_product_special`
+--
+
+INSERT INTO `oc_product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
+(441, 59, 1, 0, '9000.0000', '0000-00-00', '0000-00-00');
+
 -- --------------------------------------------------------
 
 --
@@ -3021,10 +3059,20 @@ CREATE TABLE `oc_product_to_category` (
 --
 
 INSERT INTO `oc_product_to_category` (`product_id`, `category_id`, `main_category`) VALUES
+(58, 59, 1),
+(57, 59, 1),
+(55, 59, 1),
+(54, 59, 1),
 (53, 60, 1),
+(61, 59, 1),
 (52, 61, 1),
 (51, 59, 1),
-(50, 59, 1);
+(56, 59, 1),
+(60, 59, 1),
+(63, 59, 1),
+(62, 59, 1),
+(50, 59, 1),
+(59, 59, 1);
 
 -- --------------------------------------------------------
 
@@ -3057,7 +3105,17 @@ INSERT INTO `oc_product_to_layout` (`product_id`, `store_id`, `layout_id`) VALUE
 (50, 0, 0),
 (51, 0, 0),
 (52, 0, 0),
-(53, 0, 0);
+(53, 0, 0),
+(54, 0, 0),
+(55, 0, 0),
+(56, 0, 0),
+(57, 0, 0),
+(58, 0, 0),
+(59, 0, 0),
+(60, 0, 0),
+(61, 0, 0),
+(62, 0, 0),
+(63, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -3090,7 +3148,17 @@ INSERT INTO `oc_product_to_store` (`product_id`, `store_id`) VALUES
 (50, 0),
 (51, 0),
 (52, 0),
-(53, 0);
+(53, 0),
+(54, 0),
+(55, 0),
+(56, 0),
+(57, 0),
+(58, 0),
+(59, 0),
+(60, 0),
+(61, 0),
+(62, 0),
+(63, 0);
 
 -- --------------------------------------------------------
 
@@ -3296,54 +3364,54 @@ CREATE TABLE `oc_setting` (
 --
 
 INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `serialized`) VALUES
-(2155, 0, 'config', 'config_error_filename', 'error.log', 0),
-(2154, 0, 'config', 'config_error_log', '1', 0),
-(2153, 0, 'config', 'config_error_display', '1', 0),
-(2139, 0, 'config', 'config_alert_email', '', 0),
-(2140, 0, 'config', 'config_maintenance', '0', 0),
-(2141, 0, 'config', 'config_seo_url', '0', 0),
-(2142, 0, 'config', 'config_seo_url_include_path', '0', 0),
-(2143, 0, 'config', 'config_seo_url_postfix', '', 0),
-(2144, 0, 'config', 'config_file_max_size', '300000', 0),
-(2145, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+(2509, 0, 'config', 'config_error_filename', 'error.log', 0),
+(2508, 0, 'config', 'config_error_log', '1', 0),
+(2507, 0, 'config', 'config_error_display', '1', 0),
+(2505, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
+(2506, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
+(2500, 0, 'config', 'config_compression', '0', 0),
+(2501, 0, 'config', 'config_secure', '0', 0),
+(2502, 0, 'config', 'config_password', '1', 0),
+(2503, 0, 'config', 'config_shared', '0', 0),
+(2504, 0, 'config', 'config_encryption', 'klNNSCiD0sMQbzXvacwTalbmdFAd1fZ6iKXPdUjM28U3Fnc65pCv4OblBvHNkytA2S46M6OehSWAnT8hVrGUkyLSgTvJUXYrwYvEK4Ny1jahaI0aAvd3CcXZhPFnf7Y2mhZ7Jzsu1zICq9R9MVy7x27p1dfmsp87AXl0n97quBcBc41f731bD7gt5twLs7yZe0Ov5mcNQGjocCHT1yl6Ylas0n9nkn5idURaIIHYaWTYNFiSKVRTYlnb5UiNq3ygxLT95cHaSUfy7OhvJujZm8JLT6t6GiKxNjxeCf9esvZRw3duYxbQ5E7cfgfdI7Ud4Q6T2nPjWWAhtvIbclprGdWWzrH2MewRUufcIpXUfGOuEvxpfzXiIc2XTRa7RiS2qqb1Nqt2yy70vZuXWrpXP1YPHfDD3sWwwTdU3868ZIYPAwjKl0AdN1WVZj6FRgdrkTw1eWcJ3ot08NapQzXRMHDLlMe288mL0PW1dVFNBebBNpGawXM7gUV37D8PYBdpkanfzQ6h8tq6vqRicyDutJp7HurcWb6GuwCgUuj3HDuQOEqoAd0nLBfLRxpG0tnfLKu1gS0cdoMOx4BJhZKwZ27UIM1x95wWOObkLhQXyiQfliPLnYsXowb1e62uidowyonz4COD1hMHuwlO76x9txO3iNfqN2Zg7iFaMzx1JNPaN0AjQytEEkAgHFwn2dJopkMyJqm3fCovZbbBZN6pa3MLUGl0z5kmggdeY13k0knqhW6Yo3ud6NkDKC93msJKHceAP3CfG7mfJmuDpKnuqDZk9WSz8sCgXKBvdZ1i23CDBb9nS6kJyinqW7ft5zyuGqr7oCha9FTms1nMANPH9KlJgEY06u7gqGolJFqg9SlKMpOVhkQiY40JO44E4ugVje451Z05dJDZXyQaKIuOArqyhEBTKE3oRod8tiHkyjUJRIMAKzZ1ujDwO2Fs4fT33SSslKmt8rLckdk7kQo4jPEti8VkrI6bKaTOoQTek4GDIk8ThiDurASlbLNs6cOF', 0),
 (4, 0, 'voucher', 'voucher_sort_order', '8', 0),
 (5, 0, 'voucher', 'voucher_status', '1', 0),
-(2146, 0, 'config', 'config_compression', '0', 0),
-(2147, 0, 'config', 'config_secure', '0', 0),
-(2148, 0, 'config', 'config_password', '1', 0),
-(2149, 0, 'config', 'config_shared', '0', 0),
-(2150, 0, 'config', 'config_encryption', 'klNNSCiD0sMQbzXvacwTalbmdFAd1fZ6iKXPdUjM28U3Fnc65pCv4OblBvHNkytA2S46M6OehSWAnT8hVrGUkyLSgTvJUXYrwYvEK4Ny1jahaI0aAvd3CcXZhPFnf7Y2mhZ7Jzsu1zICq9R9MVy7x27p1dfmsp87AXl0n97quBcBc41f731bD7gt5twLs7yZe0Ov5mcNQGjocCHT1yl6Ylas0n9nkn5idURaIIHYaWTYNFiSKVRTYlnb5UiNq3ygxLT95cHaSUfy7OhvJujZm8JLT6t6GiKxNjxeCf9esvZRw3duYxbQ5E7cfgfdI7Ud4Q6T2nPjWWAhtvIbclprGdWWzrH2MewRUufcIpXUfGOuEvxpfzXiIc2XTRa7RiS2qqb1Nqt2yy70vZuXWrpXP1YPHfDD3sWwwTdU3868ZIYPAwjKl0AdN1WVZj6FRgdrkTw1eWcJ3ot08NapQzXRMHDLlMe288mL0PW1dVFNBebBNpGawXM7gUV37D8PYBdpkanfzQ6h8tq6vqRicyDutJp7HurcWb6GuwCgUuj3HDuQOEqoAd0nLBfLRxpG0tnfLKu1gS0cdoMOx4BJhZKwZ27UIM1x95wWOObkLhQXyiQfliPLnYsXowb1e62uidowyonz4COD1hMHuwlO76x9txO3iNfqN2Zg7iFaMzx1JNPaN0AjQytEEkAgHFwn2dJopkMyJqm3fCovZbbBZN6pa3MLUGl0z5kmggdeY13k0knqhW6Yo3ud6NkDKC93msJKHceAP3CfG7mfJmuDpKnuqDZk9WSz8sCgXKBvdZ1i23CDBb9nS6kJyinqW7ft5zyuGqr7oCha9FTms1nMANPH9KlJgEY06u7gqGolJFqg9SlKMpOVhkQiY40JO44E4ugVje451Z05dJDZXyQaKIuOArqyhEBTKE3oRod8tiHkyjUJRIMAKzZ1ujDwO2Fs4fT33SSslKmt8rLckdk7kQo4jPEti8VkrI6bKaTOoQTek4GDIk8ThiDurASlbLNs6cOF', 0),
-(2151, 0, 'config', 'config_file_ext_allowed', 'zip\r\ntxt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc', 0),
-(2152, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\n&quot;application/zip&quot;\r\napplication/x-zip\r\n&quot;application/x-zip&quot;\r\napplication/x-zip-compressed\r\n&quot;application/x-zip-compressed&quot;\r\napplication/rar\r\n&quot;application/rar&quot;\r\napplication/x-rar\r\n&quot;application/x-rar&quot;\r\napplication/x-rar-compressed\r\n&quot;application/x-rar-compressed&quot;\r\napplication/octet-stream\r\n&quot;application/octet-stream&quot;\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf', 0),
-(2136, 0, 'config', 'config_mail_smtp_port', '25', 0),
-(2137, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
-(2138, 0, 'config', 'config_mail_alert', '[\"order\"]', 1),
-(2135, 0, 'config', 'config_mail_smtp_password', '', 0),
-(2134, 0, 'config', 'config_mail_smtp_username', '', 0),
-(2133, 0, 'config', 'config_mail_smtp_hostname', '', 0),
-(2132, 0, 'config', 'config_mail_parameter', '', 0),
-(2131, 0, 'config', 'config_mail_protocol', 'mail', 0),
-(2130, 0, 'config', 'config_ftp_status', '0', 0),
-(2129, 0, 'config', 'config_ftp_root', '', 0),
-(2128, 0, 'config', 'config_ftp_password', '', 0),
-(2127, 0, 'config', 'config_ftp_username', '', 0),
-(2126, 0, 'config', 'config_ftp_port', '21', 0),
-(2125, 0, 'config', 'config_ftp_hostname', 'localhost:8001', 0),
-(2124, 0, 'config', 'config_icon', 'catalog/favicon.png', 0),
-(2122, 0, 'config', 'config_captcha_page', '[\"review\",\"return\",\"contact\"]', 1),
-(2123, 0, 'config', 'config_logo', 'catalog/logo-header.svg', 0),
-(2121, 0, 'config', 'config_captcha', '', 0),
-(2120, 0, 'config', 'config_return_status_id', '2', 0),
-(2119, 0, 'config', 'config_return_id', '0', 0),
-(2118, 0, 'config', 'config_affiliate_id', '4', 0),
-(2117, 0, 'config', 'config_affiliate_commission', '5', 0),
-(2116, 0, 'config', 'config_affiliate_auto', '0', 0),
-(2115, 0, 'config', 'config_affiliate_approval', '0', 0),
-(2114, 0, 'config', 'config_stock_checkout', '0', 0),
-(2113, 0, 'config', 'config_stock_warning', '0', 0),
-(2112, 0, 'config', 'config_stock_display', '0', 0),
-(2111, 0, 'config', 'config_api_id', '1', 0),
-(2110, 0, 'config', 'config_fraud_status_id', '16', 0),
+(2493, 0, 'config', 'config_alert_email', '', 0),
+(2494, 0, 'config', 'config_maintenance', '0', 0),
+(2495, 0, 'config', 'config_seo_url', '0', 0),
+(2496, 0, 'config', 'config_seo_url_include_path', '0', 0),
+(2497, 0, 'config', 'config_seo_url_postfix', '', 0),
+(2498, 0, 'config', 'config_file_max_size', '300000', 0),
+(2499, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai\'hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+(2490, 0, 'config', 'config_mail_smtp_port', '25', 0),
+(2491, 0, 'config', 'config_mail_smtp_timeout', '5', 0),
+(2492, 0, 'config', 'config_mail_alert', '[\"order\"]', 1),
+(2489, 0, 'config', 'config_mail_smtp_password', '', 0),
+(2488, 0, 'config', 'config_mail_smtp_username', '', 0),
+(2487, 0, 'config', 'config_mail_smtp_hostname', '', 0),
+(2486, 0, 'config', 'config_mail_parameter', '', 0),
+(2485, 0, 'config', 'config_mail_protocol', 'mail', 0),
+(2484, 0, 'config', 'config_ftp_status', '0', 0),
+(2483, 0, 'config', 'config_ftp_root', '', 0),
+(2482, 0, 'config', 'config_ftp_password', '', 0),
+(2481, 0, 'config', 'config_ftp_username', '', 0),
+(2480, 0, 'config', 'config_ftp_port', '21', 0),
+(2476, 0, 'config', 'config_captcha_page', '[\"review\",\"return\",\"contact\"]', 1),
+(2477, 0, 'config', 'config_logo', 'catalog/logo-header.svg', 0),
+(2479, 0, 'config', 'config_ftp_hostname', 'localhost:8001', 0),
+(2478, 0, 'config', 'config_icon', 'catalog/favicon.png', 0),
+(2475, 0, 'config', 'config_captcha', '', 0),
+(2474, 0, 'config', 'config_return_status_id', '2', 0),
+(2473, 0, 'config', 'config_return_id', '0', 0),
+(2472, 0, 'config', 'config_affiliate_id', '4', 0),
+(2471, 0, 'config', 'config_affiliate_commission', '5', 0),
+(2470, 0, 'config', 'config_affiliate_auto', '0', 0),
+(2469, 0, 'config', 'config_affiliate_approval', '0', 0),
+(2468, 0, 'config', 'config_stock_checkout', '0', 0),
+(2467, 0, 'config', 'config_stock_warning', '0', 0),
+(2466, 0, 'config', 'config_stock_display', '0', 0),
+(2465, 0, 'config', 'config_api_id', '1', 0),
+(2464, 0, 'config', 'config_fraud_status_id', '16', 0),
 (95, 0, 'free_checkout', 'free_checkout_status', '1', 0),
 (96, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
 (97, 0, 'shipping', 'shipping_sort_order', '3', 0),
@@ -3375,27 +3443,24 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (123, 0, 'category', 'category_status', '1', 0),
 (124, 0, 'account', 'account_status', '1', 0),
 (125, 0, 'affiliate', 'affiliate_status', '1', 0),
-(313, 0, 'theme_default', 'theme_default_image_cart_width', '47', 0),
-(312, 0, 'theme_default', 'theme_default_image_wishlist_height', '47', 0),
-(311, 0, 'theme_default', 'theme_default_image_wishlist_width', '47', 0),
-(310, 0, 'theme_default', 'theme_default_image_compare_height', '90', 0),
-(309, 0, 'theme_default', 'theme_default_image_compare_width', '90', 0),
-(308, 0, 'theme_default', 'theme_default_image_related_height', '200', 0),
-(307, 0, 'theme_default', 'theme_default_image_related_width', '200', 0),
-(306, 0, 'theme_default', 'theme_default_image_additional_height', '74', 0),
-(305, 0, 'theme_default', 'theme_default_image_additional_width', '74', 0),
-(304, 0, 'theme_default', 'theme_default_image_product_height', '228', 0),
-(303, 0, 'theme_default', 'theme_default_image_product_width', '228', 0),
-(302, 0, 'theme_default', 'theme_default_image_popup_height', '500', 0),
-(301, 0, 'theme_default', 'theme_default_image_popup_width', '500', 0),
-(300, 0, 'theme_default', 'theme_default_image_thumb_height', '228', 0),
-(299, 0, 'theme_default', 'theme_default_image_thumb_width', '228', 0),
-(298, 0, 'theme_default', 'theme_default_image_category_height', '80', 0),
-(297, 0, 'theme_default', 'theme_default_image_category_width', '80', 0),
-(296, 0, 'theme_default', 'theme_default_product_description_length', '100', 0),
-(295, 0, 'theme_default', 'theme_default_product_limit', '15', 0),
-(294, 0, 'theme_default', 'theme_default_status', '1', 0),
-(293, 0, 'theme_default', 'theme_default_directory', 'soocas', 0),
+(2286, 0, 'theme_default', 'theme_default_image_category_width', '80', 0),
+(2287, 0, 'theme_default', 'theme_default_image_category_height', '80', 0),
+(2288, 0, 'theme_default', 'theme_default_image_thumb_width', '228', 0),
+(2289, 0, 'theme_default', 'theme_default_image_thumb_height', '228', 0),
+(2290, 0, 'theme_default', 'theme_default_image_popup_width', '500', 0),
+(2291, 0, 'theme_default', 'theme_default_image_popup_height', '500', 0),
+(2292, 0, 'theme_default', 'theme_default_image_product_width', '228', 0),
+(2293, 0, 'theme_default', 'theme_default_image_product_height', '228', 0),
+(2294, 0, 'theme_default', 'theme_default_image_additional_width', '74', 0),
+(2304, 0, 'theme_default', 'theme_default_image_location_width', '268', 0),
+(2302, 0, 'theme_default', 'theme_default_image_cart_width', '47', 0),
+(2303, 0, 'theme_default', 'theme_default_image_cart_height', '47', 0),
+(2301, 0, 'theme_default', 'theme_default_image_wishlist_height', '47', 0),
+(2298, 0, 'theme_default', 'theme_default_image_compare_width', '90', 0),
+(2299, 0, 'theme_default', 'theme_default_image_compare_height', '90', 0),
+(2300, 0, 'theme_default', 'theme_default_image_wishlist_width', '47', 0),
+(2297, 0, 'theme_default', 'theme_default_image_related_height', '200', 0),
+(2296, 0, 'theme_default', 'theme_default_image_related_width', '200', 0),
 (150, 0, 'dashboard_activity', 'dashboard_activity_status', '1', 0),
 (151, 0, 'dashboard_activity', 'dashboard_activity_sort_order', '7', 0),
 (152, 0, 'dashboard_sale', 'dashboard_sale_status', '1', 0),
@@ -3443,65 +3508,68 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (194, 0, 'blog_category', 'blog_category_status', '1', 0),
 (968, 0, 'configcustommenu', 'configcustommenu_custommenu', '1', 0),
 (196, 0, 'manufacturer', 'manufacturer_status', '1', 0),
-(2109, 0, 'config', 'config_complete_status', '[\"3\",\"5\"]', 1),
-(2108, 0, 'config', 'config_processing_status', '[\"2\",\"3\",\"1\",\"12\",\"5\"]', 1),
-(2107, 0, 'config', 'config_order_status_id', '1', 0),
-(2106, 0, 'config', 'config_checkout_id', '5', 0),
-(2105, 0, 'config', 'config_checkout_guest', '1', 0),
-(2104, 0, 'config', 'config_cart_weight', '1', 0),
-(2103, 0, 'config', 'config_invoice_prefix', 'INV-0000', 0),
-(2102, 0, 'config', 'config_account_id', '3', 0),
-(2101, 0, 'config', 'config_login_attempts', '5', 0),
-(2100, 0, 'config', 'config_customer_price', '0', 0),
-(2099, 0, 'config', 'config_customer_group_display', '[\"1\"]', 1),
-(2098, 0, 'config', 'config_customer_group_id', '1', 0),
-(2097, 0, 'config', 'config_customer_search', '0', 0),
-(2096, 0, 'config', 'config_customer_activity', '0', 0),
-(2095, 0, 'config', 'config_customer_online', '0', 0),
-(2094, 0, 'config', 'config_tax_customer', 'shipping', 0),
-(2093, 0, 'config', 'config_tax_default', 'shipping', 0),
-(2092, 0, 'config', 'config_tax', '1', 0),
-(2091, 0, 'config', 'config_voucher_max', '1000', 0),
-(2090, 0, 'config', 'config_voucher_min', '1', 0),
-(2089, 0, 'config', 'config_review_guest', '1', 0),
-(2088, 0, 'config', 'config_review_status', '1', 0),
-(2087, 0, 'config', 'config_limit_admin', '20', 0),
-(2086, 0, 'config', 'config_product_count', '1', 0),
-(2085, 0, 'config', 'config_weight_class_id', '1', 0),
-(2084, 0, 'config', 'config_length_class_id', '1', 0),
-(2083, 0, 'config', 'config_currency_auto', '0', 0),
-(2082, 0, 'config', 'config_currency', 'RUB', 0),
-(2081, 0, 'config', 'config_admin_language', 'ru-ru', 0),
-(2080, 0, 'config', 'config_language', 'ru-ru', 0),
-(2079, 0, 'config', 'config_zone_id', '2761', 0),
-(2078, 0, 'config', 'config_country_id', '176', 0),
-(2077, 0, 'config', 'config_vk', 'https://vk.com/soocas', 0),
-(2071, 0, 'config', 'config_open', 'Работаем с 11:00 до 20:00 без выходных', 0),
-(2072, 0, 'config', 'config_comment', '© COPYRIGHT 2021 SOOCAS. ALL RIGHTS RESERVED', 0),
-(2076, 0, 'config', 'config_telegram', 'https://t.me/soocas', 0),
-(2075, 0, 'config', 'config_instagram', 'https://www.instagram.com/soocasrussia/', 0),
-(2074, 0, 'config', 'config_youtube', 'https://www.youtube.com/results?search_query=soocas', 0),
-(314, 0, 'theme_default', 'theme_default_image_cart_height', '47', 0),
-(315, 0, 'theme_default', 'theme_default_image_location_width', '268', 0),
-(316, 0, 'theme_default', 'theme_default_image_location_height', '50', 0),
-(2073, 0, 'config', 'config_facebook', 'https://www.facebook.com/soocasrussia/', 0),
-(2069, 0, 'config', 'config_fax', '', 0),
-(2070, 0, 'config', 'config_image', '', 0),
-(2068, 0, 'config', 'config_telephone', '+7 999 433 33 22', 0),
-(2065, 0, 'config', 'config_email_clients', 'customerinfo@soocasrussia.ru', 0),
-(2066, 0, 'config', 'config_email_wholesale', 'supply@soocasrussia.ru', 0),
-(2067, 0, 'config', 'config_email_cooperation', 'info@soocasrussia.ru', 0),
-(2064, 0, 'config', 'config_email', 'titleby@yandex.by', 0),
-(2063, 0, 'config', 'config_geocode', '', 0),
-(2061, 0, 'config', 'config_address', 'г. Санкт-Петербург ул. Пушкина 1', 0),
-(2062, 0, 'config', 'config_address_ur', 'г. Санкт-Петербург, Лиговский проспект 50к13, помещение 97Б - главный офис', 0),
-(2060, 0, 'config', 'config_owner', 'Your Name', 0),
-(2059, 0, 'config', 'config_name', 'Your Store', 0),
-(2058, 0, 'config', 'config_layout_id', '4', 0),
-(2057, 0, 'config', 'config_theme', 'theme_default', 0),
-(2056, 0, 'config', 'config_meta_keyword', '', 0),
-(2055, 0, 'config', 'config_meta_description', 'OPENCART.PRO Профессиональная система для онлайн торговли', 0),
-(2054, 0, 'config', 'config_meta_title', 'OPENCART.PRO', 0);
+(2463, 0, 'config', 'config_complete_status', '[\"3\",\"5\"]', 1),
+(2462, 0, 'config', 'config_processing_status', '[\"2\",\"3\",\"1\",\"12\",\"5\"]', 1),
+(2461, 0, 'config', 'config_order_status_id', '1', 0),
+(2460, 0, 'config', 'config_checkout_id', '0', 0),
+(2459, 0, 'config', 'config_checkout_guest', '1', 0),
+(2458, 0, 'config', 'config_cart_weight', '1', 0),
+(2457, 0, 'config', 'config_invoice_prefix', 'INV-0000', 0),
+(2456, 0, 'config', 'config_account_id', '3', 0),
+(2455, 0, 'config', 'config_login_attempts', '5', 0),
+(2454, 0, 'config', 'config_customer_price', '0', 0),
+(2453, 0, 'config', 'config_customer_group_display', '[\"1\"]', 1),
+(2452, 0, 'config', 'config_customer_group_id', '1', 0),
+(2451, 0, 'config', 'config_customer_search', '0', 0),
+(2450, 0, 'config', 'config_customer_activity', '0', 0),
+(2449, 0, 'config', 'config_customer_online', '0', 0),
+(2448, 0, 'config', 'config_tax_customer', 'shipping', 0),
+(2447, 0, 'config', 'config_tax_default', 'shipping', 0),
+(2446, 0, 'config', 'config_tax', '1', 0),
+(2445, 0, 'config', 'config_voucher_max', '1000', 0),
+(2444, 0, 'config', 'config_voucher_min', '1', 0),
+(2443, 0, 'config', 'config_review_guest', '1', 0),
+(2442, 0, 'config', 'config_review_status', '1', 0),
+(2441, 0, 'config', 'config_limit_admin', '40', 0),
+(2440, 0, 'config', 'config_product_count', '1', 0),
+(2439, 0, 'config', 'config_weight_class_id', '1', 0),
+(2438, 0, 'config', 'config_length_class_id', '1', 0),
+(2437, 0, 'config', 'config_currency_auto', '0', 0),
+(2436, 0, 'config', 'config_currency', 'RUB', 0),
+(2435, 0, 'config', 'config_admin_language', 'ru-ru', 0),
+(2434, 0, 'config', 'config_language', 'ru-ru', 0),
+(2433, 0, 'config', 'config_zone_id', '2761', 0),
+(2432, 0, 'config', 'config_country_id', '176', 0),
+(2431, 0, 'config', 'config_vk', 'https://vk.com/soocas', 0),
+(2430, 0, 'config', 'config_telegram', 'https://t.me/soocas', 0),
+(2428, 0, 'config', 'config_youtube', 'https://www.youtube.com/results?search_query=soocas', 0),
+(2429, 0, 'config', 'config_instagram', 'https://www.instagram.com/soocasrussia/', 0),
+(2427, 0, 'config', 'config_facebook', 'https://www.facebook.com/soocasrussia/', 0),
+(2295, 0, 'theme_default', 'theme_default_image_additional_height', '74', 0),
+(2285, 0, 'theme_default', 'theme_default_product_description_length', '100', 0),
+(2284, 0, 'theme_default', 'theme_default_product_limit', '8', 0),
+(2283, 0, 'theme_default', 'theme_default_status', '1', 0),
+(2426, 0, 'config', 'config_comment', '© COPYRIGHT 2021 SOOCAS. ALL RIGHTS RESERVED', 0),
+(2422, 0, 'config', 'config_telephone', '+7 999 433 33 22', 0),
+(2424, 0, 'config', 'config_image', '', 0),
+(2425, 0, 'config', 'config_open', 'Работаем с 11:00 до 20:00 без выходных', 0),
+(2423, 0, 'config', 'config_fax', '', 0),
+(2420, 0, 'config', 'config_email_wholesale', 'supply@soocasrussia.ru', 0),
+(2421, 0, 'config', 'config_email_cooperation', 'info@soocasrussia.ru', 0),
+(2419, 0, 'config', 'config_email_clients', 'customerinfo@soocasrussia.ru', 0),
+(2418, 0, 'config', 'config_email', 'titleby@yandex.by', 0),
+(2416, 0, 'config', 'config_address_ur', 'г. Санкт-Петербург, Лиговский проспект 50к13, помещение 97Б - главный офис', 0),
+(2417, 0, 'config', 'config_geocode', '', 0),
+(2415, 0, 'config', 'config_address', 'г. Санкт-Петербург ул. Пушкина 1', 0),
+(2414, 0, 'config', 'config_owner', 'Your Name', 0),
+(2413, 0, 'config', 'config_name', 'Your Store', 0),
+(2411, 0, 'config', 'config_theme', 'theme_default', 0),
+(2412, 0, 'config', 'config_layout_id', '4', 0),
+(2409, 0, 'config', 'config_meta_description', 'OPENCART.PRO Профессиональная система для онлайн торговли', 0),
+(2410, 0, 'config', 'config_meta_keyword', '', 0),
+(2408, 0, 'config', 'config_meta_title', 'OPENCART.PRO', 0),
+(2282, 0, 'theme_default', 'theme_default_directory', 'soocas', 0),
+(2305, 0, 'theme_default', 'theme_default_image_location_height', '50', 0);
 
 -- --------------------------------------------------------
 
@@ -3719,7 +3787,7 @@ CREATE TABLE `oc_url_alias` (
 --
 
 INSERT INTO `oc_url_alias` (`url_alias_id`, `query`, `keyword`, `seomanager`) VALUES
-(861, 'information_id=4', 'about_us', 0),
+(896, 'information_id=4', 'about_us', 0),
 (881, 'category_id=59', 'uhod-za-polostju-rta', 0),
 (882, 'category_id=60', 'uhod-za-volosami', 0),
 (883, 'category_id=61', 'jelektrobritvi', 0),
@@ -3728,9 +3796,7 @@ INSERT INTO `oc_url_alias` (`url_alias_id`, `query`, `keyword`, `seomanager`) VA
 (887, 'product_id=51', 'jelektricheskaja-zubnaja-shhetka-soocas-x3u', 0),
 (889, 'product_id=52', 'jelektrobritva-soocas-s5-4-v-1', 0),
 (890, 'product_id=53', 'fen-s-ionizatorom-soocas-h5', 0),
-(841, 'information_id=6', 'delivery', 0),
 (842, 'information_id=3', 'privacy', 0),
-(843, 'information_id=5', 'terms', 0),
 (862, 'common/home', '', 1),
 (863, 'information/contact', 'contacts', 1),
 (864, 'information/sitemap', 'sitemaps', 1),
@@ -9269,7 +9335,7 @@ ALTER TABLE `oc_banner`
 -- AUTO_INCREMENT для таблицы `oc_banner_image`
 --
 ALTER TABLE `oc_banner_image`
-  MODIFY `banner_image_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+  MODIFY `banner_image_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_benefit`
@@ -9293,7 +9359,7 @@ ALTER TABLE `oc_cart`
 -- AUTO_INCREMENT для таблицы `oc_category`
 --
 ALTER TABLE `oc_category`
-  MODIFY `category_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `category_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_country`
@@ -9455,19 +9521,19 @@ ALTER TABLE `oc_language`
 -- AUTO_INCREMENT для таблицы `oc_layout`
 --
 ALTER TABLE `oc_layout`
-  MODIFY `layout_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `layout_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_layout_module`
 --
 ALTER TABLE `oc_layout_module`
-  MODIFY `layout_module_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=181;
+  MODIFY `layout_module_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=196;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_layout_route`
 --
 ALTER TABLE `oc_layout_route`
-  MODIFY `layout_route_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `layout_route_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_location`
@@ -9503,7 +9569,7 @@ ALTER TABLE `oc_modification`
 -- AUTO_INCREMENT для таблицы `oc_module`
 --
 ALTER TABLE `oc_module`
-  MODIFY `module_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `module_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_option`
@@ -9581,7 +9647,7 @@ ALTER TABLE `oc_order_voucher`
 -- AUTO_INCREMENT для таблицы `oc_product`
 --
 ALTER TABLE `oc_product`
-  MODIFY `product_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `product_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_product_discount`
@@ -9617,7 +9683,7 @@ ALTER TABLE `oc_product_reward`
 -- AUTO_INCREMENT для таблицы `oc_product_special`
 --
 ALTER TABLE `oc_product_special`
-  MODIFY `product_special_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=441;
+  MODIFY `product_special_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=442;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_product_tab`
@@ -9677,7 +9743,7 @@ ALTER TABLE `oc_review_article`
 -- AUTO_INCREMENT для таблицы `oc_setting`
 --
 ALTER TABLE `oc_setting`
-  MODIFY `setting_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2156;
+  MODIFY `setting_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2510;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_sticker`
@@ -9737,7 +9803,7 @@ ALTER TABLE `oc_upload`
 -- AUTO_INCREMENT для таблицы `oc_url_alias`
 --
 ALTER TABLE `oc_url_alias`
-  MODIFY `url_alias_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=891;
+  MODIFY `url_alias_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=900;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_user`
