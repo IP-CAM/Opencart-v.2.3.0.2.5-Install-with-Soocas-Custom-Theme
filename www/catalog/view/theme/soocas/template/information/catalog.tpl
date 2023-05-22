@@ -27,6 +27,7 @@
       <?= $heading_title; ?>
     </h1>
 
+
     <ul class="product__list product__list_big-gap">
       <? foreach ($products as $product) { ?>
         <li class="product__item">
@@ -54,5 +55,6 @@
 </div>
 
 
+<?= $content_top; ?>
 <?= $content_bottom; ?>
 <?= $footer; ?>
