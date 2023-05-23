@@ -10,16 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 				if (scrolled > 153 && scrolled > scrollPrev) {
 					header.classList.add('header_part-out');
-				} 
+				}
 
-				if (scrolled < 153 ) {
+				if (scrolled < 153) {
 					header.classList.remove('header_part-out');
-				} 
-	
+				}
+
 				scrollPrev = scrolled;
 			})
 		}
-		
+
 		if (window.matchMedia("(max-width: 768px)").matches) {
 			window.addEventListener('scroll', () => {
 				let scrolled = window.pageYOffset;
@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
 					header.classList.add('header_part-out');
 				}
 
-				if (scrolled < 105 ) {
+				if (scrolled < 105) {
 					header.classList.remove('header_part-out');
 					header.classList.remove('header_out');
-				} 
-	
+				}
+
 				scrollPrev = scrolled;
 			})
 		}
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const nav = document.querySelector('.nav');
 		const navLinks = document.querySelectorAll('.nav__link');
 		const burger = document.querySelector('.burger');
-		
+
 		const toggleClasses = () => {
 			burger.classList.toggle('burger_open');
 			nav.classList.toggle('nav_open');
@@ -71,8 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			//проверка на наличие якорной ссылки
 			const menuActive = body.classList.contains('page_active-burger');
 			const firstIndex = link.getAttribute('href').indexOf('#') === 0;
-			
-			if (menuActive & firstIndex) toggleClasses();				
+
+			if (menuActive & firstIndex) toggleClasses();
 		}))
 	}
 
@@ -123,17 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			body.classList.toggle('page_active-search');
 		}
 
-		if (window.location.toString().indexOf('search') < 0) {
-			searchBtns.forEach(btn => btn.addEventListener('click', toggleClasses));
-			closeBtn.addEventListener('click', toggleClasses);
-			btn.addEventListener('click', toggleClasses);
-			cover.addEventListener('click', () => {
-				if (document.querySelector('.page_active-search')) toggleClasses();
-			})
-			links.forEach(link => link.addEventListener('click', toggleClasses));
-		} else {
-			return;
-		}
+		searchBtns.forEach(btn => btn.addEventListener('click', toggleClasses));
+		closeBtn.addEventListener('click', toggleClasses);
+		btn.addEventListener('click', toggleClasses);
+		cover.addEventListener('click', () => {
+			if (document.querySelector('.page_active-search')) toggleClasses();
+		})
+		links.forEach(link => link.addEventListener('click', toggleClasses));
 	}
 
 	toggleSearch();
@@ -150,13 +146,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			body.classList.toggle('page_active-form');
 		}
 
-		if(btnOpen) btnOpen.addEventListener('click', toggleClasses);
+		if (btnOpen) btnOpen.addEventListener('click', toggleClasses);
 
 		btnsClose[1].addEventListener('click', () => {
 			if (document.querySelector('.page_active-form')) toggleClasses();
 		})
 
-		if(btnSend) btnSend.addEventListener('click', toggleClasses);
+		if (btnSend) btnSend.addEventListener('click', toggleClasses);
 
 		cover.addEventListener('click', () => {
 			if (document.querySelector('.page_active-form')) toggleClasses();
@@ -177,13 +173,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			body.classList.toggle('page_active-successful');
 		}
 
-		if(btnOpen) btnOpen.addEventListener('click', toggleClasses);
+		if (btnOpen) btnOpen.addEventListener('click', toggleClasses);
 
 		btnsClose[2].addEventListener('click', () => {
 			if (document.querySelector('.page_active-successful')) toggleClasses();
 		})
 
-		if(btnReady) btnReady.addEventListener('click', toggleClasses);
+		if (btnReady) btnReady.addEventListener('click', toggleClasses);
 
 		cover.addEventListener('click', () => {
 			if (document.querySelector('.page_active-successful')) toggleClasses();
@@ -194,8 +190,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function checkboxColor() {
 		const checkboxList = document.querySelectorAll('.device__input');
-		
-		checkboxList.forEach(checkbox => checkbox.addEventListener('click', () => {		
+
+		checkboxList.forEach(checkbox => checkbox.addEventListener('click', () => {
 			checkboxList.forEach(checkbox => checkbox.checked = false);
 			checkbox.checked = true;
 		}))
@@ -210,26 +206,24 @@ document.addEventListener('DOMContentLoaded', () => {
 		btnsPlus.forEach(btn => btn.addEventListener("click", () => {
 			let input = btn.closest('.cart__amount').querySelector('.cart__input');
 
-			if(input.value >= 99) return;
+			if (input.value >= 99) return;
 			input.value = Number(input.value) + 1;
 		}))
 
 		btnsMinus.forEach(btn => btn.addEventListener("click", () => {
 			let input = btn.closest('.cart__amount').querySelector('.cart__input');
 
-			if(input.value <= 1) return;
+			if (input.value <= 1) return;
 			input.value = Number(input.value) - 1;
 		}))
 	}
 
 	countProducts();
 
-	function toggleImgModal() {
-		const listImages1 = document.querySelectorAll('.feedbacks__img');
-		const listImages2 = document.querySelectorAll('.img-big');
+	if (document.querySelector('.feedbacks__img') || document.querySelector('.img-big')) {
 		const imgWrap = document.querySelector('#img-modal');
 		const tegImg = document.querySelector('.image__photo');
-		
+
 		const toggleClasses = () => {
 			modalList[3].classList.toggle('modal_open-image');
 			imgWrap.classList.toggle('image_open');
@@ -238,13 +232,18 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		const getSrc = (e) => {
-			let src = e.target.src;
+			let src = e.target.getAttribute('data-zoom-image');
 			tegImg.src = src;
 			toggleClasses();
-		} 
+		}
 
-		listImages1.forEach(img => img.addEventListener("click", getSrc));
-		listImages2.forEach(img => img.addEventListener("click", getSrc));
+		if (document.querySelector('.feedbacks__img')) {
+			document.querySelectorAll('.feedbacks__img').forEach(img => img.addEventListener("click", getSrc));
+		}
+		
+		if (document.querySelector('.img-big')) {
+			document.querySelectorAll('.img-big').forEach(img => img.addEventListener("click", getSrc));
+		}
 
 		btnsClose[3].addEventListener('click', () => {
 			if (document.querySelector('.page_active-image')) toggleClasses();
@@ -255,93 +254,88 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
-	// toggleImgModal();
-
 	// Формы
-	function form() {
+	if (document.querySelector('#feedback-modal')) {
 		const modalForm = document.querySelector('#feedback-modal');
+		const form = document.querySelector('.form-id');
+		const allInputs = form.querySelectorAll('.form__input');
 
-		if (window.location.toString().indexOf('contacts') > 0 || window.location.toString().indexOf('order') > 0 || modalForm) {
+		//смещение label вверх при фокусе ------------------------------------------------
+		allInputs.forEach(input => input.onfocus = function () {
+			const id = this.id;
+			const label = form.querySelector(`[for=${id}]`);
 
-			const form = document.querySelector('.form-id');
-			const allInputs = form.querySelectorAll('.form__input');
+			label.classList.add('form__label_active');
+		});
 
-			//смещение label вверх при фокусе ------------------------------------------------
-			allInputs.forEach(input => input.onfocus = function() {
+		//смещение label обратно при переключении фокуса, если инпут пустой ----------------
+		allInputs.forEach(input => input.addEventListener('focusout', function () {
+			if (!this.value) {
 				const id = this.id;
 				const label = form.querySelector(`[for=${id}]`);
-		
-				label.classList.add('form__label_active');
-			});
-		
-			//смещение label обратно при переключении фокуса, если инпут пустой ----------------
-			allInputs.forEach(input => input.addEventListener('focusout', function () {
-				if (!this.value) {
-					const id = this.id;
-					const label = form.querySelector(`[for=${id}]`);
-		
-					label.classList.remove('form__label_active');
-				} 
-			}));
 
-			//обработка input[type= file] ------------------------------------------------------
-			const inputImage = document.querySelector('#forfile');
-			const preview = document.querySelector('#output');
-						
-			inputImage.addEventListener('change', () => {
-				uploadFile(inputImage.files[0]);
-				preview.addEventListener('DOMSubtreeModified', deletePhoto);
-			});
+				label.classList.remove('form__label_active');
+			}
+		}));
+	}
 
-			function uploadFile (file) {
-				//проверка типа
-				if (!['image/jpeg', 'image/jpg', 'image/png'].includes(file.type)) {
-					inputImage.value = '';
-					return;
-				}
+	if (document.querySelector('#forfile')) {
+		//обработка input[type= file] ------------------------------------------------------
+		const inputImage = document.querySelector('#forfile');
+		const preview = document.querySelector('#output');
 
-				//проверка размера (до 1мб)
-				if (file.size > 1024 * 1024) return;
+		inputImage.addEventListener('change', () => {
+			uploadFile(inputImage.files[0]);
+			preview.addEventListener('DOMSubtreeModified', deletePhoto);
+		});
 
-				//полученние и вставка изображения
-				let reader = new FileReader();
-				reader.onload = function(e) {
-					preview.innerHTML = `
-					<div class="form__img-wrap">
-						<img src="${e.target.result}" alt="photo" class="form__img">
-					</div>
-					<button type="button" class="form__delete">
-						<svg viewBox="0 0 16 16" class="form__icon">
-							<path d="M13.25 2H10.5V1.5C10.5 0.671562 9.82844 0 9 0H7C6.17156 0 5.5 0.671562 5.5 1.5V2H2.75C2.05966 2 1.5 2.55966 1.5 3.25V4.25C1.5 4.52616 1.72384 4.75 2 4.75H14C14.2762 4.75 14.5 4.52616 14.5 4.25V3.25C14.5 2.55966 13.9403 2 13.25 2ZM6.5 1.5C6.5 1.22438 6.72437 1 7 1H9C9.27563 1 9.5 1.22438 9.5 1.5V2H6.5V1.5Z"/>
-							<path d="M2.44921 5.75C2.35999 5.75 2.2889 5.82456 2.29315 5.91369L2.70565 14.5712C2.74377 15.3725 3.4019 16 4.20377 16H11.7969C12.5988 16 13.2569 15.3725 13.295 14.5712L13.7075 5.91369C13.7118 5.82456 13.6407 5.75 13.5515 5.75H2.44921ZM10.0003 7C10.0003 6.72375 10.2241 6.5 10.5003 6.5C10.7766 6.5 11.0003 6.72375 11.0003 7V13.5C11.0003 13.7762 10.7766 14 10.5003 14C10.2241 14 10.0003 13.7762 10.0003 13.5V7ZM7.50034 7C7.50034 6.72375 7.72409 6.5 8.00034 6.5C8.27659 6.5 8.50034 6.72375 8.50034 7V13.5C8.50034 13.7762 8.27659 14 8.00034 14C7.72409 14 7.50034 13.7762 7.50034 13.5V7ZM5.00034 7C5.00034 6.72375 5.22409 6.5 5.50034 6.5C5.77659 6.5 6.00034 6.72375 6.00034 7V13.5C6.00034 13.7762 5.77659 14 5.50034 14C5.22409 14 5.00034 13.7762 5.00034 13.5V7Z"/>
-						</svg>
-					</button>
-					`;
-				}
-				reader.readAsDataURL(file);
+		function uploadFile(file) {
+			//проверка типа
+			if (!['image/jpeg', 'image/jpg', 'image/png'].includes(file.type)) {
+				inputImage.value = '';
+				return;
 			}
 
-			//удаление изображения
-			function deletePhoto() {
-				const btnDelete = document.querySelector('.form__delete');
+			//проверка размера (до 1мб)
+			if (file.size > 1024 * 1024) return;
 
-				if(btnDelete) {
-					btnDelete.addEventListener('click', () => {
-						preview.innerHTML = '';
-						inputImage.value = '';
-					})
-				}
+			//полученние и вставка изображения
+			let reader = new FileReader();
+			reader.onload = function (e) {
+				preview.innerHTML = `
+				<div class="form__img-wrap">
+					<img src="${e.target.result}" alt="photo" class="form__img">
+				</div>
+				<button type="button" class="form__delete">
+					<svg viewBox="0 0 16 16" class="form__icon">
+						<path d="M13.25 2H10.5V1.5C10.5 0.671562 9.82844 0 9 0H7C6.17156 0 5.5 0.671562 5.5 1.5V2H2.75C2.05966 2 1.5 2.55966 1.5 3.25V4.25C1.5 4.52616 1.72384 4.75 2 4.75H14C14.2762 4.75 14.5 4.52616 14.5 4.25V3.25C14.5 2.55966 13.9403 2 13.25 2ZM6.5 1.5C6.5 1.22438 6.72437 1 7 1H9C9.27563 1 9.5 1.22438 9.5 1.5V2H6.5V1.5Z"/>
+						<path d="M2.44921 5.75C2.35999 5.75 2.2889 5.82456 2.29315 5.91369L2.70565 14.5712C2.74377 15.3725 3.4019 16 4.20377 16H11.7969C12.5988 16 13.2569 15.3725 13.295 14.5712L13.7075 5.91369C13.7118 5.82456 13.6407 5.75 13.5515 5.75H2.44921ZM10.0003 7C10.0003 6.72375 10.2241 6.5 10.5003 6.5C10.7766 6.5 11.0003 6.72375 11.0003 7V13.5C11.0003 13.7762 10.7766 14 10.5003 14C10.2241 14 10.0003 13.7762 10.0003 13.5V7ZM7.50034 7C7.50034 6.72375 7.72409 6.5 8.00034 6.5C8.27659 6.5 8.50034 6.72375 8.50034 7V13.5C8.50034 13.7762 8.27659 14 8.00034 14C7.72409 14 7.50034 13.7762 7.50034 13.5V7ZM5.00034 7C5.00034 6.72375 5.22409 6.5 5.50034 6.5C5.77659 6.5 6.00034 6.72375 6.00034 7V13.5C6.00034 13.7762 5.77659 14 5.50034 14C5.22409 14 5.00034 13.7762 5.00034 13.5V7Z"/>
+					</svg>
+				</button>
+				`;
+			}
+			reader.readAsDataURL(file);
+		}
+
+		//удаление изображения
+		function deletePhoto() {
+			const btnDelete = document.querySelector('.form__delete');
+
+			if (btnDelete) {
+				btnDelete.addEventListener('click', () => {
+					preview.innerHTML = '';
+					inputImage.value = '';
+				})
 			}
 		}
 	}
 
-	form();
 
 	// Слайдеры
 	const mainSlider = new Swiper('.slider', {
 		loop: true,
 		grabCursor: false,
-	
+
 		breakpoints: {
 			320: {
 				allowTouchMove: true,
@@ -350,26 +344,26 @@ document.addEventListener('DOMContentLoaded', () => {
 				allowTouchMove: false,
 			}
 		},
-	
+
 		autoplay: {
 			delay: 10000,
 		},
-	
+
 		pagination: {
-			  el: '.swiper-pagination',
+			el: '.swiper-pagination',
 		},
-	
+
 		navigation: {
-			  nextEl: '.swiper-button-next',
-			  prevEl: '.swiper-button-prev',
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
 		},
 	});
-	
+
 	const galleryInstagram = new Swiper('.instagram__gallery', {
 		slidesPerView: "auto",
 		freeMode: true,
 		spaceBetween: 20,
-	
+
 		breakpoints: {
 			320: {
 				grabCursor: true,
@@ -381,13 +375,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		},
 	});
-	
+
 	const galleryThumbs = new Swiper(".device__thumbs", {
 		slidesPerView: 4,
 		freeMode: true,
 		watchSlidesProgress: true,
 		grabCursor: true,
-	
+
 		breakpoints: {
 			0: {
 				direction: "vertical",
@@ -409,17 +403,17 @@ document.addEventListener('DOMContentLoaded', () => {
 			swiper: galleryThumbs,
 		},
 	});
-	
+
 	const galleryFeedback = new Swiper('.feedbacks__gallery', {
 		slidesPerView: "auto",
 		loop: false,
 		spaceBetween: 18,
 		grabCursor: true,
 		allowTouchMove: true,
-	
+
 		navigation: {
 			nextEl: '.feedbacks__button-next',
 			prevEl: '.feedbacks__button-pev',
-		  },
+		},
 	});
 })

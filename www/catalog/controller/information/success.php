@@ -4,48 +4,15 @@
 // *	@source		See SOURCE.txt for source and other copyright.
 // *	@license	GNU General Public License version 3; see LICENSE.txt
 
-class ControllerInformationCatalog extends Controller
+class ControllerInformationSuccess extends Controller
 {
 	private $error = array();
 
 	public function index()
 	{
-		$this->load->language('information/catalog');
-
-		$this->load->model('catalog/product');
-		$this->load->model('tool/image');
+		$this->load->language('information/contact');
 
 		$this->document->setTitle($this->language->get('heading_title'));
-
-		// if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
-		// 	$mail = new Mail();
-		// 	$mail->protocol = $this->config->get('config_mail_protocol');
-		// 	$mail->parameter = $this->config->get('config_mail_parameter');
-		// 	$mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
-		// 	$mail->smtp_username = $this->config->get('config_mail_smtp_username');
-		// 	$mail->smtp_password = html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8');
-		// 	$mail->smtp_port = $this->config->get('config_mail_smtp_port');
-		// 	$mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
-
-		// 	$mail->setTo($this->config->get('config_email'));
-		// 	$mail->setFrom($this->request->post['email']);
-		// 	$mail->setSender(html_entity_decode($this->request->post['name'], ENT_QUOTES, 'UTF-8'));
-		// 	$mail->setSubject(html_entity_decode(sprintf($this->language->get('email_subject'), $this->request->post['name']), ENT_QUOTES, 'UTF-8'));
-		// 	$mail->setText($this->request->post['enquiry']);
-		// 	$mail->send();
-
-		// 	// Send to additional alert emails if new account email is enabled
-		// 	$emails = explode(',', $this->config->get('config_mail_alert'));
-
-		// 	foreach ($emails as $email) {
-		// 		if (utf8_strlen($email) > 0 && preg_match('/^[^\@]+@.*.[a-z]{2,15}$/i', $email)) {
-		// 			$mail->setTo($email);
-		// 			$mail->send();
-		// 		}
-		// 	}
-
-		// 	$this->response->redirect($this->url->link('information/catalog/success'));
-		// }
 
 		$data['breadcrumbs'] = array();
 
@@ -56,7 +23,7 @@ class ControllerInformationCatalog extends Controller
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('information/catalog'),
+			'href' => $this->url->link('information/success'),
 			'last' => true,
 		);
 
@@ -64,7 +31,7 @@ class ControllerInformationCatalog extends Controller
 
 		// $data['text_location'] = $this->language->get('text_location');
 		// $data['text_store'] = $this->language->get('text_store');
-		// $data['text_catalog'] = $this->language->get('text_catalog');
+		// $data['text_contact'] = $this->language->get('text_contact');
 		// $data['text_address'] = $this->language->get('text_address');
 		// $data['text_telephone'] = $this->language->get('text_telephone');
 		// $data['text_fax'] = $this->language->get('text_fax');
@@ -97,7 +64,7 @@ class ControllerInformationCatalog extends Controller
 
 		// $data['button_submit'] = $this->language->get('button_submit');
 
-		// $data['action'] = $this->url->link('information/catalog', '', true);
+		// $data['action'] = $this->url->link('information/contact', '', true);
 
 		// $this->load->model('tool/image');
 
@@ -111,93 +78,18 @@ class ControllerInformationCatalog extends Controller
 		// $data['address'] = nl2br($this->config->get('config_address'));
 		// $data['geocode'] = $this->config->get('config_geocode');
 		// $data['geocode_hl'] = $this->config->get('config_language');
-		$data['telephone'] = $this->config->get('config_telephone');
+		// $data['telephone'] = $this->config->get('config_telephone');
 		// $data['fax'] = $this->config->get('config_fax');
-		$data['open'] = nl2br($this->config->get('config_open'));
+		// $data['open'] = nl2br($this->config->get('config_open'));
 		// $data['comment'] = $this->config->get('config_comment');
-		$data['link_instagram'] = $this->config->get('config_instagram');
-		$data['link_telegram'] = $this->config->get('config_telegram');
-		$data['link_vk'] = $this->config->get('config_vk');
+		// $data['link_instagram'] = $this->config->get('config_instagram');
+		// $data['link_telegram'] = $this->config->get('config_telegram');
+		// $data['link_vk'] = $this->config->get('config_vk');
 
-		$data['legal_address'] = $this->config->get('config_address_ur');
-		$data['email_clients'] = $this->config->get('config_email_clients');
-		$data['email_wholesale'] = $this->config->get('config_email_wholesale');
-		$data['email_cooperation'] = $this->config->get('config_email_cooperation');
-
-
-		$data['products'] = array();
-
-		$limit = $this->config->get($this->config->get('config_theme') . '_product_limit');
-		$url = '';
-
-		if (isset($this->request->get['page'])) {
-			$page = $this->request->get['page'];
-			$this->document->setRobots('noindex,follow');
-		} else {
-			$page = 1;
-		}
-
-		if (isset($this->request->get['sort'])) {
-			$sort = $this->request->get['sort'];
-			$this->document->setRobots('noindex,follow');
-		} else {
-			$sort = 'p.sort_order';
-		}
-
-		if (isset($this->request->get['order'])) {
-			$order = $this->request->get['order'];
-		} else {
-			$order = 'ASC';
-		}
-
-		$filter_data = array(
-			'sort'               => $sort,
-			'order'              => $order,
-			'start'              => ($page - 1) * $limit,
-			'limit'              => $limit,
-		);
-
-		$products = $this->model_catalog_product->getProducts($filter_data);
-		$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
-
-		foreach ($products as $result) {
-			if ($result['image']) {
-				$image = $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
-			} else {
-				$image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
-			}
-
-			if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
-				$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
-			} else {
-				$price = '';
-			}
-
-			if ((float)$result['special']) {
-				$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
-			} else {
-				$special = '';
-			}
-
-			$data['products'][] = array(
-				'product_id'  => $result['product_id'],
-				'thumb'       => $image,
-				'price'       => $price,
-				'special'     => $special,
-				'name'        => $result['name'],
-				'href'        => $this->url->link('product/product', '&product_id=' . $result['product_id'] . $url)
-			);
-		}
-
-		$pagination = new PaginationCatalog();
-		$pagination->total = $product_total;
-		$pagination->page = $page;
-		$pagination->limit = $limit;
-		$pagination->url = $this->url->link('information/catalog', $url . '&page={page}');
-
-		$data['pagination'] = $pagination->render();
-
-		$data['results'] = sprintf($this->language->get('text_pagination'), ($product_total) ? (($page - 1) * $limit) + 1 : 0, ((($page - 1) * $limit) > ($product_total - $limit)) ? $product_total : ((($page - 1) * $limit) + $limit), $product_total, ceil($product_total / $limit));
+		// $data['legal_address'] = $this->config->get('config_address_ur');
+		// $data['email_clients'] = $this->config->get('config_email_clients');
+		// $data['email_wholesale'] = $this->config->get('config_email_wholesale');
+		// $data['email_cooperation'] = $this->config->get('config_email_cooperation');
 
 		// $data['locations'] = array();
 
@@ -246,7 +138,7 @@ class ControllerInformationCatalog extends Controller
 		// }
 
 		// // Captcha
-		// if ($this->config->get($this->config->get('config_captcha') . '_status') && in_array('catalog', (array)$this->config->get('config_captcha_page'))) {
+		// if ($this->config->get($this->config->get('config_captcha') . '_status') && in_array('contact', (array)$this->config->get('config_captcha_page'))) {
 		// 	$data['captcha'] = $this->load->controller('extension/captcha/' . $this->config->get('config_captcha'), $this->error);
 		// } else {
 		// 	$data['captcha'] = '';
@@ -254,12 +146,12 @@ class ControllerInformationCatalog extends Controller
 
 		// $data['column_left'] = $this->load->controller('common/column_left');
 		// $data['column_right'] = $this->load->controller('common/column_right');
-		$data['content_top'] = $this->load->controller('common/content_top');
-		$data['content_bottom'] = $this->load->controller('common/content_bottom');
+		// $data['content_top'] = $this->load->controller('common/content_top');
+		// $data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 
-		$this->response->setOutput($this->load->view('information/catalog', $data));
+		$this->response->setOutput($this->load->view('information/success', $data));
 	}
 
 	// protected function validate() {
@@ -276,7 +168,7 @@ class ControllerInformationCatalog extends Controller
 	// 	}
 
 	// 	// Captcha
-	// 	if ($this->config->get($this->config->get('config_captcha') . '_status') && in_array('catalog', (array)$this->config->get('config_captcha_page'))) {
+	// 	if ($this->config->get($this->config->get('config_captcha') . '_status') && in_array('contact', (array)$this->config->get('config_captcha_page'))) {
 	// 		$captcha = $this->load->controller('extension/captcha/' . $this->config->get('config_captcha') . '/validate');
 
 	// 		if ($captcha) {
@@ -288,7 +180,7 @@ class ControllerInformationCatalog extends Controller
 	// }
 
 	// public function success() {
-	// 	$this->load->language('information/catalog');
+	// 	$this->load->language('information/contact');
 
 	// 	$this->document->setTitle($this->language->get('heading_title'));
 
@@ -301,7 +193,7 @@ class ControllerInformationCatalog extends Controller
 
 	// 	$data['breadcrumbs'][] = array(
 	// 		'text' => $this->language->get('heading_title'),
-	// 		'href' => $this->url->link('information/catalog')
+	// 		'href' => $this->url->link('information/contact')
 	// 	);
 
 	// 	$data['heading_title'] = $this->language->get('heading_title');

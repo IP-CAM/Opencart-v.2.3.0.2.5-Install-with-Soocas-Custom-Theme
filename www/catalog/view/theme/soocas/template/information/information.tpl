@@ -25,7 +25,9 @@
     </nav>
 
     <article class="info__description">
-      <h2 class="info__title-h2">О нас</h2>
+      <h1 class="info__title-h2">
+        <?= $meta_h1; ?>
+      </h1>
       <p class="info__text">
         <?= $description; ?>
       </p>

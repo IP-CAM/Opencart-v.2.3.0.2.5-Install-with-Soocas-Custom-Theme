@@ -82,22 +82,23 @@
 
       <div class="contacts__right">
         <div class="form">
-          <form action="#" method="POST" class="form-id">
+          <form method="POST" class="form-id" id="send-form">
             <h3 class="title-h3 form__title-3">Форма обратной связи</h3>
+            <input type="hidden" name="email_subject" value="Обратная связь">
 
             <div class="form__item form__item_big-margin">
               <label for="forName" class="form__label">Имя</label>
-              <input type="text" id="forName" class="form__input" name="name">
+              <input type="text" id="forName" class="form__input" name="Имя">
             </div>
 
             <div class="form__item form__item_big-margin">
               <label for="forEmail" class="form__label">Email *</label>
-              <input type="text" id="forEmail" class="form__input" name="email" required="">
+              <input type="email" id="forEmail" class="form__input" name="E-mail" required minlength="5">
             </div>
 
             <div class="form__item form__item_big-margin">
               <label for="forMessage" class="form__label form__label_top">Сообщение *</label>
-              <textarea id="forMessage" class="form__input form__input_big" name="message" required=""></textarea>
+              <textarea id="forMessage" class="form__input form__input_big" name="Комментарий" required></textarea>
             </div>
 
             <div class="form__wrap">

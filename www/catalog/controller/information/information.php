@@ -50,6 +50,12 @@ class ControllerInformationInformation extends Controller
 
 			$data['description'] = html_entity_decode($information_info['description'], ENT_QUOTES, 'UTF-8');
 
+			if ($information_info['meta_h1']) {
+				$data['meta_h1'] = $information_info['meta_h1'];
+			} else {
+				$data['meta_h1'] = $information_info['title'];
+			}
+
 			$data['continue'] = $this->url->link('common/home');
 
 			$data['column_left'] = $this->load->controller('common/column_left');

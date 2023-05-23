@@ -40,7 +40,13 @@
                 <?= $product['name']; ?>
               </p>
               <span class="product__price">
-                <?= $product['tax']; ?>
+                <?
+                  if (!$product['special']) {
+                    echo $product['price'];
+                  } else {
+                    echo $product['special'];
+                  }
+                ?>
               </span>
             </div>
           </a>

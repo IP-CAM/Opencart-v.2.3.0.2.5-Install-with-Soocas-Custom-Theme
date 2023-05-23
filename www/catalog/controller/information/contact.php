@@ -4,43 +4,15 @@
 // *	@source		See SOURCE.txt for source and other copyright.
 // *	@license	GNU General Public License version 3; see LICENSE.txt
 
-class ControllerInformationContact extends Controller {
+class ControllerInformationContact extends Controller
+{
 	private $error = array();
 
-	public function index() {
+	public function index()
+	{
 		$this->load->language('information/contact');
 
 		$this->document->setTitle($this->language->get('heading_title'));
-
-		// if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
-		// 	$mail = new Mail();
-		// 	$mail->protocol = $this->config->get('config_mail_protocol');
-		// 	$mail->parameter = $this->config->get('config_mail_parameter');
-		// 	$mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
-		// 	$mail->smtp_username = $this->config->get('config_mail_smtp_username');
-		// 	$mail->smtp_password = html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8');
-		// 	$mail->smtp_port = $this->config->get('config_mail_smtp_port');
-		// 	$mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
-
-		// 	$mail->setTo($this->config->get('config_email'));
-		// 	$mail->setFrom($this->request->post['email']);
-		// 	$mail->setSender(html_entity_decode($this->request->post['name'], ENT_QUOTES, 'UTF-8'));
-		// 	$mail->setSubject(html_entity_decode(sprintf($this->language->get('email_subject'), $this->request->post['name']), ENT_QUOTES, 'UTF-8'));
-		// 	$mail->setText($this->request->post['enquiry']);
-		// 	$mail->send();
-			
-		// 	// Send to additional alert emails if new account email is enabled
-		// 	$emails = explode(',', $this->config->get('config_mail_alert'));
-
-		// 	foreach ($emails as $email) {
-		// 		if (utf8_strlen($email) > 0 && preg_match('/^[^\@]+@.*.[a-z]{2,15}$/i', $email)) {
-		// 			$mail->setTo($email);
-		// 			$mail->send();
-		// 		}
-		// 	}
-
-		// 	$this->response->redirect($this->url->link('information/contact/success'));
-		// }
 
 		$data['breadcrumbs'] = array();
 
@@ -180,6 +152,61 @@ class ControllerInformationContact extends Controller {
 		$data['header'] = $this->load->controller('common/header');
 
 		$this->response->setOutput($this->load->view('information/contact', $data));
+	}
+
+	public function sendMail()
+	{
+		$json = array();
+
+		if (($this->request->server['REQUEST_METHOD'] == 'POST')) {
+			$mail = new Mail();
+			$mail->protocol = $this->config->get('config_mail_protocol');
+			$mail->parameter = $this->config->get('config_mail_parameter');
+			$mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
+			$mail->smtp_username = $this->config->get('config_mail_smtp_username');
+			$mail->smtp_password = html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8');
+			$mail->smtp_port = $this->config->get('config_mail_smtp_port');
+			$mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
+
+
+			$body = '';
+			$c = true;
+
+			foreach ($this->request->post as $key => $value) {
+				if ($value != "" && $key != "email_subject") {
+					$body .= "
+						" . (($c = !$c) ? '<tr>' : '<tr style="background-color: #f8f8f8;">') . "
+								<td style='padding: 10px; border: #e9e9e9 1px solid;'><b>" . str_replace('_', ' ', $key) . "</b></td>
+								<td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
+						</tr>
+						";
+				}
+			}
+
+			$body = "<table style='width: 100%;'>$body</table>";
+
+
+			$mail->setTo($this->config->get('config_email'));
+			$mail->setFrom($this->config->get('config_email'));
+			$mail->setSender(html_entity_decode($this->config->get('config_name'), ENT_QUOTES, 'UTF-8'));
+			$mail->setSubject(html_entity_decode($this->request->post['email_subject'], ENT_QUOTES, 'UTF-8'));
+			$mail->setHtml($body);
+			$mail->send();
+
+			// Send to additional alert emails if new account email is enabled
+			$emails = explode(',', $this->config->get('config_alert_email'));
+
+			foreach ($emails as $email) {
+				if (utf8_strlen($email) > 0 && preg_match('/^[^\@]+@.*.[a-z]{2,15}$/i', $email)) {
+					$mail->setTo($email);
+					$mail->send();
+				}
+			}
+			$json['success'] = $this->url->link('information/success');
+		}
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
 	}
 
 	// protected function validate() {
