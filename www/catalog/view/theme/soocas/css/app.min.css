@@ -1156,7 +1156,8 @@ button.swiper-pagination-bullet {
   max-height: 100%;
   max-width: 100%;
   -o-object-fit: contain;
-  object-fit: contain
+  object-fit: contain;
+  object-position: center;
 }
 
 .swiper-slide-zoomed {
@@ -2449,7 +2450,7 @@ button.swiper-pagination-bullet {
   font-style: normal;
   font-weight: 400;
   line-height: 180%;
-  padding: 20px 20px 30px
+  padding: 20px 20px 0px
 }
 
 .device__item {
@@ -2542,17 +2543,19 @@ button.swiper-pagination-bullet {
   -ms-grid-row: 1;
   grid-row: 1/2;
   justify-content: center;
-  padding: 20px
+  padding: 20px;
+  margin-top: 15px;
 }
 
 .device__left {
   -webkit-box-orient: vertical;
-  border-right: 1px solid rgba(0, 0, 0, .05);
+  /* border-right: 1px solid rgba(0, 0, 0, .05); */
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 10px;
   padding-right: 30px;
-  width: 50%
+  /* width: 50% */
+  width: 100%;
 }
 
 .device__left, .device__price-wrap {
@@ -2861,7 +2864,7 @@ button.swiper-pagination-bullet {
   }
 
   .device__description {
-    padding: 20px 0
+    padding: 20px 0 0
   }
 
   .device__price {
@@ -2872,9 +2875,9 @@ button.swiper-pagination-bullet {
   }
 
   .device__left {
-    border-bottom: 1px solid rgba(0, 0, 0, .05);
+    /* border-bottom: 1px solid rgba(0, 0, 0, .05); */
     border-right: none;
-    padding-bottom: 15px;
+    /* padding-bottom: 15px; */
     padding-right: 0
   }
 

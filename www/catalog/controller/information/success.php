@@ -4,7 +4,7 @@
 // *	@source		See SOURCE.txt for source and other copyright.
 // *	@license	GNU General Public License version 3; see LICENSE.txt
 
-class ControllerInformationContact extends Controller
+class ControllerInformationSuccess extends Controller
 {
 	private $error = array();
 
@@ -23,11 +23,11 @@ class ControllerInformationContact extends Controller
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('information/contact'),
+			'href' => $this->url->link('information/success'),
 			'last' => true,
 		);
 
-		// $data['heading_title'] = $this->language->get('heading_title');
+		$data['heading_title'] = $this->language->get('heading_title');
 
 		// $data['text_location'] = $this->language->get('text_location');
 		// $data['text_store'] = $this->language->get('text_store');
@@ -78,18 +78,18 @@ class ControllerInformationContact extends Controller
 		// $data['address'] = nl2br($this->config->get('config_address'));
 		// $data['geocode'] = $this->config->get('config_geocode');
 		// $data['geocode_hl'] = $this->config->get('config_language');
-		$data['telephone'] = $this->config->get('config_telephone');
+		// $data['telephone'] = $this->config->get('config_telephone');
 		// $data['fax'] = $this->config->get('config_fax');
-		$data['open'] = nl2br($this->config->get('config_open'));
+		// $data['open'] = nl2br($this->config->get('config_open'));
 		// $data['comment'] = $this->config->get('config_comment');
-		$data['link_instagram'] = $this->config->get('config_instagram');
-		$data['link_telegram'] = $this->config->get('config_telegram');
-		$data['link_vk'] = $this->config->get('config_vk');
+		// $data['link_instagram'] = $this->config->get('config_instagram');
+		// $data['link_telegram'] = $this->config->get('config_telegram');
+		// $data['link_vk'] = $this->config->get('config_vk');
 
-		$data['legal_address'] = $this->config->get('config_address_ur');
-		$data['email_clients'] = $this->config->get('config_email_clients');
-		$data['email_wholesale'] = $this->config->get('config_email_wholesale');
-		$data['email_cooperation'] = $this->config->get('config_email_cooperation');
+		// $data['legal_address'] = $this->config->get('config_address_ur');
+		// $data['email_clients'] = $this->config->get('config_email_clients');
+		// $data['email_wholesale'] = $this->config->get('config_email_wholesale');
+		// $data['email_cooperation'] = $this->config->get('config_email_cooperation');
 
 		// $data['locations'] = array();
 
@@ -147,66 +147,11 @@ class ControllerInformationContact extends Controller
 		// $data['column_left'] = $this->load->controller('common/column_left');
 		// $data['column_right'] = $this->load->controller('common/column_right');
 		// $data['content_top'] = $this->load->controller('common/content_top');
-		$data['content_bottom'] = $this->load->controller('common/content_bottom');
+		// $data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 
-		$this->response->setOutput($this->load->view('information/contact', $data));
-	}
-
-	public function sendMail()
-	{
-		$json = array();
-
-		if (($this->request->server['REQUEST_METHOD'] == 'POST')) {
-			$mail = new Mail();
-			$mail->protocol = $this->config->get('config_mail_protocol');
-			$mail->parameter = $this->config->get('config_mail_parameter');
-			$mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
-			$mail->smtp_username = $this->config->get('config_mail_smtp_username');
-			$mail->smtp_password = html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8');
-			$mail->smtp_port = $this->config->get('config_mail_smtp_port');
-			$mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
-
-
-			$body = '';
-			$c = true;
-
-			foreach ($this->request->post as $key => $value) {
-				if ($value != "" && $key != "email_subject") {
-					$body .= "
-						" . (($c = !$c) ? '<tr>' : '<tr style="background-color: #f8f8f8;">') . "
-								<td style='padding: 10px; border: #e9e9e9 1px solid;'><b>" . str_replace('_', ' ', $key) . "</b></td>
-								<td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
-						</tr>
-						";
-				}
-			}
-
-			$body = "<table style='width: 100%;'>$body</table>";
-
-
-			$mail->setTo($this->config->get('config_email'));
-			$mail->setFrom($this->config->get('config_email'));
-			$mail->setSender(html_entity_decode($this->config->get('config_name'), ENT_QUOTES, 'UTF-8'));
-			$mail->setSubject(html_entity_decode($this->request->post['email_subject'], ENT_QUOTES, 'UTF-8'));
-			$mail->setHtml($body);
-			$mail->send();
-
-			// Send to additional alert emails if new account email is enabled
-			$emails = explode(',', $this->config->get('config_alert_email'));
-
-			foreach ($emails as $email) {
-				if (utf8_strlen($email) > 0 && preg_match('/^[^\@]+@.*.[a-z]{2,15}$/i', $email)) {
-					$mail->setTo($email);
-					$mail->send();
-				}
-			}
-			$json['success'] = $this->url->link('information/success');
-		}
-
-		$this->response->addHeader('Content-Type: application/json');
-		$this->response->setOutput(json_encode($json));
+		$this->response->setOutput($this->load->view('information/success', $data));
 	}
 
 	// protected function validate() {

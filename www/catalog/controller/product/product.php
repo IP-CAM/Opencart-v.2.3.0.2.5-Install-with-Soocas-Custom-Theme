@@ -40,7 +40,8 @@ class ControllerProductProduct extends Controller
 				if ($category_info) {
 					$data['breadcrumbs'][] = array(
 						'text' => $category_info['name'],
-						'href' => $this->url->link('product/category', 'path=' . $path)
+						'href' => $this->url->link('product/category', 'path=' . $path),
+						'last' => true
 					);
 				}
 			}
@@ -218,7 +219,8 @@ class ControllerProductProduct extends Controller
 
 			$data['breadcrumbs'][] = array(
 				'text' => $product_info['name'],
-				'href' => $this->url->link('product/product', $url . '&product_id=' . $this->request->get['product_id'])
+				'href' => $this->url->link('product/product', $url . '&product_id=' . $this->request->get['product_id']),
+				'last' => true
 			);
 
 			if ($product_info['meta_title']) {
@@ -304,13 +306,19 @@ class ControllerProductProduct extends Controller
 			$this->load->model('tool/image');
 
 			if ($product_info['image']) {
-				$data['popup'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height'));
+				$data['image'] = $this->model_tool_image->onesize($product_info['image'], 600);
+			} else {
+				$data['image'] = '';
+			}
+
+			if ($product_info['image']) {
+				$data['popup'] = $this->model_tool_image->onesize($product_info['image'], 1000);
 			} else {
 				$data['popup'] = '';
 			}
 
 			if ($product_info['image']) {
-				$data['thumb'] = $this->model_tool_image->resize($product_info['image'], $this->config->get($this->config->get('config_theme') . '_image_thumb_width'), $this->config->get($this->config->get('config_theme') . '_image_thumb_height'));
+				$data['thumb'] = $this->model_tool_image->onesize($product_info['image'], 110);
 			} else {
 				$data['thumb'] = '';
 			}
@@ -321,8 +329,9 @@ class ControllerProductProduct extends Controller
 
 			foreach ($results as $result) {
 				$data['images'][] = array(
-					'popup' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height')),
-					'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_additional_width'), $this->config->get($this->config->get('config_theme') . '_image_additional_height'))
+					'image' => $this->model_tool_image->onesize($result['image'], 600),
+					'popup' => $this->model_tool_image->onesize($result['image'], 1000),
+					'thumb' => $this->model_tool_image->onesize($result['image'], 110)
 				);
 			}
 
@@ -618,7 +627,8 @@ class ControllerProductProduct extends Controller
 
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('text_error'),
-				'href' => $this->url->link('product/product', $url . '&product_id=' . $product_id)
+				'href' => $this->url->link('product/product', $url . '&product_id=' . $product_id),
+				'last' => true
 			);
 
 			$this->document->setTitle($this->language->get('text_error'));
