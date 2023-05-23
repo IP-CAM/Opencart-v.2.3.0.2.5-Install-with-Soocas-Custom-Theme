@@ -829,31 +829,33 @@ class ControllerProductProduct extends Controller
 
 			foreach ($results as $result) {
 
-				if (isset($result['image']) && $result['image']) {
-					$image = $this->model_tool_image->onesize($result['image'], 100);
-				} else {
-					$image = '';
-				}
+				if (count($json) < 8) {
+					if (isset($result['image']) && $result['image']) {
+						$image = $this->model_tool_image->onesize($result['image'], 100);
+					} else {
+						$image = '';
+					}
 
-				if ($result['special']) {
-					$special = $this->currency->format($result['special'], $this->session->data['currency']);
-				} else {
-					$special = ''; 
-				}
+					if ($result['special']) {
+						$special = $this->currency->format($result['special'], $this->session->data['currency']);
+					} else {
+						$special = '';
+					}
 
-				if ($result['price']) {
-					$price = $this->currency->format($result['price'], $this->session->data['currency']);
-				} else {
-					$price = '';
-				}
+					if ($result['price']) {
+						$price = $this->currency->format($result['price'], $this->session->data['currency']);
+					} else {
+						$price = '';
+					}
 
-				$json[] = array(
-					'name' => strip_tags(html_entity_decode($result['name'], ENT_QUOTES, 'UTF-8')),
-					'price' => $price,
-					'special' => $special,
-					'image' => $image,
-					'link' => str_replace('&amp;', '&', $this->url->link('product/product', 'product_id=' . $result['product_id'])),
-				);
+					$json[] = array(
+						'name' => strip_tags(html_entity_decode($result['name'], ENT_QUOTES, 'UTF-8')),
+						'price' => $price,
+						'special' => $special,
+						'image' => $image,
+						'link' => str_replace('&amp;', '&', $this->url->link('product/product', 'product_id=' . $result['product_id'])),
+					);
+				}
 			}
 		}
 

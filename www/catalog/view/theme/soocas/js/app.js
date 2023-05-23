@@ -10,16 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 				if (scrolled > 153 && scrolled > scrollPrev) {
 					header.classList.add('header_part-out');
-				} 
+				}
 
-				if (scrolled < 153 ) {
+				if (scrolled < 153) {
 					header.classList.remove('header_part-out');
-				} 
-	
+				}
+
 				scrollPrev = scrolled;
 			})
 		}
-		
+
 		if (window.matchMedia("(max-width: 768px)").matches) {
 			window.addEventListener('scroll', () => {
 				let scrolled = window.pageYOffset;
@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
 					header.classList.add('header_part-out');
 				}
 
-				if (scrolled < 105 ) {
+				if (scrolled < 105) {
 					header.classList.remove('header_part-out');
 					header.classList.remove('header_out');
-				} 
-	
+				}
+
 				scrollPrev = scrolled;
 			})
 		}
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const nav = document.querySelector('.nav');
 		const navLinks = document.querySelectorAll('.nav__link');
 		const burger = document.querySelector('.burger');
-		
+
 		const toggleClasses = () => {
 			burger.classList.toggle('burger_open');
 			nav.classList.toggle('nav_open');
@@ -71,8 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			//проверка на наличие якорной ссылки
 			const menuActive = body.classList.contains('page_active-burger');
 			const firstIndex = link.getAttribute('href').indexOf('#') === 0;
-			
-			if (menuActive & firstIndex) toggleClasses();				
+
+			if (menuActive & firstIndex) toggleClasses();
 		}))
 	}
 
@@ -123,17 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			body.classList.toggle('page_active-search');
 		}
 
-		if (window.location.toString().indexOf('search') < 0) {
-			searchBtns.forEach(btn => btn.addEventListener('click', toggleClasses));
-			closeBtn.addEventListener('click', toggleClasses);
-			btn.addEventListener('click', toggleClasses);
-			cover.addEventListener('click', () => {
-				if (document.querySelector('.page_active-search')) toggleClasses();
-			})
-			links.forEach(link => link.addEventListener('click', toggleClasses));
-		} else {
-			return;
-		}
+		searchBtns.forEach(btn => btn.addEventListener('click', toggleClasses));
+		closeBtn.addEventListener('click', toggleClasses);
+		btn.addEventListener('click', toggleClasses);
+		cover.addEventListener('click', () => {
+			if (document.querySelector('.page_active-search')) toggleClasses();
+		})
+		links.forEach(link => link.addEventListener('click', toggleClasses));
 	}
 
 	toggleSearch();
@@ -150,13 +146,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			body.classList.toggle('page_active-form');
 		}
 
-		if(btnOpen) btnOpen.addEventListener('click', toggleClasses);
+		if (btnOpen) btnOpen.addEventListener('click', toggleClasses);
 
 		btnsClose[1].addEventListener('click', () => {
 			if (document.querySelector('.page_active-form')) toggleClasses();
 		})
 
-		if(btnSend) btnSend.addEventListener('click', toggleClasses);
+		if (btnSend) btnSend.addEventListener('click', toggleClasses);
 
 		cover.addEventListener('click', () => {
 			if (document.querySelector('.page_active-form')) toggleClasses();
@@ -177,13 +173,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			body.classList.toggle('page_active-successful');
 		}
 
-		if(btnOpen) btnOpen.addEventListener('click', toggleClasses);
+		if (btnOpen) btnOpen.addEventListener('click', toggleClasses);
 
 		btnsClose[2].addEventListener('click', () => {
 			if (document.querySelector('.page_active-successful')) toggleClasses();
 		})
 
-		if(btnReady) btnReady.addEventListener('click', toggleClasses);
+		if (btnReady) btnReady.addEventListener('click', toggleClasses);
 
 		cover.addEventListener('click', () => {
 			if (document.querySelector('.page_active-successful')) toggleClasses();
@@ -194,8 +190,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function checkboxColor() {
 		const checkboxList = document.querySelectorAll('.device__input');
-		
-		checkboxList.forEach(checkbox => checkbox.addEventListener('click', () => {		
+
+		checkboxList.forEach(checkbox => checkbox.addEventListener('click', () => {
 			checkboxList.forEach(checkbox => checkbox.checked = false);
 			checkbox.checked = true;
 		}))
@@ -210,14 +206,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		btnsPlus.forEach(btn => btn.addEventListener("click", () => {
 			let input = btn.closest('.cart__amount').querySelector('.cart__input');
 
-			if(input.value >= 99) return;
+			if (input.value >= 99) return;
 			input.value = Number(input.value) + 1;
 		}))
 
 		btnsMinus.forEach(btn => btn.addEventListener("click", () => {
 			let input = btn.closest('.cart__amount').querySelector('.cart__input');
 
-			if(input.value <= 1) return;
+			if (input.value <= 1) return;
 			input.value = Number(input.value) - 1;
 		}))
 	}
@@ -229,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const listImages2 = document.querySelectorAll('.img-big');
 		const imgWrap = document.querySelector('#img-modal');
 		const tegImg = document.querySelector('.image__photo');
-		
+
 		const toggleClasses = () => {
 			modalList[3].classList.toggle('modal_open-image');
 			imgWrap.classList.toggle('image_open');
@@ -241,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			let src = e.target.src;
 			tegImg.src = src;
 			toggleClasses();
-		} 
+		}
 
 		listImages1.forEach(img => img.addEventListener("click", getSrc));
 		listImages2.forEach(img => img.addEventListener("click", getSrc));
@@ -267,33 +263,33 @@ document.addEventListener('DOMContentLoaded', () => {
 			const allInputs = form.querySelectorAll('.form__input');
 
 			//смещение label вверх при фокусе ------------------------------------------------
-			allInputs.forEach(input => input.onfocus = function() {
+			allInputs.forEach(input => input.onfocus = function () {
 				const id = this.id;
 				const label = form.querySelector(`[for=${id}]`);
-		
+
 				label.classList.add('form__label_active');
 			});
-		
+
 			//смещение label обратно при переключении фокуса, если инпут пустой ----------------
 			allInputs.forEach(input => input.addEventListener('focusout', function () {
 				if (!this.value) {
 					const id = this.id;
 					const label = form.querySelector(`[for=${id}]`);
-		
+
 					label.classList.remove('form__label_active');
-				} 
+				}
 			}));
 
 			//обработка input[type= file] ------------------------------------------------------
 			const inputImage = document.querySelector('#forfile');
 			const preview = document.querySelector('#output');
-						
+
 			inputImage.addEventListener('change', () => {
 				uploadFile(inputImage.files[0]);
 				preview.addEventListener('DOMSubtreeModified', deletePhoto);
 			});
 
-			function uploadFile (file) {
+			function uploadFile(file) {
 				//проверка типа
 				if (!['image/jpeg', 'image/jpg', 'image/png'].includes(file.type)) {
 					inputImage.value = '';
@@ -305,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 				//полученние и вставка изображения
 				let reader = new FileReader();
-				reader.onload = function(e) {
+				reader.onload = function (e) {
 					preview.innerHTML = `
 					<div class="form__img-wrap">
 						<img src="${e.target.result}" alt="photo" class="form__img">
@@ -325,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			function deletePhoto() {
 				const btnDelete = document.querySelector('.form__delete');
 
-				if(btnDelete) {
+				if (btnDelete) {
 					btnDelete.addEventListener('click', () => {
 						preview.innerHTML = '';
 						inputImage.value = '';
@@ -341,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const mainSlider = new Swiper('.slider', {
 		loop: true,
 		grabCursor: false,
-	
+
 		breakpoints: {
 			320: {
 				allowTouchMove: true,
@@ -350,26 +346,26 @@ document.addEventListener('DOMContentLoaded', () => {
 				allowTouchMove: false,
 			}
 		},
-	
+
 		autoplay: {
 			delay: 10000,
 		},
-	
+
 		pagination: {
-			  el: '.swiper-pagination',
+			el: '.swiper-pagination',
 		},
-	
+
 		navigation: {
-			  nextEl: '.swiper-button-next',
-			  prevEl: '.swiper-button-prev',
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
 		},
 	});
-	
+
 	const galleryInstagram = new Swiper('.instagram__gallery', {
 		slidesPerView: "auto",
 		freeMode: true,
 		spaceBetween: 20,
-	
+
 		breakpoints: {
 			320: {
 				grabCursor: true,
@@ -381,13 +377,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		},
 	});
-	
+
 	const galleryThumbs = new Swiper(".device__thumbs", {
 		slidesPerView: 4,
 		freeMode: true,
 		watchSlidesProgress: true,
 		grabCursor: true,
-	
+
 		breakpoints: {
 			0: {
 				direction: "vertical",
@@ -409,17 +405,17 @@ document.addEventListener('DOMContentLoaded', () => {
 			swiper: galleryThumbs,
 		},
 	});
-	
+
 	const galleryFeedback = new Swiper('.feedbacks__gallery', {
 		slidesPerView: "auto",
 		loop: false,
 		spaceBetween: 18,
 		grabCursor: true,
 		allowTouchMove: true,
-	
+
 		navigation: {
 			nextEl: '.feedbacks__button-next',
 			prevEl: '.feedbacks__button-pev',
-		  },
+		},
 	});
 })

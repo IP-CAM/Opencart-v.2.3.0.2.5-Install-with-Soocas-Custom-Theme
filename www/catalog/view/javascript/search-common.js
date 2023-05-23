@@ -29,15 +29,20 @@ document.addEventListener("DOMContentLoaded", () => {
             html += `<li>По вашему запросу ничего не найдено</li>`;
           }
         } else {
-          console.log('Что-то не так :х');
+          console.log('Что-то не так');
         }
       };
       request.onerror = function () {
-        console.log('Ошибка подключения 0_0');
+        console.log('Ошибка подключения');
       };
       request.send();
     }
     document.getElementById('search_link').href = `/index.php?route=product/search&search=${value}`;
+  });
+
+  document.querySelector('#search-modal-form').addEventListener('submit', event => {
+    event.preventDefault();
+    window.location.href = `/index.php?route=product/search&search=${document.querySelector('#search input[name=\'search\']').value}`;
   });
 
   if (document.getElementById('page-search-form')) {
@@ -48,8 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
       window.location.href = `/index.php?route=product/search&search=${searchPageInput.value}`;
     });
-
-
   }
 
 });

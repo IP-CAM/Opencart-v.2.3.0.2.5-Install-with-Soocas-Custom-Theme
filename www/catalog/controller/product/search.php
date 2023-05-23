@@ -248,11 +248,11 @@ class ControllerProductSearch extends Controller {
 					$special = false;
 				}
 
-				if ($this->config->get('config_tax')) {
-					$tax = $this->currency->format((float)$result['special'] ? $result['special'] : $result['price'], $this->session->data['currency']);
-				} else {
-					$tax = false;
-				}
+				// if ($this->config->get('config_tax')) {
+				// 	$tax = $this->currency->format((float)$result['special'] ? $result['special'] : $result['price'], $this->session->data['currency']);
+				// } else {
+				// 	$tax = false;
+				// }
 
 				if ($this->config->get('config_review_status')) {
 					$rating = (int)$result['rating'];
@@ -300,11 +300,11 @@ class ControllerProductSearch extends Controller {
 					'description' => $description,
 					'price'       => $price,
 					'special'     => $special,
-					'tax'         => $tax,
+					// 'tax'         => $tax,
 					'sticker'     => $stickers,
 					'benefits'    => $benefits,
 					'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
-					'rating'      => $result['rating'],
+					// 'rating'      => $result['rating'],
 					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
 				);
 			}
