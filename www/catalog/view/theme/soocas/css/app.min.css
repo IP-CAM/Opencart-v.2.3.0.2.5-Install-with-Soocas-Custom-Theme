@@ -2406,7 +2406,7 @@ button.swiper-pagination-bullet {
   padding: 20px 20px 0
 }
 
-.device__input {
+.device__label {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -2421,19 +2421,15 @@ button.swiper-pagination-bullet {
   width: 32px
 }
 
-.device__input_pink {
-  background: -webkit-gradient(linear, left top, left bottom, from(#edd0f7), to(#c4a5cf));
-  background: -o-linear-gradient(top, #edd0f7 0, #c4a5cf 100%);
-  background: linear-gradient(180deg, #edd0f7, #c4a5cf)
+.device__label img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
 }
 
-.device__input_blue {
-  background: -webkit-gradient(linear, left top, left bottom, from(#c2e3ff), to(#558dd1));
-  background: -o-linear-gradient(top, #c2e3ff 0, #558dd1 100%);
-  background: linear-gradient(180deg, #c2e3ff, #558dd1)
-}
-
-.device__input:checked:before {
+.device__input:checked + .device__label:before {
   background: transparent;
   border: 4px solid #0084ff;
   border-radius: 8px;
@@ -2952,6 +2948,10 @@ button.swiper-pagination-bullet {
   overflow: hidden
 }
 
+.block__wrapper_image {
+ height: 585px;
+}
+
 .block__subtitle {
   margin-bottom: 6px
 }
@@ -2960,7 +2960,7 @@ button.swiper-pagination-bullet {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  width: 100%
+  width: 100%;
 }
 
 .block__text {

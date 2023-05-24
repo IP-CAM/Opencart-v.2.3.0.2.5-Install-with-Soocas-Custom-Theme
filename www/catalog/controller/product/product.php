@@ -407,7 +407,7 @@ class ControllerProductProduct extends Controller
 							'product_option_value_id' => $option_value['product_option_value_id'],
 							'option_value_id'         => $option_value['option_value_id'],
 							'name'                    => $option_value['name'],
-							'image'                   => $this->model_tool_image->resize($option_value['image'], 50, 50),
+							'image'                   => $this->model_tool_image->onesize($option_value['image'], 50),
 							'price'                   => $price,
 							'price_prefix'            => $option_value['price_prefix']
 						);
@@ -563,12 +563,18 @@ class ControllerProductProduct extends Controller
 
 			$data['product_tabs'] = array();
 
+			$this->load->model('tool/image');
 			$tabresults = $this->model_catalog_product->getproducttab($this->request->get['product_id']);
+
+
 
 			foreach ($tabresults as $result) {
 				$data['product_tabs'][] = array(
 					'product_tab_id' => $result['product_tab_id'],
 					'title'   => $result['heading'],
+					'image'   => $this->model_tool_image->onesize($result['image'], 1000),
+					'subtitle'   => $result['subtitle'],
+					'color'   => $result['color'],
 					'description' => html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'),
 				);
 			}

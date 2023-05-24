@@ -188,17 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// toggleSuccessfulModal();
 
-	function checkboxColor() {
-		const checkboxList = document.querySelectorAll('.device__input');
-
-		checkboxList.forEach(checkbox => checkbox.addEventListener('click', () => {
-			checkboxList.forEach(checkbox => checkbox.checked = false);
-			checkbox.checked = true;
-		}))
-	}
-
-	checkboxColor();
-
 	function countProducts() {
 		const btnsPlus = document.querySelectorAll('.cart__plus');
 		const btnsMinus = document.querySelectorAll('.cart__minus');
