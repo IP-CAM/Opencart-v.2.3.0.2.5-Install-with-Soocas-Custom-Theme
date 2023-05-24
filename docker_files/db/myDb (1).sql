@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: db
--- Время создания: Май 22 2023 г., 15:04
+-- Время создания: Май 24 2023 г., 15:13
 -- Версия сервера: 8.0.31
 -- Версия PHP: 8.0.27
 
@@ -417,23 +417,6 @@ CREATE TABLE `oc_attribute` (
   `sort_order` int NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
 
---
--- Дамп данных таблицы `oc_attribute`
---
-
-INSERT INTO `oc_attribute` (`attribute_id`, `attribute_group_id`, `sort_order`) VALUES
-(1, 6, 1),
-(2, 6, 5),
-(3, 6, 3),
-(4, 3, 1),
-(5, 3, 2),
-(6, 3, 3),
-(7, 3, 4),
-(8, 3, 5),
-(9, 3, 6),
-(10, 3, 7),
-(11, 3, 8);
-
 -- --------------------------------------------------------
 
 --
@@ -446,23 +429,6 @@ CREATE TABLE `oc_attribute_description` (
   `name` varchar(64) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
 
---
--- Дамп данных таблицы `oc_attribute_description`
---
-
-INSERT INTO `oc_attribute_description` (`attribute_id`, `language_id`, `name`) VALUES
-(1, 1, 'Description'),
-(2, 1, 'No. of Cores'),
-(4, 1, 'test 1'),
-(5, 1, 'test 2'),
-(6, 1, 'test 3'),
-(7, 1, 'test 4'),
-(8, 1, 'test 5'),
-(9, 1, 'test 6'),
-(10, 1, 'test 7'),
-(11, 1, 'test 8'),
-(3, 1, 'Clockspeed');
-
 -- --------------------------------------------------------
 
 --
@@ -473,16 +439,6 @@ CREATE TABLE `oc_attribute_group` (
   `attribute_group_id` int NOT NULL,
   `sort_order` int NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
-
---
--- Дамп данных таблицы `oc_attribute_group`
---
-
-INSERT INTO `oc_attribute_group` (`attribute_group_id`, `sort_order`) VALUES
-(3, 2),
-(4, 1),
-(5, 3),
-(6, 4);
 
 -- --------------------------------------------------------
 
@@ -495,16 +451,6 @@ CREATE TABLE `oc_attribute_group_description` (
   `language_id` int NOT NULL,
   `name` varchar(64) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
-
---
--- Дамп данных таблицы `oc_attribute_group_description`
---
-
-INSERT INTO `oc_attribute_group_description` (`attribute_group_id`, `language_id`, `name`) VALUES
-(3, 1, 'Memory'),
-(4, 1, 'Technical'),
-(5, 1, 'Motherboard'),
-(6, 1, 'Processor');
 
 -- --------------------------------------------------------
 
@@ -547,8 +493,8 @@ CREATE TABLE `oc_banner_image` (
 --
 
 INSERT INTO `oc_banner_image` (`banner_image_id`, `banner_id`, `language_id`, `title`, `image`, `image_mobile`, `textarea`, `sort_order`) VALUES
-(116, 9, 1, 'Фен Soocas H5 Hair Care', 'catalog/index banner/slide-1.png', 'catalog/index banner/slide-1-mob.png', '&lt;h2 class=&quot;slider__title slider__title_dark&quot;&gt;Знакомтесь — лучший друг ваших волос&lt;/h2&gt;\r\n&lt;p class=&quot;slider__description&quot;&gt;Новый Soocas H5 Hair Care порадуют вас качеством и приятной ценой&lt;/p&gt;\r\n&lt;a target=&quot;blank&quot;\r\n    href=&quot;https://market.yandex.ru/catalog--feny-i-fen-shchetki/16336735/list?srnum=23&amp;amp;was_redir=1&amp;amp;rt=11&amp;amp;rs=eJwzKlMK4hL2MFXwSMwsUnBOLEpVKM7PT04sFjj26CGzEgsHgwADkOQVENZgyMKmrorD0MzCwNDIzKSB8V7fU_YuRiYOhgDGKlYOEG8WIzY9GxgZANPqIl4%2C&amp;amp;parsed-glfilter=7893318%3A16801264&amp;amp;text=H5%20Hair%20Care%20soocas&amp;amp;hid=16336734&amp;amp;allowCollapsing=1&amp;amp;local-offers-first=0&amp;amp;glfilter=7893318%3A16801264&quot;\r\n    class=&quot;btn btn_red slider__btn&quot;&gt;Подробнее&lt;/a&gt;\r\n\r\n&lt;div class=&quot;slider__text&quot;&gt;\r\n    &lt;img class=&quot;slider__icon&quot; src=&quot;../catalog/view/theme/soocas/images/dist/main-slider/icon.svg&quot; alt=&quot;Icon honeycomb&quot;&gt;\r\n    &lt;p class=&quot;slider__paragraph&quot;&gt;\r\n        Уникальная сотовая система фильтров для защиты попадания волос\r\n    &lt;/p&gt;\r\n&lt;/div&gt;', 1),
-(117, 9, 1, 'Электробритва Soocas', 'catalog/index banner/slide-2.png', 'catalog/index banner/slide-2-mob.png', '&lt;h2 class=&quot;slider__title slider__title_light&quot;&gt;Гладкость которую вы раньше никогда не пробовали&lt;/h2&gt;\r\n&lt;p class=&quot;slider__description slider__description_light&quot;&gt;Новые электробритвы Soocas порадуют вас качеством и приятной\r\n    ценой&lt;/p&gt;\r\n&lt;a target=&quot;_blank&quot; href=&quot;https://market.yandex.ru/catalog--elektrobritvy-muzhskie/16680755/list?srnum=46&amp;was_redir=1&amp;rt=11&amp;rs=eJwz2s6oVMqlemHthd0Xtl7YdbHpYsOFfRc2AskdF5subLqwQSE4Pz85sVgh2NhQ4Nijh8xKLBwMAgxAkk9ARIMhizidVRyGZhYGhkZmJg2Mpw6zdjEycTAEMFaxcAA5sxiJM2MVIxfHtBPfRARunenl2sDIAAB9eFa5&amp;parsed-glfilter=7893318%3A16801264&amp;text=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%B1%D1%80%D0%B8%D1%82%D0%B2%D0%B0%20Soocas%20S31&amp;hid=90570&amp;allowCollapsing=1&amp;local-offers-first=0&amp;glfilter=7893318%3A16801264&quot; class=&quot;btn btn_transparent slider__btn&quot;&gt;Подробнее&lt;/a&gt;\r\n&lt;div class=&quot;slider__advantages&quot;&gt;\r\n    &lt;div class=&quot;slider__item&quot;&gt;\r\n        &lt;img class=&quot;slider__preview&quot; src=&quot;../catalog/view/theme/soocas/images/dist/main-slider/img-1.png&quot; alt=&quot;Icon&quot;&gt;\r\n        &lt;p class=&quot;slider__paragraph slider__paragraph_white&quot;&gt;Электробритва Soocas S31&lt;/p&gt;\r\n    &lt;/div&gt;\r\n    &lt;div class=&quot;slider__item&quot;&gt;\r\n        &lt;img class=&quot;slider__preview&quot; src=&quot;../catalog/view/theme/soocas/images/dist/main-slider/img-2.png&quot; alt=&quot;Icon&quot;&gt;\r\n        &lt;p class=&quot;slider__paragraph slider__paragraph_white&quot;&gt;Аксессуары для хранения&lt;/p&gt;\r\n    &lt;/div&gt;\r\n    &lt;div class=&quot;slider__item&quot;&gt;\r\n        &lt;img class=&quot;slider__preview&quot; src=&quot;../catalog/view/theme/soocas/images/dist/main-slider/img-3.png&quot; alt=&quot;Icon&quot;&gt;\r\n        &lt;p class=&quot;slider__paragraph slider__paragraph_white&quot;&gt;В комплекте все необходимое&lt;/p&gt;\r\n    &lt;/div&gt;\r\n&lt;/div&gt;', 2);
+(120, 9, 1, 'Фен Soocas H5 Hair Care', 'catalog/index banner/slide-1.png', 'catalog/index banner/slide-1-mob.png', '&lt;h2 class=&quot;slider__title slider__title_dark&quot;&gt;Знакомтесь — лучший друг ваших волос&lt;/h2&gt;\r\n&lt;p class=&quot;slider__description&quot;&gt;Новый Soocas H5 Hair Care порадуют вас качеством и приятной ценой&lt;/p&gt;\r\n&lt;a target=&quot;blank&quot;\r\n    href=&quot;https://market.yandex.ru/catalog--feny-i-fen-shchetki/16336735/list?srnum=23&amp;amp;was_redir=1&amp;amp;rt=11&amp;amp;rs=eJwzKlMK4hL2MFXwSMwsUnBOLEpVKM7PT04sFjj26CGzEgsHgwADkOQVENZgyMKmrorD0MzCwNDIzKSB8V7fU_YuRiYOhgDGKlYOEG8WIzY9GxgZANPqIl4%2C&amp;amp;parsed-glfilter=7893318%3A16801264&amp;amp;text=H5%20Hair%20Care%20soocas&amp;amp;hid=16336734&amp;amp;allowCollapsing=1&amp;amp;local-offers-first=0&amp;amp;glfilter=7893318%3A16801264&quot;\r\n    class=&quot;btn btn_red slider__btn&quot;&gt;Подробнее&lt;/a&gt;\r\n\r\n&lt;div class=&quot;slider__text&quot;&gt;\r\n    &lt;img class=&quot;slider__icon&quot; src=&quot;../catalog/view/theme/soocas/images/dist/main-slider/icon.svg&quot; alt=&quot;Icon honeycomb&quot;&gt;\r\n    &lt;p class=&quot;slider__paragraph&quot;&gt;\r\n        Уникальная сотовая система фильтров для защиты попадания волос\r\n    &lt;/p&gt;\r\n&lt;/div&gt;', 1),
+(121, 9, 1, 'Электробритва Soocas', 'catalog/index banner/slide-2.png', 'catalog/index banner/slide-2-mob.png', '&lt;h2 class=&quot;slider__title slider__title_light&quot;&gt;Гладкость которую вы раньше никогда не пробовали&lt;/h2&gt;\r\n&lt;p class=&quot;slider__description slider__description_light&quot;&gt;Новые электробритвы Soocas порадуют вас качеством и приятной\r\n    ценой&lt;/p&gt;\r\n&lt;a target=&quot;_blank&quot; href=&quot;https://market.yandex.ru/catalog--elektrobritvy-muzhskie/16680755/list?srnum=46&amp;was_redir=1&amp;rt=11&amp;rs=eJwz2s6oVMqlemHthd0Xtl7YdbHpYsOFfRc2AskdF5subLqwQSE4Pz85sVgh2NhQ4Nijh8xKLBwMAgxAkk9ARIMhizidVRyGZhYGhkZmJg2Mpw6zdjEycTAEMFaxcAA5sxiJM2MVIxfHtBPfRARunenl2sDIAAB9eFa5&amp;parsed-glfilter=7893318%3A16801264&amp;text=%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%B1%D1%80%D0%B8%D1%82%D0%B2%D0%B0%20Soocas%20S31&amp;hid=90570&amp;allowCollapsing=1&amp;local-offers-first=0&amp;glfilter=7893318%3A16801264&quot; class=&quot;btn btn_transparent slider__btn&quot;&gt;Подробнее&lt;/a&gt;\r\n&lt;div class=&quot;slider__advantages&quot;&gt;\r\n    &lt;div class=&quot;slider__item&quot;&gt;\r\n        &lt;img class=&quot;slider__preview&quot; src=&quot;../catalog/view/theme/soocas/images/dist/main-slider/img-1.png&quot; alt=&quot;Icon&quot;&gt;\r\n        &lt;p class=&quot;slider__paragraph slider__paragraph_white&quot;&gt;Электробритва Soocas S31&lt;/p&gt;\r\n    &lt;/div&gt;\r\n    &lt;div class=&quot;slider__item&quot;&gt;\r\n        &lt;img class=&quot;slider__preview&quot; src=&quot;../catalog/view/theme/soocas/images/dist/main-slider/img-2.png&quot; alt=&quot;Icon&quot;&gt;\r\n        &lt;p class=&quot;slider__paragraph slider__paragraph_white&quot;&gt;Аксессуары для хранения&lt;/p&gt;\r\n    &lt;/div&gt;\r\n    &lt;div class=&quot;slider__item&quot;&gt;\r\n        &lt;img class=&quot;slider__preview&quot; src=&quot;../catalog/view/theme/soocas/images/dist/main-slider/img-3.png&quot; alt=&quot;Icon&quot;&gt;\r\n        &lt;p class=&quot;slider__paragraph slider__paragraph_white&quot;&gt;В комплекте все необходимое&lt;/p&gt;\r\n    &lt;/div&gt;\r\n&lt;/div&gt;', 2);
 
 -- --------------------------------------------------------
 
@@ -2041,7 +1987,8 @@ INSERT INTO `oc_layout` (`layout_id`, `name`) VALUES
 (16, 'Статьи Блога'),
 (17, 'Страница Производителя'),
 (18, 'О нас'),
-(19, 'Каталог');
+(19, 'Каталог'),
+(20, 'Успешная отправка');
 
 -- --------------------------------------------------------
 
@@ -2083,7 +2030,13 @@ INSERT INTO `oc_layout_module` (`layout_module_id`, `layout_id`, `code`, `positi
 (179, 1, 'html.41', 'content_top', 5),
 (177, 1, 'featured.28', 'content_top', 3),
 (160, 8, 'html.43', 'content_bottom', 0),
-(176, 1, 'imgcategory.38', 'content_top', 2);
+(176, 1, 'imgcategory.38', 'content_top', 2),
+(209, 2, 'html.48', 'column_left', 3),
+(208, 2, 'html.51', 'column_left', 2),
+(207, 2, 'html.50', 'column_left', 1),
+(206, 2, 'html.49', 'column_left', 0),
+(210, 2, 'featured.28', 'content_top', 0),
+(211, 2, 'html.47', 'content_bottom', 0);
 
 -- --------------------------------------------------------
 
@@ -2107,7 +2060,7 @@ INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `rout
 (17, 10, 0, 'affiliate/%'),
 (87, 3, 0, 'product/category'),
 (82, 1, 0, 'common/home'),
-(20, 2, 0, 'product/product'),
+(93, 2, 0, 'product/product'),
 (24, 11, 0, 'information/information'),
 (23, 7, 0, 'checkout/%'),
 (79, 8, 0, 'information/contact'),
@@ -2120,7 +2073,8 @@ INSERT INTO `oc_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `rout
 (58, 15, 0, 'blog/category'),
 (56, 16, 0, 'blog/article'),
 (63, 17, 0, 'product/manufacturer/info'),
-(88, 19, 0, 'information/catalog');
+(88, 19, 0, 'information/catalog'),
+(89, 20, 0, 'information/success');
 
 -- --------------------------------------------------------
 
@@ -2343,10 +2297,14 @@ INSERT INTO `oc_module` (`module_id`, `name`, `code`, `setting`) VALUES
 (38, 'Категории (IMG)', 'imgcategory', '{\"name\":\"\\u041a\\u0430\\u0442\\u0435\\u0433\\u043e\\u0440\\u0438\\u0438 (IMG)\",\"category_id\":\"0\",\"width\":\"300\",\"height\":\"400\",\"status\":\"1\"}'),
 (39, 'Преимущества (блок под слайдером на главной странице)', 'html', '{\"name\":\"\\u041f\\u0440\\u0435\\u0438\\u043c\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432\\u0430 (\\u0431\\u043b\\u043e\\u043a \\u043f\\u043e\\u0434 \\u0441\\u043b\\u0430\\u0439\\u0434\\u0435\\u0440\\u043e\\u043c \\u043d\\u0430 \\u0433\\u043b\\u0430\\u0432\\u043d\\u043e\\u0439 \\u0441\\u0442\\u0440\\u0430\\u043d\\u0438\\u0446\\u0435)\",\"module_description\":{\"1\":{\"title\":\"\",\"description\":\"&lt;div class=&quot;advantages&quot;&gt;\\r\\n&lt;div class=&quot;container advantages__container&quot;&gt;\\r\\n&lt;ul class=&quot;advantages__list&quot;&gt;\\r\\n&lt;li class=&quot;advantages__item&quot;&gt;&lt;img class=&quot;advantages__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/advantages\\/icon-1.svg&quot; alt=&quot;icon&quot; width=&quot;90&quot; height=&quot;37&quot; \\/&gt; &lt;span class=&quot;advantages__description&quot;&gt;\\u041e\\u0444\\u0438\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 \\u043f\\u0440\\u0435\\u0434\\u0441\\u0442\\u0430\\u0432\\u0438\\u0442\\u0435\\u043b\\u044c Soocas \\u0432 \\u0420\\u043e\\u0441\\u0441\\u0438\\u0438&lt;\\/span&gt;&lt;\\/li&gt;\\r\\n&lt;li class=&quot;advantages__item&quot;&gt;&lt;img class=&quot;advantages__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/advantages\\/icon-2.svg&quot; alt=&quot;icon&quot; width=&quot;45&quot; height=&quot;37&quot; \\/&gt; &lt;span class=&quot;advantages__description&quot;&gt;\\u0413\\u0430\\u0440\\u0430\\u043d\\u0442\\u0438\\u044f \\u0438 \\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u043d\\u043e\\u0435 \\u043e\\u0431\\u0441\\u043b\\u0443\\u0436\\u0438\\u0432\\u0430\\u043d\\u0438\\u0435&lt;\\/span&gt;&lt;\\/li&gt;\\r\\n&lt;li class=&quot;advantages__item&quot;&gt;&lt;img class=&quot;advantages__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/advantages\\/icon-3.svg&quot; alt=&quot;icon&quot; width=&quot;47&quot; height=&quot;47&quot; \\/&gt; &lt;span class=&quot;advantages__description&quot;&gt;\\u0421\\u043f\\u0435\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u044b\\u0435 \\u0443\\u0441\\u043b\\u043e\\u0432\\u0438\\u044f \\u0434\\u043b\\u044f B2B&lt;\\/span&gt;&lt;\\/li&gt;\\r\\n&lt;\\/ul&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\"}},\"status\":\"1\"}'),
 (40, 'Представлены на маркетплейсах', 'html', '{\"name\":\"\\u041f\\u0440\\u0435\\u0434\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u044b \\u043d\\u0430 \\u043c\\u0430\\u0440\\u043a\\u0435\\u0442\\u043f\\u043b\\u0435\\u0439\\u0441\\u0430\\u0445\",\"module_description\":{\"1\":{\"title\":\"\",\"description\":\"&lt;section id=&quot;markets&quot; class=&quot;marketplaces marketplaces_pink&quot;&gt;\\r\\n&lt;div class=&quot;container marketplaces__container&quot;&gt;\\r\\n&lt;h2 class=&quot;title-h2&quot;&gt;\\u041f\\u0440\\u0435\\u0434\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u044b \\u043d\\u0430 \\u0432\\u0441\\u0435\\u0445 \\u043c\\u0430\\u0440\\u043a\\u0435\\u0442\\u043f\\u043b\\u0435\\u0439\\u0441\\u0430\\u0445&lt;\\/h2&gt;\\r\\n&lt;p class=&quot;marketplaces__description&quot;&gt;\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u043f\\u0440\\u0438\\u043e\\u0431\\u0440\\u0435\\u0441\\u0442\\u0438 \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0446\\u0438\\u044e Soocas \\u043d\\u0430 Wildberries, Ozon, \\u042f\\u043d\\u0434\\u0435\\u043a\\u0441 \\u041c\\u0430\\u0440\\u043a\\u0435\\u0442, \\u043b\\u0438\\u0431\\u043e \\u0443 \\u043d\\u0430\\u0441 \\u043d\\u0430 \\u0441\\u0430\\u0439\\u0442\\u0435&lt;\\/p&gt;\\r\\n&lt;div class=&quot;marketplaces__list&quot;&gt;&lt;a class=&quot;marketplaces__link&quot; href=&quot;https:\\/\\/ozon.ru\\/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; &lt;img class=&quot;marketplaces__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/marketplaces\\/logo-1.png&quot; alt=&quot;Logo Ozon&quot; \\/&gt; &lt;\\/a&gt; &lt;a class=&quot;marketplaces__link&quot; href=&quot;https:\\/\\/wildberries.ru\\/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; &lt;img class=&quot;marketplaces__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/marketplaces\\/logo-2.png&quot; alt=&quot;Logo Wildberries&quot; \\/&gt; &lt;\\/a&gt; &lt;a class=&quot;marketplaces__link marketplaces__link_border&quot; href=&quot;https:\\/\\/market.yandex.ru\\/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; &lt;img class=&quot;marketplaces__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/marketplaces\\/logo-3.png&quot; alt=&quot;Logo Yandex Market&quot; \\/&gt; &lt;\\/a&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/section&gt;\"}},\"status\":\"1\"}'),
-(41, 'Призыв к подписке на инстаграм (темный)', 'html', '{\"name\":\"\\u041f\\u0440\\u0438\\u0437\\u044b\\u0432 \\u043a \\u043f\\u043e\\u0434\\u043f\\u0438\\u0441\\u043a\\u0435 \\u043d\\u0430 \\u0438\\u043d\\u0441\\u0442\\u0430\\u0433\\u0440\\u0430\\u043c (\\u0442\\u0435\\u043c\\u043d\\u044b\\u0439)\",\"module_description\":{\"1\":{\"title\":\"\",\"description\":\"&lt;div class=&quot;instagram instagram_dark-theme&quot;&gt;\\r\\n&lt;div class=&quot;container instagram__container&quot;&gt;\\r\\n&lt;div class=&quot;instagram__info&quot;&gt;\\r\\n&lt;p class=&quot;instagram__description instagram__description_dark-theme&quot;&gt;\\u041f\\u043e\\u0434\\u043f\\u0438\\u0448\\u0438\\u0441\\u044c \\u043d\\u0430 \\u043e\\u0444\\u0438\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 Instagram Soocas \\u0432 \\u0420\\u043e\\u0441\\u0441\\u0438\\u0438, \\u0447\\u0442\\u043e\\u0431\\u044b \\u043d\\u0435 \\u043f\\u0440\\u043e\\u043f\\u0443\\u0441\\u0442\\u0438\\u0442\\u044c \\u0430\\u043a\\u0446\\u0438\\u0438 \\u0438 \\u0440\\u0430\\u0441\\u043f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0438 \\u0442\\u043e\\u0432\\u0430\\u0440\\u043e\\u0432 \\u0431\\u0440\\u0435\\u043d\\u0434\\u0430&lt;\\/p&gt;\\r\\n&lt;a class=&quot;btn instagram__btn instagram__btn_dark-theme&quot; href=&quot;https:\\/\\/www.instagram.com\\/soocasrussia\\/&quot;&gt; &lt;span class=&quot;instagram__text&quot;&gt; &lt;span class=&quot;instagram__action instagram__action_dark-theme&quot;&gt;\\u041f\\u043e\\u0434\\u043f\\u0438\\u0441\\u0430\\u0442\\u044c\\u0441\\u044f&lt;\\/span&gt; &lt;span class=&quot;instagram__nickname instagram__action_dark-theme&quot;&gt;@soocasrussia&lt;\\/span&gt; &lt;\\/span&gt; &lt;\\/a&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper instagram__gallery swiper-initialized swiper-horizontal swiper-backface-hidden&quot;&gt;\\r\\n&lt;div class=&quot;swiper-wrapper&quot;&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide swiper-slide-active&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem1&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-1.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide swiper-slide-next&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem2&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-2.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;instagram__elem3&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-3.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem4&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-4.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem5&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-5.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem6&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-6.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;instagram__elem7&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-7.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\"}},\"status\":\"1\"}'),
+(41, 'Призыв к подписке на инстаграм (темный)', 'html', '{\"name\":\"\\u041f\\u0440\\u0438\\u0437\\u044b\\u0432 \\u043a \\u043f\\u043e\\u0434\\u043f\\u0438\\u0441\\u043a\\u0435 \\u043d\\u0430 \\u0438\\u043d\\u0441\\u0442\\u0430\\u0433\\u0440\\u0430\\u043c (\\u0442\\u0435\\u043c\\u043d\\u044b\\u0439)\",\"module_description\":{\"1\":{\"title\":\"\",\"description\":\"&lt;div class=&quot;instagram instagram_dark-theme&quot;&gt;\\r\\n&lt;div class=&quot;container instagram__container&quot;&gt;\\r\\n&lt;div class=&quot;instagram__info&quot;&gt;\\r\\n&lt;p class=&quot;instagram__description instagram__description_dark-theme&quot;&gt;\\u041f\\u043e\\u0434\\u043f\\u0438\\u0448\\u0438\\u0441\\u044c \\u043d\\u0430 \\u043e\\u0444\\u0438\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 Instagram Soocas \\u0432 \\u0420\\u043e\\u0441\\u0441\\u0438\\u0438, \\u0447\\u0442\\u043e\\u0431\\u044b \\u043d\\u0435 \\u043f\\u0440\\u043e\\u043f\\u0443\\u0441\\u0442\\u0438\\u0442\\u044c \\u0430\\u043a\\u0446\\u0438\\u0438 \\u0438 \\u0440\\u0430\\u0441\\u043f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0438 \\u0442\\u043e\\u0432\\u0430\\u0440\\u043e\\u0432 \\u0431\\u0440\\u0435\\u043d\\u0434\\u0430&lt;\\/p&gt;\\r\\n&lt;a class=&quot;btn instagram__btn instagram__btn_dark-theme&quot; href=&quot;https:\\/\\/www.instagram.com\\/soocasrussia\\/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; &lt;span class=&quot;instagram__text&quot;&gt; &lt;span class=&quot;instagram__action instagram__action_dark-theme&quot;&gt;\\u041f\\u043e\\u0434\\u043f\\u0438\\u0441\\u0430\\u0442\\u044c\\u0441\\u044f&lt;\\/span&gt; &lt;span class=&quot;instagram__nickname instagram__action_dark-theme&quot;&gt;@soocasrussia&lt;\\/span&gt; &lt;\\/span&gt; &lt;\\/a&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper instagram__gallery swiper-initialized swiper-horizontal swiper-backface-hidden&quot;&gt;\\r\\n&lt;div class=&quot;swiper-wrapper&quot;&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide swiper-slide-active&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem1&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-1.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide swiper-slide-next&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem2&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-2.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;instagram__elem3&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-3.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem4&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-4.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem5&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-5.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem6&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-6.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;instagram__elem7&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-7.png&quot; alt=&quot;User photo with SOOCAS device&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\"}},\"status\":\"1\"}'),
 (43, 'Представлены на маркетплейсах (Светлая)', 'html', '{\"name\":\"\\u041f\\u0440\\u0435\\u0434\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u044b \\u043d\\u0430 \\u043c\\u0430\\u0440\\u043a\\u0435\\u0442\\u043f\\u043b\\u0435\\u0439\\u0441\\u0430\\u0445 (\\u0421\\u0432\\u0435\\u0442\\u043b\\u0430\\u044f)\",\"module_description\":{\"1\":{\"title\":\"\",\"description\":\"&lt;section id=&quot;markets&quot; class=&quot;marketplaces marketplaces_light&quot;&gt;\\r\\n&lt;div class=&quot;container marketplaces__container&quot;&gt;\\r\\n&lt;h2 class=&quot;title-h2&quot;&gt;\\u041f\\u0440\\u0435\\u0434\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u044b \\u043d\\u0430 \\u0432\\u0441\\u0435\\u0445 \\u043c\\u0430\\u0440\\u043a\\u0435\\u0442\\u043f\\u043b\\u0435\\u0439\\u0441\\u0430\\u0445&lt;\\/h2&gt;\\r\\n&lt;p class=&quot;marketplaces__description&quot;&gt;\\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u043f\\u0440\\u0438\\u043e\\u0431\\u0440\\u0435\\u0441\\u0442\\u0438 \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0446\\u0438\\u044e Soocas \\u043d\\u0430 Wildberries, Ozon, \\u042f\\u043d\\u0434\\u0435\\u043a\\u0441 \\u041c\\u0430\\u0440\\u043a\\u0435\\u0442, \\u043b\\u0438\\u0431\\u043e \\u0443 \\u043d\\u0430\\u0441 \\u043d\\u0430 \\u0441\\u0430\\u0439\\u0442\\u0435&lt;\\/p&gt;\\r\\n&lt;div class=&quot;marketplaces__list&quot;&gt;&lt;a class=&quot;marketplaces__link&quot; href=&quot;https:\\/\\/ozon.ru\\/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; &lt;img class=&quot;marketplaces__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/marketplaces\\/logo-1.png&quot; alt=&quot;Logo Ozon&quot; \\/&gt; &lt;\\/a&gt; &lt;a class=&quot;marketplaces__link&quot; href=&quot;https:\\/\\/wildberries.ru\\/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; &lt;img class=&quot;marketplaces__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/marketplaces\\/logo-2.png&quot; alt=&quot;Logo Wildberries&quot; \\/&gt; &lt;\\/a&gt; &lt;a class=&quot;marketplaces__link marketplaces__link_border&quot; href=&quot;https:\\/\\/market.yandex.ru\\/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; &lt;img class=&quot;marketplaces__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/marketplaces\\/logo-3.png&quot; alt=&quot;Logo Yandex Market&quot; \\/&gt; &lt;\\/a&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/section&gt;\"}},\"status\":\"1\"}'),
 (44, 'Знакомтесь — лучший друг ваших зубов', 'little_banner', '{\"name\":\"\\u0417\\u043d\\u0430\\u043a\\u043e\\u043c\\u0442\\u0435\\u0441\\u044c \\u2014 \\u043b\\u0443\\u0447\\u0448\\u0438\\u0439 \\u0434\\u0440\\u0443\\u0433 \\u0432\\u0430\\u0448\\u0438\\u0445 \\u0437\\u0443\\u0431\\u043e\\u0432\",\"module_title\":\"\\u0417\\u043d\\u0430\\u043a\\u043e\\u043c\\u0442\\u0435\\u0441\\u044c \\u2014 \\u043b\\u0443\\u0447\\u0448\\u0438\\u0439 \\u0434\\u0440\\u0443\\u0433 \\u0432\\u0430\\u0448\\u0438\\u0445 \\u0437\\u0443\\u0431\\u043e\\u0432\",\"module_text\":\"\\u0417\\u0443\\u0431\\u043d\\u044b\\u0435 \\u0449\\u0435\\u0442\\u043a\\u0438 \\u0441\\u0435\\u0440\\u0438\\u0438 Soocas V1 \\u043f\\u043e\\u0440\\u0430\\u0434\\u0443\\u044e\\u0442 \\u0432\\u0430\\u0441 \\u043a\\u0430\\u0447\\u0435\\u0441\\u0442\\u0432\\u043e\\u043c \\u0438 \\u043f\\u0440\\u0438\\u044f\\u0442\\u043d\\u043e\\u0439 \\u0446\\u0435\\u043d\\u043e\\u0439\",\"module_link\":\"https:\\/\\/market.yandex.ru\\/search?cvredirect=1&amp;amp;text=soocas%20v1%20%D1%89%D0%B5%D1%82%D0%BA%D0%B8&amp;amp;allowCollapsing=1&amp;amp;local-offers-first=0\",\"module_button_text\":\"\\u041f\\u043e\\u0434\\u0440\\u043e\\u0431\\u043d\\u0435\\u0435\",\"image\":\"catalog\\/background.png\",\"image_small\":\"catalog\\/background-mobile.png\",\"status\":\"1\"}'),
-(47, 'Призыв к подписке на инстаграм (светлый)', 'html', '{\"name\":\"\\u041f\\u0440\\u0438\\u0437\\u044b\\u0432 \\u043a \\u043f\\u043e\\u0434\\u043f\\u0438\\u0441\\u043a\\u0435 \\u043d\\u0430 \\u0438\\u043d\\u0441\\u0442\\u0430\\u0433\\u0440\\u0430\\u043c (\\u0441\\u0432\\u0435\\u0442\\u043b\\u044b\\u0439)\",\"module_description\":{\"1\":{\"title\":\"\",\"description\":\"&lt;div class=&quot;instagram instagram_light-theme&quot;&gt;\\r\\n&lt;div class=&quot;container instagram__container&quot;&gt;\\r\\n&lt;div class=&quot;instagram__info&quot;&gt;\\r\\n&lt;p class=&quot;instagram__description instagram__description_light-theme&quot;&gt;\\u041f\\u043e\\u0434\\u043f\\u0438\\u0448\\u0438\\u0441\\u044c \\u043d\\u0430 \\u043e\\u0444\\u0438\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 Instagram Soocas \\u0432 \\u0420\\u043e\\u0441\\u0441\\u0438\\u0438, \\u0447\\u0442\\u043e\\u0431\\u044b \\u043d\\u0435 \\u043f\\u0440\\u043e\\u043f\\u0443\\u0441\\u0442\\u0438\\u0442\\u044c \\u0430\\u043a\\u0446\\u0438\\u0438 \\u0438 \\u0440\\u0430\\u0441\\u043f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0438 \\u0442\\u043e\\u0432\\u0430\\u0440\\u043e\\u0432 \\u0431\\u0440\\u0435\\u043d\\u0434\\u0430&lt;\\/p&gt;\\r\\n&lt;a class=&quot;btn instagram__btn instagram__btn_light-theme&quot; href=&quot;https:\\/\\/www.instagram.com\\/soocasrussia\\/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; &lt;span class=&quot;instagram__text&quot;&gt; &lt;span class=&quot;instagram__action instagram__action_light-theme&quot;&gt;\\u041f\\u043e\\u0434\\u043f\\u0438\\u0441\\u0430\\u0442\\u044c\\u0441\\u044f&lt;\\/span&gt; &lt;span class=&quot;instagram__nickname instagram__action_light-theme&quot;&gt;@soocasrussia&lt;\\/span&gt; &lt;\\/span&gt; &lt;\\/a&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper instagram__gallery swiper-initialized swiper-horizontal swiper-backface-hidden&quot;&gt;\\r\\n&lt;div class=&quot;swiper-wrapper&quot; style=&quot;cursor: grab; transform: translate3d(0px, 0px, 0px);&quot;&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide swiper-slide-active&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem1&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-1.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide swiper-slide-next&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem2&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-2.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;instagram__elem3&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-3.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem4&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-4.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem5&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-5.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem6&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-6.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;instagram__elem7&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-7.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\"}},\"status\":\"1\"}');
+(47, 'Призыв к подписке на инстаграм (светлый)', 'html', '{\"name\":\"\\u041f\\u0440\\u0438\\u0437\\u044b\\u0432 \\u043a \\u043f\\u043e\\u0434\\u043f\\u0438\\u0441\\u043a\\u0435 \\u043d\\u0430 \\u0438\\u043d\\u0441\\u0442\\u0430\\u0433\\u0440\\u0430\\u043c (\\u0441\\u0432\\u0435\\u0442\\u043b\\u044b\\u0439)\",\"module_description\":{\"1\":{\"title\":\"\",\"description\":\"&lt;div class=&quot;instagram instagram_light-theme&quot;&gt;\\r\\n&lt;div class=&quot;container instagram__container&quot;&gt;\\r\\n&lt;div class=&quot;instagram__info&quot;&gt;\\r\\n&lt;p class=&quot;instagram__description instagram__description_light-theme&quot;&gt;\\u041f\\u043e\\u0434\\u043f\\u0438\\u0448\\u0438\\u0441\\u044c \\u043d\\u0430 \\u043e\\u0444\\u0438\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 Instagram Soocas \\u0432 \\u0420\\u043e\\u0441\\u0441\\u0438\\u0438, \\u0447\\u0442\\u043e\\u0431\\u044b \\u043d\\u0435 \\u043f\\u0440\\u043e\\u043f\\u0443\\u0441\\u0442\\u0438\\u0442\\u044c \\u0430\\u043a\\u0446\\u0438\\u0438 \\u0438 \\u0440\\u0430\\u0441\\u043f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0438 \\u0442\\u043e\\u0432\\u0430\\u0440\\u043e\\u0432 \\u0431\\u0440\\u0435\\u043d\\u0434\\u0430&lt;\\/p&gt;\\r\\n&lt;a class=&quot;btn instagram__btn instagram__btn_light-theme&quot; href=&quot;https:\\/\\/www.instagram.com\\/soocasrussia\\/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; &lt;span class=&quot;instagram__text&quot;&gt; &lt;span class=&quot;instagram__action instagram__action_light-theme&quot;&gt;\\u041f\\u043e\\u0434\\u043f\\u0438\\u0441\\u0430\\u0442\\u044c\\u0441\\u044f&lt;\\/span&gt; &lt;span class=&quot;instagram__nickname instagram__action_light-theme&quot;&gt;@soocasrussia&lt;\\/span&gt; &lt;\\/span&gt; &lt;\\/a&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper instagram__gallery swiper-initialized swiper-horizontal swiper-backface-hidden&quot;&gt;\\r\\n&lt;div class=&quot;swiper-wrapper&quot; style=&quot;cursor: grab; transform: translate3d(0px, 0px, 0px);&quot;&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide swiper-slide-active&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem1&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-1.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide swiper-slide-next&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem2&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-2.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;instagram__elem3&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-3.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem4&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-4.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem5&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-5.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;div class=&quot;swiper-slide instagram__slide&quot; style=&quot;margin-right: 20px;&quot;&gt;\\r\\n&lt;div class=&quot;instagram__elem6&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-6.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;div class=&quot;instagram__elem7&quot;&gt;&lt;img class=&quot;instagram__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/instagram\\/photo-7.png&quot; alt=&quot;SOOCAS&quot; \\/&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\"}},\"status\":\"1\"}'),
+(48, 'Представлены на маркетплейсах (Карточка товара)', 'html', '{\"name\":\"\\u041f\\u0440\\u0435\\u0434\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u044b \\u043d\\u0430 \\u043c\\u0430\\u0440\\u043a\\u0435\\u0442\\u043f\\u043b\\u0435\\u0439\\u0441\\u0430\\u0445 (\\u041a\\u0430\\u0440\\u0442\\u043e\\u0447\\u043a\\u0430 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430)\",\"module_description\":{\"1\":{\"title\":\"\",\"description\":\"&lt;div class=&quot;device__marketplaces marketplaces&quot;&gt;\\r\\n&lt;p class=&quot;marketplaces__description-small&quot;&gt;\\u0422\\u0430\\u043a\\u0436\\u0435 \\u0432\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u043f\\u0440\\u0438\\u043e\\u0431\\u0440\\u0435\\u0441\\u0442\\u0438 \\u043d\\u0430\\u0448 \\u0442\\u043e\\u0432\\u0430\\u0440 \\u043d\\u0430 \\u043c\\u0430\\u0440\\u043a\\u0435\\u0442\\u043f\\u043b\\u0435\\u0439\\u0441\\u0430\\u0445:&lt;\\/p&gt;\\r\\n&lt;div class=&quot;marketplaces__list-small&quot;&gt;&lt;a class=&quot;marketplaces__link&quot; href=&quot;https:\\/\\/ozon.ru\\/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; &lt;img class=&quot;marketplaces__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/marketplaces\\/logo-1.png&quot; alt=&quot;Logo Ozon&quot; \\/&gt; &lt;\\/a&gt; &lt;a class=&quot;marketplaces__link&quot; href=&quot;https:\\/\\/wildberries.ru\\/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; &lt;img class=&quot;marketplaces__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/marketplaces\\/logo-2.png&quot; alt=&quot;Logo Wildberries&quot; \\/&gt; &lt;\\/a&gt; &lt;a class=&quot;marketplaces__link marketplaces__link_border&quot; href=&quot;https:\\/\\/market.yandex.ru\\/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; &lt;img class=&quot;marketplaces__img&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/marketplaces\\/logo-3.png&quot; alt=&quot;Logo Yandex Market&quot; \\/&gt; &lt;\\/a&gt;&lt;\\/div&gt;\\r\\n&lt;\\/div&gt;\"}},\"status\":\"1\"}'),
+(49, 'Бесплатная доставка по все россии (Карточка товара)', 'html', '{\"name\":\"\\u0411\\u0435\\u0441\\u043f\\u043b\\u0430\\u0442\\u043d\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430 \\u043f\\u043e \\u0432\\u0441\\u0435 \\u0440\\u043e\\u0441\\u0441\\u0438\\u0438 (\\u041a\\u0430\\u0440\\u0442\\u043e\\u0447\\u043a\\u0430 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430)\",\"module_description\":{\"1\":{\"title\":\"\",\"description\":\"&lt;div class=&quot;device__advantage&quot;&gt;&lt;img class=&quot;device__icon&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/device-slider\\/icon-1.svg&quot; alt=&quot;icon&quot; width=&quot;30&quot; height=&quot;30&quot; \\/&gt;\\u0411\\u0435\\u0441\\u043f\\u043b\\u0430\\u0442\\u043d\\u0430\\u044f \\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043a\\u0430 \\u043f\\u043e \\u0432\\u0441\\u0435\\u0439 \\u0420\\u043e\\u0441\\u0441\\u0438\\u0438&lt;\\/div&gt;\"}},\"status\":\"1\"}'),
+(50, 'Обмен/возврат товара в течении 14 дней (Карточка товара)', 'html', '{\"name\":\"\\u041e\\u0431\\u043c\\u0435\\u043d\\/\\u0432\\u043e\\u0437\\u0432\\u0440\\u0430\\u0442 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430 \\u0432 \\u0442\\u0435\\u0447\\u0435\\u043d\\u0438\\u0438 14 \\u0434\\u043d\\u0435\\u0439 (\\u041a\\u0430\\u0440\\u0442\\u043e\\u0447\\u043a\\u0430 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430)\",\"module_description\":{\"1\":{\"title\":\"\",\"description\":\"&lt;div class=&quot;device__advantage&quot;&gt;&lt;img class=&quot;device__icon&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/device-slider\\/icon-2.svg&quot; alt=&quot;icon&quot; width=&quot;30&quot; height=&quot;30&quot; \\/&gt;\\u041e\\u0431\\u043c\\u0435\\u043d\\/\\u0432\\u043e\\u0437\\u0432\\u0440\\u0430\\u0442 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430 \\u0432 \\u0442\\u0435\\u0447\\u0435\\u043d\\u0438\\u0438 14 \\u0434\\u043d\\u0435\\u0439&lt;\\/div&gt;\"}},\"status\":\"1\"}'),
+(51, 'Гарантия от 1 года (Карточка товара)', 'html', '{\"name\":\"\\u0413\\u0430\\u0440\\u0430\\u043d\\u0442\\u0438\\u044f \\u043e\\u0442 1 \\u0433\\u043e\\u0434\\u0430 (\\u041a\\u0430\\u0440\\u0442\\u043e\\u0447\\u043a\\u0430 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430)\",\"module_description\":{\"1\":{\"title\":\"\",\"description\":\"&lt;div class=&quot;device__advantage&quot;&gt;&lt;img class=&quot;device__icon&quot; src=&quot;..\\/catalog\\/view\\/theme\\/soocas\\/images\\/dist\\/device-slider\\/icon-3.svg&quot; alt=&quot;icon&quot; width=&quot;30&quot; height=&quot;30&quot; \\/&gt; &lt;span class=&quot;device__text&quot;&gt;\\u0413\\u0430\\u0440\\u0430\\u043d\\u0442\\u0438\\u044f \\u043e\\u0442 1 \\u0433\\u043e\\u0434\\u0430&lt;\\/span&gt;&lt;\\/div&gt;\"}},\"status\":\"1\"}');
 
 -- --------------------------------------------------------
 
@@ -2365,17 +2323,7 @@ CREATE TABLE `oc_option` (
 --
 
 INSERT INTO `oc_option` (`option_id`, `type`, `sort_order`) VALUES
-(1, 'radio', 1),
-(2, 'checkbox', 2),
-(4, 'text', 3),
-(5, 'select', 4),
-(6, 'textarea', 5),
-(7, 'file', 6),
-(8, 'date', 7),
-(9, 'time', 8),
-(10, 'datetime', 9),
-(11, 'select', 10),
-(12, 'date', 11);
+(13, 'radio', 1);
 
 -- --------------------------------------------------------
 
@@ -2394,17 +2342,7 @@ CREATE TABLE `oc_option_description` (
 --
 
 INSERT INTO `oc_option_description` (`option_id`, `language_id`, `name`) VALUES
-(1, 1, 'Radio'),
-(2, 1, 'Checkbox'),
-(4, 1, 'Text'),
-(6, 1, 'Textarea'),
-(8, 1, 'Date'),
-(7, 1, 'File'),
-(5, 1, 'Select'),
-(9, 1, 'Time'),
-(10, 1, 'Date &amp; Time'),
-(12, 1, 'Delivery Date'),
-(11, 1, 'Size');
+(13, 1, 'Цвет');
 
 -- --------------------------------------------------------
 
@@ -2424,20 +2362,8 @@ CREATE TABLE `oc_option_value` (
 --
 
 INSERT INTO `oc_option_value` (`option_value_id`, `option_id`, `image`, `sort_order`) VALUES
-(43, 1, '', 3),
-(32, 1, '', 1),
-(45, 2, '', 4),
-(44, 2, '', 3),
-(42, 5, '', 4),
-(41, 5, '', 3),
-(39, 5, '', 1),
-(40, 5, '', 2),
-(31, 1, '', 2),
-(23, 2, '', 1),
-(24, 2, '', 2),
-(46, 11, '', 1),
-(47, 11, '', 2),
-(48, 11, '', 3);
+(50, 13, 'catalog/option/color/blue.svg', 2),
+(49, 13, 'catalog/option/color/pink.svg', 1);
 
 -- --------------------------------------------------------
 
@@ -2457,20 +2383,8 @@ CREATE TABLE `oc_option_value_description` (
 --
 
 INSERT INTO `oc_option_value_description` (`option_value_id`, `language_id`, `option_id`, `name`) VALUES
-(43, 1, 1, 'Large'),
-(32, 1, 1, 'Small'),
-(45, 1, 2, 'Checkbox 4'),
-(44, 1, 2, 'Checkbox 3'),
-(31, 1, 1, 'Medium'),
-(42, 1, 5, 'Yellow'),
-(41, 1, 5, 'Green'),
-(39, 1, 5, 'Red'),
-(40, 1, 5, 'Blue'),
-(23, 1, 2, 'Checkbox 1'),
-(24, 1, 2, 'Checkbox 2'),
-(48, 1, 11, 'Large'),
-(47, 1, 11, 'Medium'),
-(46, 1, 11, 'Small');
+(50, 1, 13, 'Голубой'),
+(49, 1, 13, 'Розовый');
 
 -- --------------------------------------------------------
 
@@ -2769,19 +2683,19 @@ CREATE TABLE `oc_product` (
 
 INSERT INTO `oc_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `noindex`, `date_added`, `date_modified`) VALUES
 (63, '2222222222', '', '', '', '', '', '', '', 1, 7, 'catalog/products/product-2.png', 0, 1, '9900.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, 0, '2023-05-21 12:19:19', '2023-05-21 12:20:05'),
-(54, '111111111111', '', '', '', '', '', '', '', 999, 7, 'catalog/products/product-1.png', 0, 1, '12000.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 1, 0, '2023-05-19 13:38:45', '2023-05-19 14:07:10'),
+(54, '111111111111', '', '', '', '', '', '', '', 999, 7, 'catalog/products/product-1.png', 0, 1, '12000.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 18, 0, '2023-05-19 13:38:45', '2023-05-19 14:07:10'),
 (55, '111111111111', '', '', '', '', '', '', '', 999, 7, 'catalog/products/product-1.png', 0, 1, '12000.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 2, 0, '2023-05-19 13:38:54', '2023-05-21 12:18:54'),
 (56, '111111111111', '', '', '', '', '', '', '', 999, 7, 'catalog/products/product-1.png', 0, 1, '12000.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 2, 0, '2023-05-19 13:38:54', '2023-05-21 12:19:03'),
-(57, '2222222222', '', '', '', '', '', '', '', 1, 7, 'catalog/products/product-2.png', 0, 1, '9900.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 2, 0, '2023-05-19 13:38:54', '2023-05-21 12:19:09'),
+(57, '2222222222', '', '', '', '', '', '', '', 1, 7, 'catalog/products/product-2.png', 0, 1, '9900.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 3, 0, '2023-05-19 13:38:54', '2023-05-21 12:19:09'),
 (58, '111111111111', '', '', '', '', '', '', '', 999, 7, 'catalog/products/product-1.png', 0, 1, '12000.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 1, 0, '2023-05-21 12:19:18', '2023-05-21 12:19:32'),
 (59, '111111111111', '', '', '', '', '', '', '', 999, 7, 'catalog/products/product-1.png', 0, 1, '12000.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 6, 0, '2023-05-21 12:19:18', '2023-05-22 12:47:23'),
 (60, '111111111111', '', '', '', '', '', '', '', 999, 7, 'catalog/products/product-1.png', 0, 1, '12000.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 2, 0, '2023-05-21 12:19:18', '2023-05-21 12:19:45'),
 (61, '111111111111', '', '', '', '', '', '', '', 999, 7, 'catalog/products/product-1.png', 0, 1, '12000.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 1, 0, '2023-05-21 12:19:18', '2023-05-21 12:19:51'),
 (62, '2222222222', '', '', '', '', '', '', '', 1, 7, 'catalog/products/product-2.png', 0, 1, '9900.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, 0, '2023-05-21 12:19:18', '2023-05-21 12:19:58'),
-(50, '111111111111', '', '', '', '', '', '', '', 999, 7, 'catalog/products/product-1.png', 0, 1, '12000.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 2, 1, '2023-05-17 13:18:09', '2023-05-17 13:19:55'),
+(50, '111111111111', '', '', '', '', '', '', '', 999, 7, 'catalog/products/product-1.png', 0, 1, '12000.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 27, 1, '2023-05-17 13:18:09', '2023-05-23 07:05:44'),
 (51, '2222222222', '', '', '', '', '', '', '', 1, 7, 'catalog/products/product-2.png', 0, 1, '9900.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 1, 1, '2023-05-17 13:19:13', '2023-05-17 13:19:38'),
-(52, '123123123', '', '', '', '', '', '', '', 666, 7, 'catalog/products/product-3.png', 0, 1, '11900.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 0, 1, '2023-05-17 13:20:42', '0000-00-00 00:00:00'),
-(53, '124214124', '', '', '', '', '', '', '', 1, 7, 'catalog/products/product-4.png', 0, 1, '8900.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 2, 1, '2023-05-17 13:21:27', '0000-00-00 00:00:00');
+(52, '123123123', '', '', '', '', '', '', '', 666, 7, 'catalog/products/product-3.png', 0, 1, '11900.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 1, 1, '2023-05-17 13:20:42', '0000-00-00 00:00:00'),
+(53, '124214124', '', '', '', '', '', '', '', 1, 7, 'catalog/products/product-4.png', 0, 1, '8900.0000', 0, 0, '2023-05-17', '0.00000000', 1, '0.00000000', '0.00000000', '0.00000000', 1, 1, 1, 1, 1, 203, 1, '2023-05-17 13:21:27', '2023-05-24 15:12:20');
 
 -- --------------------------------------------------------
 
@@ -2823,7 +2737,6 @@ INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `desc
 (50, 1, 'Беспроводной ирригатор Soocas W3 Pro', '', '', '', '', '', '', ''),
 (51, 1, 'Электрическая зубная щетка Soocas X3U', '', '', '', '', '', '', ''),
 (52, 1, 'Электробритва Soocas S5 4 в 1', '', '', '', '', '', '', ''),
-(53, 1, 'Фен с ионизатором Soocas H5', '', '', '', '', '', '', ''),
 (54, 1, 'Беспроводной ирригатор Soocas W3 Pro', '', '', '', '', '', '', ''),
 (55, 1, 'Беспроводной ирригатор Soocas W3 Pro', '', '', '', '', '', '', ''),
 (56, 1, 'Беспроводной ирригатор Soocas W3 Pro', '', '', '', '', '', '', ''),
@@ -2833,7 +2746,8 @@ INSERT INTO `oc_product_description` (`product_id`, `language_id`, `name`, `desc
 (60, 1, 'Беспроводной ирригатор Soocas W3 Pro', '', '', '', '', '', '', ''),
 (61, 1, 'Беспроводной ирригатор Soocas W3 Pro', '', '', '', '', '', '', ''),
 (62, 1, 'Электрическая зубная щетка Soocas X3U', '', '', '', '', '', '', ''),
-(63, 1, 'Электрическая зубная щетка Soocas X3U', '', '', '', '', '', '', '');
+(63, 1, 'Электрическая зубная щетка Soocas X3U', '', '', '', '', '', '', ''),
+(53, 1, 'Фен с ионизатором Soocas H5', '&lt;p class=&quot;device__paragraph&quot;&gt;Флагманская звуковая щетка со стериллизатором:&lt;/p&gt;\r\n&lt;ul class=&quot;device__list&quot;&gt;\r\n&lt;li class=&quot;device__item&quot;&gt;Отбеливание зубов за 4 недели на 30%&lt;/li&gt;\r\n&lt;li class=&quot;device__item&quot;&gt;Стериллизатор убивает 99% бактерий&lt;/li&gt;\r\n&lt;li class=&quot;device__item&quot;&gt;100 режимов, 200 насадок&lt;/li&gt;\r\n&lt;/ul&gt;', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -2876,6 +2790,14 @@ CREATE TABLE `oc_product_image` (
   `sort_order` int NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
 
+--
+-- Дамп данных таблицы `oc_product_image`
+--
+
+INSERT INTO `oc_product_image` (`product_image_id`, `product_id`, `image`, `sort_order`) VALUES
+(2471, 53, 'catalog/products/product-3.png', 0),
+(2472, 53, 'catalog/products/product-2.png', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -2889,6 +2811,13 @@ CREATE TABLE `oc_product_option` (
   `value` text NOT NULL,
   `required` tinyint(1) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+
+--
+-- Дамп данных таблицы `oc_product_option`
+--
+
+INSERT INTO `oc_product_option` (`product_option_id`, `product_id`, `option_id`, `value`, `required`) VALUES
+(230, 53, 13, '', 1);
 
 -- --------------------------------------------------------
 
@@ -2911,6 +2840,14 @@ CREATE TABLE `oc_product_option_value` (
   `weight` decimal(15,8) NOT NULL,
   `weight_prefix` varchar(1) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+
+--
+-- Дамп данных таблицы `oc_product_option_value`
+--
+
+INSERT INTO `oc_product_option_value` (`product_option_value_id`, `product_option_id`, `product_id`, `option_id`, `option_value_id`, `quantity`, `subtract`, `price`, `price_prefix`, `points`, `points_prefix`, `weight`, `weight_prefix`) VALUES
+(24, 230, 53, 13, 50, 50, 1, '0.0000', '+', 0, '+', '0.00000000', '+'),
+(23, 230, 53, 13, 49, 50, 1, '0.0000', '+', 0, '+', '0.00000000', '+');
 
 -- --------------------------------------------------------
 
@@ -3002,6 +2939,7 @@ CREATE TABLE `oc_product_special` (
 --
 
 INSERT INTO `oc_product_special` (`product_special_id`, `product_id`, `customer_group_id`, `priority`, `price`, `date_start`, `date_end`) VALUES
+(442, 50, 1, 0, '1.0000', '0000-00-00', '0000-00-00'),
 (441, 59, 1, 0, '9000.0000', '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
@@ -3014,8 +2952,19 @@ CREATE TABLE `oc_product_tab` (
   `product_tab_id` int NOT NULL,
   `product_id` int NOT NULL,
   `sort_order` tinyint NOT NULL,
-  `status` tinyint NOT NULL
+  `status` tinyint NOT NULL,
+  `color` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+
+--
+-- Дамп данных таблицы `oc_product_tab`
+--
+
+INSERT INTO `oc_product_tab` (`product_tab_id`, `product_id`, `sort_order`, `status`, `color`) VALUES
+(69, 53, 1, 1, '#eef5ff'),
+(68, 53, 4, 1, '#ebe3f8'),
+(67, 53, 3, 1, '#ebe3f8'),
+(66, 53, 2, 1, '#ebe3f8');
 
 -- --------------------------------------------------------
 
@@ -3027,9 +2976,21 @@ CREATE TABLE `oc_product_tab_desc` (
   `product_tab_id` int NOT NULL,
   `heading` varchar(255) NOT NULL,
   `description` text NOT NULL,
+  `subtitle` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `product_id` int NOT NULL,
   `language_id` int NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+
+--
+-- Дамп данных таблицы `oc_product_tab_desc`
+--
+
+INSERT INTO `oc_product_tab_desc` (`product_tab_id`, `heading`, `description`, `subtitle`, `image`, `product_id`, `language_id`) VALUES
+(66, '180 дней', 'Совершенно новая технология сверхмощного энергосбережения, 6 часов быстрой зарядки Type-C до 180 дней*', '*На основе 2 минут ежедневного использования в НЕЖНОМ РЕЖИМЕ.', 'catalog/img-2-mob.png', 53, 1),
+(67, '12 чистых вариантов', '&lt;p class=&quot;text block__text&quot;&gt;\r\n                                    Найдите идеального партнера с нашими 3 режимами интенсивности и 4 режимами: чистый, отбеливающий, нежный, полирующий. Вам решать, какой из них. \r\n                                &lt;/p&gt;\r\n                                &lt;p class=&quot;text block__text&quot;&gt;\r\n                                    Утро: щадящий режим, чтобы разбудить зубы бережной утренней чисткой \r\n                                &lt;/p&gt;\r\n                                &lt;p class=&quot;text block__text&quot;&gt;\r\n                                    Вечер: режим очистки для глубокой очистки зубов после еды в течение всего дня.\r\n                                &lt;/p&gt;', '', 'catalog/img-3.png', 53, 1),
+(68, 'Что внутри?', '&lt;ol class=&quot;block__list&quot;&gt;\r\n                                    &lt;li class=&quot;block__item text&quot;&gt;\r\n                                        UVC Toothbrush Sanitizer\r\n                                    &lt;/li&gt;\r\n                                    &lt;li class=&quot;block__item text&quot;&gt;\r\n                                        The SOOCAS X3 PRO Sonic Toothbrush\r\n                                    &lt;/li&gt;\r\n                                    &lt;li class=&quot;block__item text&quot;&gt;\r\n                                        Toothbrush head &lt;span class=&quot;block__gray-text&quot;&gt;(Standard type, Soft type, Tongue cleaner (back of Soft))&lt;/span&gt; \r\n                                    &lt;/li&gt;\r\n                                    &lt;li class=&quot;block__item text&quot;&gt;\r\n                                        Крючок для настенного крепления\r\n                                    &lt;/li&gt;\r\n                                    &lt;li class=&quot;block__item text&quot;&gt;\r\n                                        USD кабель для зарядки\r\n                                    &lt;/li&gt;\r\n                                &lt;/ol&gt;', '', 'catalog/img-4-tabl.png', 53, 1),
+(69, '99,99% уровень  санитарной обработки', 'Технология Super UVC Sanitizazation специально разработана для уничтожения миллионов причудливых бактерий на зубной щетке. Клинически доказано, что SOOCAS обеспечивает до 99,99% за 5 минут.', '', 'catalog/img-1-tabl.png', 53, 1);
 
 -- --------------------------------------------------------
 
@@ -3792,10 +3753,10 @@ INSERT INTO `oc_url_alias` (`url_alias_id`, `query`, `keyword`, `seomanager`) VA
 (882, 'category_id=60', 'uhod-za-volosami', 0),
 (883, 'category_id=61', 'jelektrobritvi', 0),
 (884, 'category_id=62', 'aksessuari', 0),
-(888, 'product_id=50', 'besprovodnoj-irrigator-soocas-w3-pro', 0),
+(900, 'product_id=50', 'besprovodnoj-irrigator-soocas-w3-pro', 0),
 (887, 'product_id=51', 'jelektricheskaja-zubnaja-shhetka-soocas-x3u', 0),
 (889, 'product_id=52', 'jelektrobritva-soocas-s5-4-v-1', 0),
-(890, 'product_id=53', 'fen-s-ionizatorom-soocas-h5', 0),
+(958, 'product_id=53', 'fen-s-ionizatorom-soocas-h5', 0),
 (842, 'information_id=3', 'privacy', 0),
 (862, 'common/home', '', 1),
 (863, 'information/contact', 'contacts', 1),
@@ -9317,13 +9278,13 @@ ALTER TABLE `oc_article_image`
 -- AUTO_INCREMENT для таблицы `oc_attribute`
 --
 ALTER TABLE `oc_attribute`
-  MODIFY `attribute_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `attribute_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_attribute_group`
 --
 ALTER TABLE `oc_attribute_group`
-  MODIFY `attribute_group_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `attribute_group_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_banner`
@@ -9335,7 +9296,7 @@ ALTER TABLE `oc_banner`
 -- AUTO_INCREMENT для таблицы `oc_banner_image`
 --
 ALTER TABLE `oc_banner_image`
-  MODIFY `banner_image_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+  MODIFY `banner_image_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_benefit`
@@ -9521,19 +9482,19 @@ ALTER TABLE `oc_language`
 -- AUTO_INCREMENT для таблицы `oc_layout`
 --
 ALTER TABLE `oc_layout`
-  MODIFY `layout_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `layout_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_layout_module`
 --
 ALTER TABLE `oc_layout_module`
-  MODIFY `layout_module_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=196;
+  MODIFY `layout_module_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=212;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_layout_route`
 --
 ALTER TABLE `oc_layout_route`
-  MODIFY `layout_route_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `layout_route_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_location`
@@ -9569,19 +9530,19 @@ ALTER TABLE `oc_modification`
 -- AUTO_INCREMENT для таблицы `oc_module`
 --
 ALTER TABLE `oc_module`
-  MODIFY `module_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `module_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_option`
 --
 ALTER TABLE `oc_option`
-  MODIFY `option_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `option_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_option_value`
 --
 ALTER TABLE `oc_option_value`
-  MODIFY `option_value_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `option_value_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_order`
@@ -9659,19 +9620,19 @@ ALTER TABLE `oc_product_discount`
 -- AUTO_INCREMENT для таблицы `oc_product_image`
 --
 ALTER TABLE `oc_product_image`
-  MODIFY `product_image_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2357;
+  MODIFY `product_image_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2473;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_product_option`
 --
 ALTER TABLE `oc_product_option`
-  MODIFY `product_option_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
+  MODIFY `product_option_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=231;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_product_option_value`
 --
 ALTER TABLE `oc_product_option_value`
-  MODIFY `product_option_value_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `product_option_value_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_product_reward`
@@ -9683,13 +9644,13 @@ ALTER TABLE `oc_product_reward`
 -- AUTO_INCREMENT для таблицы `oc_product_special`
 --
 ALTER TABLE `oc_product_special`
-  MODIFY `product_special_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=442;
+  MODIFY `product_special_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=443;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_product_tab`
 --
 ALTER TABLE `oc_product_tab`
-  MODIFY `product_tab_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `product_tab_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_recurring`
@@ -9803,7 +9764,7 @@ ALTER TABLE `oc_upload`
 -- AUTO_INCREMENT для таблицы `oc_url_alias`
 --
 ALTER TABLE `oc_url_alias`
-  MODIFY `url_alias_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=900;
+  MODIFY `url_alias_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=959;
 
 --
 -- AUTO_INCREMENT для таблицы `oc_user`
