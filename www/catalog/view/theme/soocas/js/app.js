@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	toggleSearch();
 
-	function toggleForm() {
+	if (document.querySelector('#feedback-modal')) {
 		const btnOpen = document.querySelector('.feedbacks__btn');
 		const btnSend = document.querySelector('.feedback__button');
 		const form = document.querySelector('#feedback-modal');
@@ -152,16 +152,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (document.querySelector('.page_active-form')) toggleClasses();
 		})
 
-		if (btnSend) btnSend.addEventListener('click', toggleClasses);
-
 		cover.addEventListener('click', () => {
 			if (document.querySelector('.page_active-form')) toggleClasses();
 		})
 	}
 
-	// toggleForm();
-
-	function toggleSuccessfulModal() {
+	if (document.querySelector('#successful-modal')) {
 		const btnOpen = document.querySelector('.successful__btn');
 		const btnReady = document.querySelector('.successful-3__button');
 		const successful = document.querySelector('#successful-modal');
@@ -185,8 +181,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (document.querySelector('.page_active-successful')) toggleClasses();
 		})
 	}
-
-	// toggleSuccessfulModal();
 
 	function countProducts() {
 		const btnsPlus = document.querySelectorAll('.cart__plus');
@@ -229,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (document.querySelector('.feedbacks__img')) {
 			document.querySelectorAll('.feedbacks__img').forEach(img => img.addEventListener("click", getSrc));
 		}
-		
+
 		if (document.querySelector('.img-big')) {
 			document.querySelectorAll('.img-big').forEach(img => img.addEventListener("click", getSrc));
 		}
@@ -282,11 +276,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			//проверка типа
 			if (!['image/jpeg', 'image/jpg', 'image/png'].includes(file.type)) {
 				inputImage.value = '';
+				document.getElementById('feedback-error').innerHTML = 'Недопустимое расширение файла!';
 				return;
 			}
 
 			//проверка размера (до 1мб)
-			if (file.size > 1024 * 1024) return;
+			if (file.size > 1024 * 1024) {
+				document.getElementById('feedback-error').innerHTML = 'Размер файла больше 1мб!';
+				return
+			};
 
 			//полученние и вставка изображения
 			let reader = new FileReader();

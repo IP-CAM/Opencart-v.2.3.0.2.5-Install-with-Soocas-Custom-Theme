@@ -167,7 +167,7 @@
               <h3 class="title-h3"><?= $tab['title'] ?></h3>
               <? if ($tab['description']) { ?>
                 <p class="text">
-                  <?= $tab['description'] ?>
+                  <?= $tab['description']; ?>
                 </p>
               <? } ?>
               <? if ($tab['subtitle']) { ?>
@@ -179,10 +179,150 @@
           </div>
         <? } ?>
       <? } ?>
-
     </div>
   </div>
 </section>
+
+<div class="feedbacks">
+  <div class="container feedbacks__container">
+    <h2 class="title-h2 feedbacks__title-h2">Отзывы</h2>
+
+    <div class="swiper feedbacks__gallery swiper-initialized swiper-horizontal swiper-backface-hidden">
+
+      <div class="feedbacks__info">
+        <div class="feedbacks__left">
+          <h3 class="title-h3 feedbacks__title-h3">
+            <?= $heading_title; ?>
+          </h3>
+
+          <div class="feedbacks__rating rating">
+            <div class="rating__result rating__result_big">
+              <? for ($i = 1; $i <= 5; $i++) { ?>
+                <? if ($rating < $i) { ?>
+                  <svg class="rating__star rating__star_big" viewBox="0 0 20 19">
+                    <path d="M10 0L12.645 6.35942L19.5106 6.90983L14.2798 11.3906L15.8779 18.0902L10 14.5L4.12215 18.0902L5.72025 11.3906L0.489435 6.90983L7.35497 6.35942L10 0Z" />
+                  </svg>
+                <? } else { ?>
+                  <svg class="rating__star rating__star_big  rating__star_active" viewBox="0 0 20 19">
+                    <path d="M10 0L12.645 6.35942L19.5106 6.90983L14.2798 11.3906L15.8779 18.0902L10 14.5L4.12215 18.0902L5.72025 11.3906L0.489435 6.90983L7.35497 6.35942L10 0Z" />
+                  </svg>
+                <? } ?>
+              <? } ?>
+            </div>
+            <span class="feedbacks__amount"><?= $rating; ?> на основе <?= $reviews; ?></span>
+          </div>
+        </div>
+
+        <div class="feedbacks__right">
+          <button class="btn btn_black feedbacks__btn">Написать отзыв</button>
+
+          <div class="feedbacks__buttons">
+            <div class="swiper-button-prev feedbacks__button feedbacks__button-pev">
+              <svg class="feedbacks__arrow" viewBox="0 0 10 16">
+                <path d="M0 8L7.93103 16L10 13.913L4.13793 8L10 2.08696L7.93103 0L0 8Z"></path>
+              </svg>
+            </div>
+            <div class="swiper-button-next feedbacks__button feedbacks__button-next swiper-button-disabled">
+              <svg class="feedbacks__arrow" viewBox="0 0 10 16">
+                <path d="M10 8L2.06897 -6.93353e-07L1.21632e-06 2.08695L5.86207 8L1.82448e-07 13.913L2.06897 16L10 8Z"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- slider -->
+      <div class="swiper-wrapper" style="transform: translate3d(-3.936px, 0px, 0px); transition-duration: 0ms; cursor: grab;">
+
+        <? foreach ($review_list as $review) { ?>
+          <div class="swiper-slide feedbacks__slide swiper-slide-active" style="margin-right: 18px;">
+            <div class="feedbacks__wrap">
+              <div class="feedbacks__data">
+                <div class="feedbacks__rating-small rating">
+                  <span class="feedbacks__name">
+                    <?= $review['author']; ?>
+                  </span>
+                  <div class="rating__result">
+
+                    <? for ($i = 1; $i <= 5; $i++) { ?>
+                      <? if ($review['rating'] < $i) { ?>
+                        <svg class="rating__star rating__star_small" viewBox="0 0 20 19">
+                          <path d="M10 0L12.645 6.35942L19.5106 6.90983L14.2798 11.3906L15.8779 18.0902L10 14.5L4.12215 18.0902L5.72025 11.3906L0.489435 6.90983L7.35497 6.35942L10 0Z" />
+                        </svg>
+                      <? } else { ?>
+                        <svg class="rating__star rating__star_small rating__star_active" viewBox="0 0 20 19">
+                          <path d="M10 0L12.645 6.35942L19.5106 6.90983L14.2798 11.3906L15.8779 18.0902L10 14.5L4.12215 18.0902L5.72025 11.3906L0.489435 6.90983L7.35497 6.35942L10 0Z" />
+                        </svg>
+                      <? } ?>
+                    <? } ?>
+                  </div>
+                </div>
+                <time class="feedbacks__time" datetime="<?= $review['date_html']; ?>"><?= $review['date_added']; ?></time>
+              </div>
+
+              <p class="feedbacks__text">
+                <?= $review['text']; ?>
+              </p>
+
+              <? if ($review['image']) { ?>
+                <? foreach ($review['image'] as $image) { ?>
+                  <div class="feedbacks__img-wrap">
+                    <img class="feedbacks__img" src="<?= $image['thumb']; ?>" alt="User photo" width="237" height="157" loading="lazy" data-zoom-image="<?= $image['image']; ?>">
+                  </div>
+                <? } ?>
+              <? } ?>
+            </div>
+          </div>
+        <? } ?>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('review-form')) {
+      document.getElementById('review-form').addEventListener('submit', event => {
+        event.preventDefault();
+        const form = event.target;
+        form.querySelector('button').disabled = true;
+        const formData = new FormData(form);
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "index.php?route=product/product/write&product_id=<?= $product_id; ?>");
+        xhr.send(formData);
+
+        xhr.onloadend = function() {
+          if (xhr.status == 200) {
+            const response = JSON.parse(xhr.response);
+            if (response['success']) {
+              const modalList = document.querySelectorAll('.modal');
+              modalList[1].classList.toggle('modal_open-form');
+              document.querySelector('#feedback-modal').classList.toggle('feedback_open');
+              document.querySelector('.page__cover').classList.toggle('page__cover_open-form');
+              document.querySelector('.page').classList.toggle('page_active-form');
+
+              modalList[2].classList.toggle('modal_open-successful');
+              document.querySelector('#successful-modal').classList.toggle('successful-3_open');
+              document.querySelector('.page__cover').classList.toggle('page__cover_open-successful');
+              document.querySelector('.page').classList.toggle('page_active-successful');
+              form.reset();
+              document.getElementById('feedback-error').innerHTML = '';
+            } else {
+              document.getElementById('feedback-error').innerHTML = response['error'] ? response['error'] : "Форма не отправлена";
+            }
+            form.querySelector('button').disabled = false;
+          } else {
+            alert("Ошибка " + this.status);
+            document.getElementById('feedback-error').innerHTML = "Ошибка " + this.status;
+            form.querySelector('button').disabled = false;
+          }
+        };
+      });
+    }
+  });
+</script>
 
 <?= $content_bottom; ?>
 <?= $footer; ?>

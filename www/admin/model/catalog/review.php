@@ -10,6 +10,12 @@ class ModelCatalogReview extends Model {
 
 		$review_id = $this->db->getLastId();
 
+		if (isset($data['product_image'])) {
+				foreach ($data['product_image'] as $product_image) {
+						$this->db->query("INSERT INTO " . DB_PREFIX . "review_product_image SET review_id = '" . (int)$review_id . "', image = '" . $this->db->escape($product_image['image'])  . "'");
+				}
+		}
+
 		$this->cache->delete('product');
 
 		return $review_id;
@@ -18,13 +24,28 @@ class ModelCatalogReview extends Model {
 	public function editReview($review_id, $data) {
 		$this->db->query("UPDATE " . DB_PREFIX . "review SET author = '" . $this->db->escape($data['author']) . "', product_id = '" . (int)$data['product_id'] . "', text = '" . $this->db->escape(strip_tags($data['text'])) . "', rating = '" . (int)$data['rating'] . "', status = '" . (int)$data['status'] . "', date_added = '" . $this->db->escape($data['date_added']) . "', date_modified = NOW() WHERE review_id = '" . (int)$review_id . "'");
 
+		$this->db->query("DELETE FROM " . DB_PREFIX . "review_product_image WHERE review_id = '" . (int)$review_id . "'");
+
+		if (isset($data['product_image'])) {
+				foreach ($data['product_image'] as $product_image) {
+						$this->db->query("INSERT INTO " . DB_PREFIX . "review_product_image SET review_id = '" . (int)$review_id . "', image = '" . $this->db->escape($product_image['image'])  . "'");
+				}
+		}
+
 		$this->cache->delete('product');
 	}
 
 	public function deleteReview($review_id) {
 		$this->db->query("DELETE FROM " . DB_PREFIX . "review WHERE review_id = '" . (int)$review_id . "'");
+		$this->db->query("DELETE FROM " . DB_PREFIX . "review_product_image WHERE review_id = '" . (int)$review_id . "'");
 
 		$this->cache->delete('product');
+	}
+
+	public function getReviewProductImages($review_id) {
+			$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "review_product_image WHERE review_id = '" . (int)$review_id . "'");
+
+			return $query->rows;
 	}
 
 	public function getReview($review_id) {
