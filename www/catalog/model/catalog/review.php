@@ -5,10 +5,18 @@
 // *	@license	GNU General Public License version 3; see LICENSE.txt
 
 class ModelCatalogReview extends Model {
-	public function addReview($product_id, $data) {
+	public function addReview($product_id, $data, $file_name_array) {
 		$this->db->query("INSERT INTO " . DB_PREFIX . "review SET author = '" . $this->db->escape($data['name']) . "', customer_id = '" . (int)$this->customer->getId() . "', product_id = '" . (int)$product_id . "', text = '" . $this->db->escape($data['text']) . "', rating = '" . (int)$data['rating'] . "', date_added = NOW()");
 
 		$review_id = $this->db->getLastId();
+
+    if (isset($file_name_array)) {
+      foreach ($file_name_array as $product_image) {
+        $this->db->query("INSERT INTO " . DB_PREFIX . "review_product_image SET review_id = '" . (int)$review_id . "', image = '" . $this->db->escape($product_image['image'])  . "'");
+      }
+    }
+
+		$this->log->write($data);
 
 		if (in_array('review', (array)$this->config->get('config_mail_alert'))) {
 			$this->load->language('mail/review');
@@ -66,6 +74,13 @@ class ModelCatalogReview extends Model {
 
 		return $query->rows;
 	}
+
+	public function getReviewProductImages($review_id) {
+			$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "review_product_image WHERE review_id = '" . (int)$review_id . "'");
+
+			return $query->rows;
+	}
+
 
 	public function getTotalReviewsByProductId($product_id) {
 		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "review r LEFT JOIN " . DB_PREFIX . "product p ON (r.product_id = p.product_id) LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE p.product_id = '" . (int)$product_id . "' AND p.date_available <= NOW() AND p.status = '1' AND r.status = '1' AND pd.language_id = '" . (int)$this->config->get('config_language_id') . "'");

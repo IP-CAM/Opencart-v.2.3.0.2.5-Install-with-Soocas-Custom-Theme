@@ -242,11 +242,6 @@ class ControllerProductProduct extends Controller
 			$this->document->setDescription($product_info['meta_description']);
 			$this->document->setKeywords($product_info['meta_keyword']);
 			$this->document->addLink($this->url->link('product/product', 'product_id=' . $this->request->get['product_id']), 'canonical');
-			$this->document->addScript('catalog/view/javascript/jquery/magnific/jquery.magnific-popup.min.js');
-			$this->document->addStyle('catalog/view/javascript/jquery/magnific/magnific-popup.css');
-			$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/moment.js');
-			$this->document->addScript('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js');
-			$this->document->addStyle('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css');
 
 			$data['text_select'] = $this->language->get('text_select');
 			$data['text_manufacturer'] = $this->language->get('text_manufacturer');
@@ -281,6 +276,34 @@ class ControllerProductProduct extends Controller
 			$data['button_continue'] = $this->language->get('button_continue');
 
 			$this->load->model('catalog/review');
+			$this->load->model('tool/image');
+
+			$data['review_list'] = array();
+			$results = $this->model_catalog_review->getReviewsByProductId($this->request->get['product_id']);
+
+			foreach ($results as $result) {
+
+				$product_images = $this->model_catalog_review->getReviewProductImages($result['review_id']);
+
+				$images = array();
+				if ($product_images) {
+					foreach ($product_images as $product_image) {
+						$images[] = array(
+							'thumb' => $this->model_tool_image->onesize($product_image['image'], 350),
+							'image' => $this->model_tool_image->onesize($product_image['image'], 1000),
+						);
+					}
+				}
+
+				$data['review_list'][] = array(
+					'author'     => $result['author'],
+					'text'       => nl2br($result['text']),
+					'rating'     => (int)$result['rating'],
+					'image'			 => $images,
+					'date_html'  => date('Y-m-d', strtotime($result['date_added'])),
+					'date_added' => date($this->language->get('date_format_short'), strtotime($result['date_added']))
+				);
+			}
 
 			$data['tab_description'] = $this->language->get('tab_description');
 			$data['tab_attribute'] = $this->language->get('tab_attribute');
@@ -446,7 +469,7 @@ class ControllerProductProduct extends Controller
 			}
 
 			$data['reviews'] = sprintf($this->language->get('text_reviews'), (int)$product_info['reviews']);
-			$data['rating'] = (int)$product_info['rating'];
+			$data['rating'] = (float)$product_info['rating'];
 
 			// Captcha
 			if ($this->config->get($this->config->get('config_captcha') . '_status') && in_array('review', (array)$this->config->get('config_captcha_page'))) {
@@ -663,7 +686,6 @@ class ControllerProductProduct extends Controller
 	public function review()
 	{
 		$this->load->language('product/product');
-
 		$this->load->model('catalog/review');
 
 		$data['text_no_reviews'] = $this->language->get('text_no_reviews');
@@ -733,7 +755,25 @@ class ControllerProductProduct extends Controller
 			if (!isset($json['error'])) {
 				$this->load->model('catalog/review');
 
-				$this->model_catalog_review->addReview($this->request->get['product_id'], $this->request->post);
+				$file_name_array = array();
+				if (isset($this->request->files["images"])) {
+						foreach ($this->request->files["images"]["error"] as $key => $error) {
+								if ($error == UPLOAD_ERR_OK) {
+										$tmp_name = $_FILES["images"]["tmp_name"][$key];
+										$name = basename($_FILES["images"]["name"][$key]);
+										$rand = rand();
+										$file_name_array[] = array(
+												'image' => 'catalog/reviews/' . $rand . $name,
+										);
+										move_uploaded_file($tmp_name, DIR_IMAGE . 'catalog/reviews/' . $rand . $name);
+								}
+						}
+				}
+
+				// $this->log->write($file_name_array);
+				// $this->log->write($this->request->post);
+
+				$this->model_catalog_review->addReview($this->request->get['product_id'], $this->request->post, $file_name_array);
 
 				$json['success'] = $this->language->get('text_success');
 			}
@@ -836,7 +876,7 @@ class ControllerProductProduct extends Controller
 				'filter_name' => $search,
 				'filter_tag' => $search,
 				'start' => 0,
-				'limit' => 50
+				'limit' => 5
 			);
 
 			$this->load->model('tool/image');
@@ -845,7 +885,7 @@ class ControllerProductProduct extends Controller
 
 			foreach ($results as $result) {
 
-				if (count($json) < 8) {
+				if (count($json) < $filter_data['limit']) {
 					if (isset($result['image']) && $result['image']) {
 						$image = $this->model_tool_image->onesize($result['image'], 100);
 					} else {

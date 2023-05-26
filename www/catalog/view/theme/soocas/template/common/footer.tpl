@@ -165,30 +165,30 @@
 <div class="modal">
 
   <button class="modal__close">
-    <img src="./images/dist/cart/close.svg" alt="Icon close" width="20" height="20" aria-label="Закрыть">
+    <img src="catalog/view/theme/soocas/images/dist/cart/close.svg" alt="Icon close" width="20" height="20" aria-label="Закрыть">
   </button>
 
   <div class="feedback" id="feedback-modal">
     <h3 class="feedback__title-3">Написать отзыв</h3>
     <div class="form feedback__form">
-      <form action="#" method="POST" class="form__body form__body_small form-id">
+      <form class="form__body form__body_small form-id" id="review-form">
         <h4 class="form__title-4">Электрическая зубная щетка Soocas X3 Pro</h4>
 
         <div class="form__container">
           <div class="form__fields form__fields_small">
             <div class="form__item">
-              <label for="forName3" class="form__label">ФИО *</label>
+              <label for="forName3" class="form__label">Имя *</label>
               <input type="text" id="forName3" class="form__input" name="name" required>
             </div>
 
             <div class="form__item">
               <label for="forEmail3" class="form__label">Email *</label>
-              <input type="text" id="forEmail3" class="form__input" name="email" required>
+              <input type="email" id="forEmail3" class="form__input" name="email" required>
             </div>
 
             <div class="form__item">
               <label for="forMessage3" class="form__label form__label_top">Текст отзыва</label>
-              <textarea id="forMessage3" class="form__input feedback__input" name="message"></textarea>
+              <textarea id="forMessage3" class="form__input feedback__input" name="text"></textarea>
             </div>
           </div>
 
@@ -196,7 +196,7 @@
             <div class="form__area">
               <label for="forfile" class="form__label-2">
                 Добавить фото
-                <input type="file" id="forfile" class="form__file" name="file" accept="image/jpeg, image/jpg, image/png" size="1048576">
+                <input type="file" id="forfile" class="form__file" name="images[]" accept="image/jpeg, image/jpg, image/png" size="1048576">
               </label>
               <span class="form__text">В формате .jpg или .png размером до 1 мб.</span>
               <div id="output" class="form__preview"></div>
@@ -261,7 +261,7 @@
 <div class="modal">
 
   <button class="modal__close">
-    <img src="./images/dist/cart/close.svg" alt="Icon close" width="20" height="20" aria-label="Закрыть">
+    <img src="catalog/view/theme/soocas/images/dist/cart/close.svg" alt="Icon close" width="20" height="20" aria-label="Закрыть">
   </button>
 
   <div class="successful-3" id="successful-modal">
