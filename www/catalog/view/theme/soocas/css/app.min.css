@@ -6903,11 +6903,10 @@ button.swiper-pagination-bullet {
 }
 
 .set__container {
-  padding: 0 135px
-}
-
-.set__title-h2 {
-  margin-bottom: min(max(25px, 5vw), 57px)
+  padding: 0 135px;
+  display: flex;
+  flex-direction: column;
+  gap: min(max(25px, 5vw), 57px);
 }
 
 .set__list {
