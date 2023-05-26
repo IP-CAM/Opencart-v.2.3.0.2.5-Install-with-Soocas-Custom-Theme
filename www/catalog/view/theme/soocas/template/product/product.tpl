@@ -129,6 +129,51 @@
   </div>
 </section>
 
+<? if ($products_combo) { ?>
+  <section class="set">
+    <div class="container set__container">
+      <h2 class="title-h2 set__title-h2">Вместе дешевле</h2>
+
+      <? foreach ($products_combo as $combo) { ?>
+        <ul class="set__list">
+          <? foreach ($combo['items'] as $id => $product) { ?>
+            <? if ($id <= 1) { ?>
+              <li class="set__item">
+                <a href="<?= $product['href']; ?>" class="set__link">
+                  <div class="set__img-wrap">
+                    <img src="<?= $product['image']; ?>" class="set__img" alt="<?= $product['name']; ?>" width="200" height="236" loading="lazy">
+                  </div>
+                  <div class="set__description">
+                    <p class="set__name">
+                      <?= $product['name']; ?>
+                    </p>
+                    <span class="set__price">
+                      <?= $product['price']; ?>
+                    </span>
+                  </div>
+                </a>
+              </li>
+            <? } ?>
+          <? } ?>
+          <li class="set__item">
+            <div class="set__wrap">
+              <div class="set__discount">
+                <span class="set__weight">Скидка <?= $combo['discount']; ?>%</span>
+                при покупке комплекта
+              </div>
+              <div class="set__old-price">
+                <span class="set__text">Цена:</span>
+                <span class="set__value"><?= $combo['previous_price']; ?></span>
+              </div>
+              <button class="btn btn_black set__button">Купить за <span class="set__new-price"><?= $combo['new_price']; ?></span></button>
+            </div>
+          </li>
+        </ul>
+      <? } ?>
+    </div>
+  </section>
+<? } ?>
+
 <?= $content_top; ?>
 
 <section class="review">

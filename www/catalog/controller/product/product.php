@@ -167,6 +167,14 @@ class ControllerProductProduct extends Controller
 		$product_info = $this->model_catalog_product->getProduct($product_id);
 
 		if ($product_info) {
+			$products_cart = array();
+			$cart = $this->cart->getProducts();
+			if ($cart) {
+					foreach ($cart as $item) {
+							$products_cart[] = $item['product_id'];
+					}
+			}
+
 			$url = '';
 
 			if (isset($this->request->get['path'])) {
@@ -305,6 +313,47 @@ class ControllerProductProduct extends Controller
 				);
 			}
 
+			$data['in_cart'] = in_array($product_info['product_id'], $products_cart);
+
+			$data['products_combo'] = array();
+			$product_combo_results = $this->model_catalog_product->getProductsCombo($this->request->get['product_id']);
+			if ($product_combo_results) {
+				foreach ($product_combo_results as $product_combo) {
+
+					$items = array();
+
+					foreach ($product_combo['items'] as $item) {
+						if ($item['image']) {
+							$image = $this->model_tool_image->onesize($item['image'], 200);
+						} else {
+							$image = $this->model_tool_image->onesize('placeholder.png', 200);
+						}
+						$items[] = array(
+							'product_id' => $item['product_id'],
+							'name' => $item['name'],
+							'image' => $image,
+							'href' => $this->url->link('product/product', '&product_id=' . (int)$item['product_id']),
+							'price' => $this->currency->format($this->tax->calculate($item['price'], 0, $this->config->get('config_tax')), $this->session->data['currency']),
+						);
+					}
+
+					// $in_cart = false;
+					// $has_combo = $this->cart->hasComboId($product_combo['combo_id']);
+					// if ($has_combo) {
+					// 	$in_cart = true;
+					// }
+					$data['products_combo'][] = array(
+						'combo_id' => $product_combo['combo_id'],
+						'items' => $items,
+						// 'in_cart' => $in_cart,
+						'discount' => $this->currency->format($product_combo['discount'], 0),
+						'previous_price' => $this->currency->format($this->tax->calculate($product_combo['previous_price'], 0, $this->config->get('config_tax')), $this->session->data['currency']),
+						'econom' => $this->currency->format($this->tax->calculate($product_combo['econom'], 0, $this->config->get('config_tax')), $this->session->data['currency']),
+						'new_price' => $this->currency->format($this->tax->calculate($product_combo['new_price'], 0, $this->config->get('config_tax')), $this->session->data['currency']),
+					);
+				}
+			}
+
 			$data['tab_description'] = $this->language->get('tab_description');
 			$data['tab_attribute'] = $this->language->get('tab_attribute');
 			$data['tab_review'] = sprintf($this->language->get('tab_review'), $product_info['reviews']);
@@ -325,6 +374,7 @@ class ControllerProductProduct extends Controller
 			} else {
 				$data['stock'] = $this->language->get('text_instock');
 			}
+
 
 			$this->load->model('tool/image');
 
@@ -757,21 +807,20 @@ class ControllerProductProduct extends Controller
 
 				$file_name_array = array();
 				if (isset($this->request->files["images"])) {
-						foreach ($this->request->files["images"]["error"] as $key => $error) {
-								if ($error == UPLOAD_ERR_OK) {
-										$tmp_name = $_FILES["images"]["tmp_name"][$key];
-										$name = basename($_FILES["images"]["name"][$key]);
-										$rand = rand();
-										$file_name_array[] = array(
-												'image' => 'catalog/reviews/' . $rand . $name,
-										);
-										move_uploaded_file($tmp_name, DIR_IMAGE . 'catalog/reviews/' . $rand . $name);
-								}
+					foreach ($this->request->files["images"]["error"] as $key => $error) {
+						if ($error == UPLOAD_ERR_OK) {
+							$tmp_name = $_FILES["images"]["tmp_name"][$key];
+							$name = basename($_FILES["images"]["name"][$key]);
+							$rand = rand();
+							$file_name_array[] = array(
+								'image' => 'catalog/reviews/' . $rand . $name,
+							);
+							move_uploaded_file($tmp_name, DIR_IMAGE . 'catalog/reviews/' . $rand . $name);
 						}
+					}
 				}
 
-				// $this->log->write($file_name_array);
-				// $this->log->write($this->request->post);
+				
 
 				$this->model_catalog_review->addReview($this->request->get['product_id'], $this->request->post, $file_name_array);
 

@@ -418,6 +418,128 @@ class ModelCatalogProduct extends Model {
 		return $query->rows;
 	}
 
+	public function getProductComboInfo($product_id)
+	{
+
+			$query = $this->db->query("SELECT pd.name AS name, p.product_id, p.image, p.price,  (SELECT price FROM " . DB_PREFIX . "product_special ps WHERE ps.product_id = p.product_id AND ps.customer_group_id = '" . (int)$this->config->get('config_customer_group_id') . "' AND ((ps.date_start = '0000-00-00' OR ps.date_start < NOW()) AND (ps.date_end = '0000-00-00' OR ps.date_end > NOW())) ORDER BY ps.priority ASC, ps.price ASC LIMIT 1) AS special FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id) WHERE p.product_id = '" . (int)$product_id . "' AND pd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND p.status = '1' AND p.stock_status_id = 7 AND p.date_available <= NOW() AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "'");
+
+			if ($query->num_rows) {
+					$price = $query->row['price'];
+					if ($query->row['special']) {
+							$price = $query->row['special'];
+							if ($query->row['special'] > $query->row['price']) {
+									$price = $query->row['price'];
+							}
+					}
+
+					return array(
+							'product_id' => $query->row['product_id'],
+							'name' => $query->row['name'],
+							'image' => $query->row['image'],
+							'price' => $price,
+					);
+			} else {
+					return false;
+			}
+
+	}
+
+	public function getComboProductId($product_id)
+	{
+			$data = false;
+			$sql = "SELECT * FROM " . DB_PREFIX . "product_combo WHERE product_id = '" . (int)$product_id . "' AND status = '1'";
+			$query = $this->db->query($sql);
+			if ($query->num_rows) {
+					$data = true;
+			}
+			$sql = "SELECT * FROM " . DB_PREFIX . "product_combo WHERE related_id = '" . (int)$product_id . "' AND status = '1'";
+			$query = $this->db->query($sql);
+			if ($query->num_rows) {
+					$data = true;
+			}
+			return $data;
+	}
+
+	public function getCombo($combo_id)
+	{
+			$sql = "SELECT * FROM " . DB_PREFIX . "product_combo WHERE combo_id = '" . (int)$combo_id . "' AND status = '1'";
+			$query = $this->db->query($sql);
+			return $query->row;
+	}
+
+	public function getProductsCombo($product_id)
+	{
+			$product_data = array();
+			$data = array();
+			$product = $this->getProductComboInfo($product_id);
+
+			if ($product) {
+
+					$sql = "SELECT * FROM " . DB_PREFIX . "product_combo WHERE product_id = '" . (int)$product_id . "' AND status = '1' ORDER BY combo_id ASC";
+					$query = $this->db->query($sql);
+					if ($query->num_rows) {
+							foreach ($query->rows as $row) {
+									$data[$row['related_id']] = array(
+											'combo_id' => $row['combo_id'],
+											'related_id' => $row['related_id'],
+											'discount' => $row['discount']
+									);
+							}
+					}
+
+					$sql = "SELECT * FROM " . DB_PREFIX . "product_combo WHERE related_id = '" . (int)$product_id . "' AND status = '1' ORDER BY combo_id ASC";
+					$query = $this->db->query($sql);
+					if ($query->num_rows) {
+							foreach ($query->rows as $row) {
+									$data[$row['product_id']] = array(
+											'combo_id' => $row['combo_id'],
+											'related_id' => $row['product_id'],
+											'discount' => $row['discount']
+									);
+							}
+					}
+
+					if ($data) {
+							$product_price = $product['price'];
+							foreach ($data as $item) {
+									$additional_product = $this->getProductComboInfo($item['related_id']);
+									if ($additional_product) {
+											$additional_product_price = $additional_product['price'];
+											$previous_price = (float)$product_price + (float)$additional_product_price;
+
+											$items = array();
+
+											$new_price = $previous_price / 100 * (100 - $item['discount']);
+
+											$econom = (float)$previous_price - (float)$new_price;
+
+											$items[] = array(
+													'product_id' => $product['product_id'],
+													'name' => $product['name'],
+													'image' => $product['image'],
+													'price' => $product['price'],
+											);
+											$items[] = array(
+													'product_id' => $additional_product['product_id'],
+													'name' => $additional_product['name'],
+													'image' => $additional_product['image'],
+													'price' => $additional_product['price'],
+											);
+											$product_data[] = array(
+													'combo_id' => $item['combo_id'],
+													'items' => $items,
+													'previous_price' => $previous_price,
+													'econom' => $econom,
+													'new_price' => $new_price,
+													'discount' => $item['discount']
+											);
+									}
+							}
+					}
+			}
+
+			return $product_data;
+	}
 
 	public function getProductImages($product_id) {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_image WHERE product_id = '" . (int)$product_id . "' ORDER BY sort_order ASC");
