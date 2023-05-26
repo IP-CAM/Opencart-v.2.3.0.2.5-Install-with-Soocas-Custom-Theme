@@ -276,11 +276,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			//проверка типа
 			if (!['image/jpeg', 'image/jpg', 'image/png'].includes(file.type)) {
 				inputImage.value = '';
+				document.getElementById('feedback-error').innerHTML = 'Недопустимое расширение файла!';
 				return;
 			}
 
 			//проверка размера (до 1мб)
-			if (file.size > 1024 * 1024) return;
+			if (file.size > 1024 * 1024) {
+				document.getElementById('feedback-error').innerHTML = 'Размер файла больше 1мб!';
+				return
+			};
 
 			//полученние и вставка изображения
 			let reader = new FileReader();

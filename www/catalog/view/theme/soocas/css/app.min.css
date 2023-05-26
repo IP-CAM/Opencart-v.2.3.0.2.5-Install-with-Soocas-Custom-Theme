@@ -4885,7 +4885,15 @@ button.swiper-pagination-bullet {
   margin-top: 30px;
   padding: 0 20px
 }
-
+.feedback__wrap_submit {
+  margin-top: 15px;
+}
+.feedback__error {
+  margin-top: 15px;
+  color: #eb1d1d;
+  opacity: 1;
+  font-size: 14px;
+}
 .feedback__button {
   max-width: 350px;
   width: 100%

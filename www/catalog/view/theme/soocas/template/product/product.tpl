@@ -308,12 +308,14 @@
               document.querySelector('.page__cover').classList.toggle('page__cover_open-successful');
               document.querySelector('.page').classList.toggle('page_active-successful');
               form.reset();
+              document.getElementById('feedback-error').innerHTML = '';
             } else {
-              alert(response['error'] ? response['error'] : "Форма не отправлена");
+              document.getElementById('feedback-error').innerHTML = response['error'] ? response['error'] : "Форма не отправлена";
             }
             form.querySelector('button').disabled = false;
           } else {
             alert("Ошибка " + this.status);
+            document.getElementById('feedback-error').innerHTML = "Ошибка " + this.status;
             form.querySelector('button').disabled = false;
           }
         };

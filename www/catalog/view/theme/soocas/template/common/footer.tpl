@@ -247,7 +247,9 @@
           </div>
         </div>
 
-        <div class="form__wrap feedback__wrap">
+        <span class="form__politics feedback__politics feedback__error" id="feedback-error"></span>
+
+        <div class="form__wrap feedback__wrap feedback__wrap_submit">
           <button type="submit" class="btn btn_black feedback__button">Отправить</button>
           <span class="form__politics feedback__politics">Нажимая кнопку отправить, я даю согласие на
             обработку своих данных в соответствии с текущим законодательством</span>
