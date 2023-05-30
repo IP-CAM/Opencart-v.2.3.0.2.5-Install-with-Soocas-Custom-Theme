@@ -161,7 +161,8 @@ class ControllerCommonHeader extends Controller {
 		// 	$data['menu'] = '';
 		// }
 		// $data['search'] = $this->load->controller('common/search');
-		// $data['cart'] = $this->load->controller('common/cart');
+		$data['cart'] = $this->load->controller('common/cart');
+		$data['count_cart'] = $this->cart->countProducts();
 
 		// For page specific css
 		if (isset($this->request->get['route'])) {

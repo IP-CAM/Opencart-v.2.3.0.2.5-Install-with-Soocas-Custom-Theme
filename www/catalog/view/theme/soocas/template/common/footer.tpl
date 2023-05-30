@@ -78,7 +78,7 @@
 
 <div class="modal">
   <button class="modal__close">
-    <img src="./images/dist/cart/close.svg" alt="Icon close" width="20" height="20" aria-label="Закрыть">
+    <img src="catalog/view/theme/soocas/images/dist/cart/close.svg" alt="Icon close" width="20" height="20" aria-label="Закрыть">
   </button>
   <div class="cart cart_big" id="cart-modal">
     <div class="cart__top">
@@ -206,35 +206,30 @@
               <div class="rating__body">
                 <div class="rating__inputs">
                   <input type="radio" class="rating__input" name="rating" value="0" disabled checked>
-
                   <label for="rating__1" class="rating__label">
                     <svg class="rating__icon" viewBox="0 0 20 19">
                       <path d="M10 0L12.645 6.35942L19.5106 6.90983L14.2798 11.3906L15.8779 18.0902L10 14.5L4.12215 18.0902L5.72025 11.3906L0.489435 6.90983L7.35497 6.35942L10 0Z" />
                     </svg>
                   </label>
                   <input type="radio" id="rating__1" class="rating__input" name="rating" value="1">
-
                   <label for="rating__2" class="rating__label">
                     <svg class="rating__icon" viewBox="0 0 20 19">
                       <path d="M10 0L12.645 6.35942L19.5106 6.90983L14.2798 11.3906L15.8779 18.0902L10 14.5L4.12215 18.0902L5.72025 11.3906L0.489435 6.90983L7.35497 6.35942L10 0Z" />
                     </svg>
                   </label>
                   <input type="radio" id="rating__2" class="rating__input" name="rating" value="2">
-
                   <label for="rating__3" class="rating__label">
                     <svg class="rating__icon" viewBox="0 0 20 19">
                       <path d="M10 0L12.645 6.35942L19.5106 6.90983L14.2798 11.3906L15.8779 18.0902L10 14.5L4.12215 18.0902L5.72025 11.3906L0.489435 6.90983L7.35497 6.35942L10 0Z" />
                     </svg>
                   </label>
                   <input type="radio" id="rating__3" class="rating__input" name="rating" value="3">
-
                   <label for="rating__4" class="rating__label">
                     <svg class="rating__icon" viewBox="0 0 20 19">
                       <path d="M10 0L12.645 6.35942L19.5106 6.90983L14.2798 11.3906L15.8779 18.0902L10 14.5L4.12215 18.0902L5.72025 11.3906L0.489435 6.90983L7.35497 6.35942L10 0Z" />
                     </svg>
                   </label>
                   <input type="radio" id="rating__4" class="rating__input" name="rating" value="4">
-
                   <label for="rating__5" class="rating__label">
                     <svg class="rating__icon" viewBox="0 0 20 19">
                       <path d="M10 0L12.645 6.35942L19.5106 6.90983L14.2798 11.3906L15.8779 18.0902L10 14.5L4.12215 18.0902L5.72025 11.3906L0.489435 6.90983L7.35497 6.35942L10 0Z" />
@@ -246,9 +241,7 @@
             </div>
           </div>
         </div>
-
         <span class="form__politics feedback__politics feedback__error" id="feedback-error"></span>
-
         <div class="form__wrap feedback__wrap feedback__wrap_submit">
           <button type="submit" class="btn btn_black feedback__button">Отправить</button>
           <span class="form__politics feedback__politics">Нажимая кнопку отправить, я даю согласие на
@@ -257,17 +250,13 @@
       </form>
     </div>
   </div>
-
 </div>
 
 <div class="modal">
-
   <button class="modal__close">
     <img src="catalog/view/theme/soocas/images/dist/cart/close.svg" alt="Icon close" width="20" height="20" aria-label="Закрыть">
   </button>
-
   <div class="successful-3" id="successful-modal">
-
     <div class="successful-3__content">
       <h3 class="successful-3__title-3">Спасибо, ваш отзыв скоро будет опубликован</h3>
       <p class="successful-3__text">Мы отправим вам уведомление на почту после публикации отзыва,
@@ -276,9 +265,7 @@
     <div class="successful-3__wrap">
       <button class="btn btn_black successful-3__button">Готово</button>
     </div>
-
   </div>
-
 </div>
 
 <div class="modal">
@@ -287,6 +274,17 @@
   </button>
   <div class="image" id="img-modal">
     <img class="image__photo" src="./">
+  </div>
+</div>
+
+<div class="modal">
+  <button class="modal__close">
+    <img src="catalog/view/theme/soocas/images/dist/cart/close.svg" alt="Icon close" width="20" height="20" aria-label="Закрыть">
+  </button>
+  <div class="successful-3" id="cart-add-modal">
+    <div class="successful-3__content">
+      <h3 class="successful-3__title-3">Товар добавлен в корзину</h3>
+    </div>
   </div>
 </div>
 </div>
