@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		listProducts.forEach(product => product.addEventListener('click', toggleClasses));
 	}
 
-	// toggleCart();
+	toggleCart();
 
 	function toggleSearch() {
 		const searchPanel = document.querySelector('.window');

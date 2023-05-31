@@ -170,9 +170,9 @@ class ControllerProductProduct extends Controller
 			$products_cart = array();
 			$cart = $this->cart->getProducts();
 			if ($cart) {
-					foreach ($cart as $item) {
-							$products_cart[] = $item['product_id'];
-					}
+				foreach ($cart as $item) {
+					$products_cart[] = $item['product_id'];
+				}
 			}
 
 			$url = '';
@@ -313,8 +313,8 @@ class ControllerProductProduct extends Controller
 				);
 			}
 
+			$data['cart_link'] = $this->url->link('checkout/checkout');
 			$data['in_cart'] = in_array($product_info['product_id'], $products_cart);
-
 			$data['products_combo'] = array();
 			$product_combo_results = $this->model_catalog_product->getProductsCombo($this->request->get['product_id']);
 			if ($product_combo_results) {
@@ -337,19 +337,44 @@ class ControllerProductProduct extends Controller
 						);
 					}
 
-					// $in_cart = false;
-					// $has_combo = $this->cart->hasComboId($product_combo['combo_id']);
-					// if ($has_combo) {
-					// 	$in_cart = true;
-					// }
+					if ($product_combo['discount']) {
+						$discount = intval($product_combo['discount']);
+					} else {
+						$discount = 0;
+					}
+
+					if ($product_combo['previous_price']) {
+						$previous_price = $this->currency->format($product_combo['previous_price'], $this->session->data['currency']);
+					} else {
+						$previous_price = 0;
+					}
+
+					if ($product_combo['econom']) {
+						$econom = $this->currency->format($product_combo['econom'], $this->session->data['currency']);
+					} else {
+						$econom = 0;
+					}
+
+					if ($product_combo['new_price']) {
+						$new_price = $this->currency->format($product_combo['new_price'], $this->session->data['currency']);
+					} else {
+						$new_price = 0;
+					}
+
+					$in_cart = false;
+					$has_combo = $this->cart->hasComboId($product_combo['combo_id']);
+					if ($has_combo) {
+						$in_cart = true;
+					}
+
 					$data['products_combo'][] = array(
 						'combo_id' => $product_combo['combo_id'],
 						'items' => $items,
-						// 'in_cart' => $in_cart,
-						'discount' => $this->currency->format($product_combo['discount'], 0),
-						'previous_price' => $this->currency->format($this->tax->calculate($product_combo['previous_price'], 0, $this->config->get('config_tax')), $this->session->data['currency']),
-						'econom' => $this->currency->format($this->tax->calculate($product_combo['econom'], 0, $this->config->get('config_tax')), $this->session->data['currency']),
-						'new_price' => $this->currency->format($this->tax->calculate($product_combo['new_price'], 0, $this->config->get('config_tax')), $this->session->data['currency']),
+						'in_cart' => $in_cart,
+						'discount' => $discount,
+						'previous_price' => $previous_price,
+						'econom' => $econom,
+						'new_price' => $new_price,
 					);
 				}
 			}
@@ -820,7 +845,7 @@ class ControllerProductProduct extends Controller
 					}
 				}
 
-				
+
 
 				$this->model_catalog_review->addReview($this->request->get['product_id'], $this->request->post, $file_name_array);
 
